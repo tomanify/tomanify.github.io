@@ -1,10 +1,29 @@
 (function(){
-  const drawer = document.querySelector('.mobile-drawer');
-  const openBtn = document.querySelector('[data-open-drawer]');
-  const closeBtn = document.querySelector('[data-close-drawer]');
+  const drawer=document.querySelector('.mobile-drawer');
+  const openBtn=document.querySelector('[data-open-drawer]');
+  const closeBtn=document.querySelector('[data-close-drawer]');
   function open(){ if(drawer){ drawer.classList.add('open'); document.body.style.overflow='hidden'; } }
   function close(){ if(drawer){ drawer.classList.remove('open'); document.body.style.overflow=''; } }
   if(openBtn) openBtn.addEventListener('click', open);
   if(closeBtn) closeBtn.addEventListener('click', close);
-  if(drawer) drawer.addEventListener('click', (e)=>{ if(e.target === drawer) close(); });
+  if(drawer) drawer.addEventListener('click', (e)=>{ if(e.target===drawer) close(); });
+
+  document.querySelectorAll('[data-copy]').forEach(btn=>{
+    btn.addEventListener('click', async ()=>{
+      const id=btn.getAttribute('data-copy');
+      const el=document.getElementById(id);
+      if(!el) return;
+      const txt=el.innerText.trim();
+      try{
+        await navigator.clipboard.writeText(txt);
+      }catch(e){
+        const ta=document.createElement('textarea');
+        ta.value=txt; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      }
+      const old=btn.textContent;
+      btn.textContent='کپی شد ✓';
+      setTimeout(()=>btn.textContent=old, 1200);
+    });
+  });
 })();

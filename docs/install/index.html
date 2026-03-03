@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<meta name="theme-color" content="#0A7B56">
+<title>نصب و راه‌اندازی Tomanify | تنظیمات پایه و اولین محصول خارجی</title>
+<meta name="description" content="راهنمای نصب و راه‌اندازی Tomanify در ووکامرس: تنظیم واحد تومان/ریال، کران، اولین بروزرسانی نرخ و تنظیم محصول خارجی.">
+<meta name="keywords" content="تومنیفای, tomanify, افزونه تومان, افزونه ریال, ووکامرس تومان, ووکامرس ریال, تبدیل قیمت خارجی ووکامرس, محصول خارجی ووکامرس, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, نرخ ارز ووکامرس, آپدیت نرخ ارز وردپرس, نمایش نرخ دلار یورو, widget نرخ ارز, شورتکد نرخ ارز, قیمت‌گذاری محصولات وارداتی, حاشیه سود ووکامرس, bonbast, tgju, نرخ بازار آزاد, نرخ رسمی بانک مرکزی, RSS نرخ ارز, JSON نرخ ارز, قیمت‌گذاری خودکار, نصب افزونه ووکامرس, تنظیمات پایه, زمان‌بندی کران وردپرس">
+<link rel="canonical" href="/docs/install/">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="نصب و راه‌اندازی Tomanify | تنظیمات پایه و اولین محصول خارجی">
+<meta property="og:description" content="راهنمای نصب و راه‌اندازی Tomanify در ووکامرس: تنظیم واحد تومان/ریال، کران، اولین بروزرسانی نرخ و تنظیم محصول خارجی.">
+<meta property="og:image" content="/assets/og.png">
+<meta property="og:url" content="/docs/install/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="نصب و راه‌اندازی Tomanify | تنظیمات پایه و اولین محصول خارجی">
+<meta name="twitter:description" content="راهنمای نصب و راه‌اندازی Tomanify در ووکامرس: تنظیم واحد تومان/ریال، کران، اولین بروزرسانی نرخ و تنظیم محصول خارجی.">
+<meta name="twitter:image" content="/assets/og.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://tomanify.github.io/#website",
+      "url": "https://tomanify.github.io/",
+      "name": "Tomanify Docs",
+      "inLanguage": [
+        "fa-IR"
+      ],
+      "publisher": {
+        "@id": "https://tomanify.github.io/#org"
+      },
+      "description": "راهنمای فارسی و چندصفحه‌ای برای افزونه Tomanify (ووکامرس) — تبدیل قیمت خارجی به تومان/ریال با چند منبع نرخ."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://tomanify.github.io/#org",
+      "name": "Tomanify",
+      "url": "https://wordpress.org/plugins/tomanify/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
+        "width": 32,
+        "height": 32
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tomanify.github.io/#author",
+      "name": "Amin Raoufi",
+      "url": "https://tomanify.github.io/"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://tomanify.github.io/docs/install/#primaryimage",
+      "url": "https://tomanify.github.io/assets/og.png",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tomanify.github.io/docs/install/#webpage",
+      "url": "https://tomanify.github.io/docs/install/",
+      "name": "نصب و راه‌اندازی Tomanify | تنظیمات پایه و اولین محصول خارجی",
+      "isPartOf": {
+        "@id": "https://tomanify.github.io/#website"
+      },
+      "about": {
+        "@id": "https://wordpress.org/plugins/tomanify/"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
+      },
+      "inLanguage": "fa-IR",
+      "datePublished": "2026-03-02",
+      "dateModified": "2026-03-02",
+      "description": "راهنمای نصب و راه‌اندازی Tomanify در ووکامرس: تنظیم واحد تومان/ریال، کران، اولین بروزرسانی نرخ و تنظیم محصول خارجی.",
+      "breadcrumb": {
+        "@id": "https://tomanify.github.io/docs/install/#breadcrumb"
+      },
+      "author": {
+        "@id": "https://tomanify.github.io/#author"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://tomanify.github.io/docs/install/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "خانه",
+          "item": "https://tomanify.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Docs",
+          "item": "https://tomanify.github.io/docs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "راه‌اندازی",
+          "item": "https://tomanify.github.io/docs/install/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://tomanify.github.io/docs/install/#article",
+      "headline": "نصب و راه‌اندازی Tomanify | تنظیمات پایه و اولین محصول خارجی",
+      "description": "راهنمای نصب و راه‌اندازی Tomanify در ووکامرس: تنظیم واحد تومان/ریال، کران، اولین بروزرسانی نرخ و تنظیم محصول خارجی.",
+      "inLanguage": "fa-IR",
+      "isPartOf": {
+        "@id": "https://tomanify.github.io/docs/install/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://tomanify.github.io/docs/install/#webpage"
+      },
+      "image": {
+        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
+      },
+      "author": {
+        "@id": "https://tomanify.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://tomanify.github.io/#org"
+      },
+      "datePublished": "2026-03-02",
+      "dateModified": "2026-03-02"
+    }
+  ]
+}</script>
+</head>
+<body>
+<header class="header" role="banner">
+  <div class="container">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Tomanify Docs">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Tomanify — راهنمای فارسی</span>
+      </a>
+      <nav class="nav" aria-label="ناوبری">
+        <a href="/" class="">خانه</a>
+<a href="/docs/" class="">Docs</a>
+<a href="/docs/quick-start/" class="">شروع سریع</a>
+<a href="/docs/install/" class="active">راه‌اندازی</a>
+<a href="/docs/sources/" class="">منابع نرخ</a>
+<a href="/docs/products/" class="">محصولات خارجی</a>
+<a href="/docs/shortcode/" class="">شورتکد</a>
+<a href="/docs/troubleshooting/" class="">رفع اشکال</a>
+<a href="/docs/faq/" class="">FAQ</a>
+      </nav>
+      <div class="controls">
+        <a class="btn primary" href="https://wordpress.org/plugins/tomanify/" target="_blank" rel="noopener">دانلود از WP.org</a>
+        <button class="btn hamburger" type="button" data-open-drawer aria-label="باز کردن منو">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer" aria-hidden="true">
+  <div class="drawer-panel" role="dialog" aria-label="منوی موبایل">
+    <div class="close">
+      <strong>منو</strong>
+      <button class="btn" type="button" data-close-drawer>بستن</button>
+    </div>
+    <a href="/">خانه</a>
+<a href="/docs/">Docs</a>
+<a href="/docs/quick-start/">شروع سریع</a>
+<a href="/docs/install/">راه‌اندازی</a>
+<a href="/docs/sources/">منابع نرخ</a>
+<a href="/docs/products/">محصولات خارجی</a>
+<a href="/docs/shortcode/">شورتکد</a>
+<a href="/docs/troubleshooting/">رفع اشکال</a>
+<a href="/docs/faq/">FAQ</a>
+    <hr>
+    <a class="btn primary" href="https://wordpress.org/plugins/tomanify/" target="_blank" rel="noopener" style="justify-content:center">دانلود از WP.org</a>
+  </div>
+</div>
+
+<main class="container main" role="main">
+  
+<div class="layout">
+  <aside class="card toc" aria-label="فهرست">
+    <div class="card-inner">
+      <p class="title">راهنمای سریع</p>
+      <a href="/docs/quick-start/" class="">شروع سریع<small>۵ دقیقه</small></a>
+<a href="/docs/install/" class="active">نصب و راه‌اندازی<small>قدم‌به‌قدم</small></a>
+<a href="/docs/sources/" class="">منابع نرخ<small>JSON/RSS/Manual</small></a>
+<a href="/docs/products/" class="">محصولات خارجی<small>فرمول + پایه</small></a>
+<a href="/docs/shortcode/" class="">شورتکد نرخ‌ها<small>ویجت</small></a>
+<a href="/docs/troubleshooting/" class="">رفع اشکال<small>چک‌لیست</small></a>
+<a href="/docs/faq/" class="">سوالات پرتکرار<small>FAQ</small></a>
+      <hr>
+      <div class="note">
+        <strong>پیشنهاد:</strong> اگر تازه نصب کردید، با «شروع سریع» بروید جلو.
+      </div>
+    </div>
+  </aside>
+  <section class="card">
+    <div class="card-inner">
+      
+<div class="breadcrumb"><a href="/">خانه</a> / Docs / نصب و راه‌اندازی</div>
+<h1>نصب و راه‌اندازی</h1>
+<p class="lead">راه‌اندازی استاندارد، قدم‌به‌قدم — مناسب برای فروشگاه‌های فارسی‌زبان و هاست اشتراکی.</p>
+
+<div class="section">
+  <h2>۱) نصب و فعال‌سازی</h2>
+  <ol style="margin:0; padding-inline-start:1.2rem">
+    <li>در وردپرس به <strong>افزونه‌ها → افزودن</strong> بروید و <strong>Tomanify</strong> را نصب/فعال کنید.</li>
+    <li>پس از فعال‌سازی، منوی <strong>Tomanify</strong> در پنل مدیریت ظاهر می‌شود.</li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>۲) تنظیمات پایه (General)</h2>
+  <ul style="margin:0; padding-inline-start:1.2rem">
+    <li><strong>واحد:</strong> تومان یا ریال</li>
+    <li><strong>زبان افزونه:</strong> مستقل از زبان سایت</li>
+    <li><strong>زمان‌بندی کران:</strong> فاصله بروزرسانی نرخ‌ها</li>
+    <li><strong>Purge cache:</strong> اختیاری و پیش‌فرض خاموش</li>
+  </ul>
+  <div class="note" style="margin-top:12px"><strong>نکته:</strong> تغییر واحد باعث fetch نرخ نمی‌شود؛ فقط قیمت ووکامرس از روی پایه تومان بازنویسی می‌شود.</div>
+</div>
+
+<div class="section">
+  <h2>۳) اولین بروزرسانی نرخ‌ها</h2>
+  <p>در Dashboard روی Update Rates کلیک کنید. نرخ‌های ذخیره شده باید به تومان نمایش داده شوند.</p>
+</div>
+
+<div class="section">
+  <h2>۴) اولین محصول خارجی</h2>
+  <p>در صفحه محصول، foreign را فعال کنید، ارز و قیمت خارجی و سود را وارد کنید. با ذخیره محصول، قیمت محاسبه و ذخیره می‌شود.</p>
+  <p style="margin:0"><a class="btn" href="/docs/products/">جزئیات محصول خارجی</a></p>
+</div>
+
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="wrap">
+      <p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده برای GitHub Pages</p>
+      <p class="small">
+        <a href="/docs/">فهرست Docs</a> ·
+        <a href="/docs/faq/">FAQ</a> ·
+        <a href="/docs/troubleshooting/">رفع اشکال</a> ·
+        <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

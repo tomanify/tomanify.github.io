@@ -144,3 +144,32 @@ pre{
 :focus-visible{outline:none;box-shadow:0 0 0 4px rgba(10,123,86,.14);border-radius:12px}
 
 h1,h2,h3,.brand span,.nav a{font-family:"YekanLocal","Vazirmatn",Tahoma,sans-serif;}
+
+
+/* SEO keyword chips (visible, small, user-friendly) */
+.seo-box{margin-top:14px}
+.seo-details{border:1px dashed rgba(15,23,42,.18); border-radius:16px; padding:12px 14px; background:rgba(255,255,255,.55)}
+.seo-details > summary{
+  cursor:pointer; font-weight:800; font-size:.95rem; color:var(--text);
+  list-style:none;
+}
+.seo-details > summary::-webkit-details-marker{display:none}
+.seo-details > summary:after{
+  content:"▾"; display:inline-block; margin-inline-start:8px; color:var(--muted); transform:translateY(-1px);
+}
+.seo-details[open] > summary:after{content:"▴"}
+.keywords{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+.keyword{
+  display:inline-flex; align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.14);
+  background:rgba(255,255,255,.75);
+  color:rgba(15,23,42,.72);
+  font-size:.78rem;
+  line-height:1.2;
+  white-space:nowrap;
+}
+@media (max-width:480px){
+  .keyword{font-size:.76rem; padding:6px 9px}
+}

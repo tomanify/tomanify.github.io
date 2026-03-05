@@ -1,3 +1,19 @@
+/* Local Persian fonts (WOFF2) */
+@font-face{
+  font-family:"Vazirmatn";
+  src:url("/assets/fonts/Vazirmatn[wght].woff2") format("woff2");
+  font-weight:100 900;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"YekanLocal";
+  src:url("/assets/fonts/Yekan.woff2") format("woff2");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
 :root{
   --bg:#f6f8fb;
   --text:#0f172a;
@@ -20,9 +36,7 @@ body{
   color:var(--text);
   line-height:1.95;
   overflow-x:hidden;
-  font-family:
-    "Vazirmatn","Shabnam","Sahel","YekanBakh","IRANSans",
-    Tahoma, "Segoe UI", system-ui, sans-serif;
+  font-family: "Vazirmatn", Tahoma, "Segoe UI", system-ui, sans-serif;
 }
 a{color:var(--brand);text-decoration:none}
 a:hover{color:var(--brand2)}
@@ -128,3 +142,5 @@ pre{
   .hamburger{display:inline-flex}
 }
 :focus-visible{outline:none;box-shadow:0 0 0 4px rgba(10,123,86,.14);border-radius:12px}
+
+h1,h2,h3,.brand span,.nav a{font-family:"YekanLocal","Vazirmatn",Tahoma,sans-serif;}

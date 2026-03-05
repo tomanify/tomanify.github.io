@@ -173,3 +173,37 @@ h1,h2,h3,.brand span,.nav a{font-family:"YekanLocal","Vazirmatn",Tahoma,sans-ser
 @media (max-width:480px){
   .keyword{font-size:.76rem; padding:6px 9px}
 }
+
+/* Image lightbox (fullscreen on click/tap) */
+.zoomable{cursor:zoom-in}
+.lightbox{
+  position:fixed; inset:0; z-index:3000;
+  background:rgba(2,20,32,.78);
+  display:none; align-items:center; justify-content:center;
+  padding:18px;
+}
+.lightbox.open{display:flex}
+.lightbox .panel{
+  position:relative;
+  width:min(1100px, 100%);
+  max-height: calc(100vh - 36px);
+}
+.lightbox img{
+  width:100%;
+  height:auto;
+  max-height: calc(100vh - 80px);
+  object-fit:contain;
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 18px 60px rgba(0,0,0,.35);
+}
+.lightbox .close{
+  position:absolute; top:-10px; left:-10px;
+  transform: translate(0,0);
+}
+@media (max-width:520px){
+  .lightbox{padding:10px}
+  .lightbox .panel{max-height: calc(100vh - 20px)}
+  .lightbox img{max-height: calc(100vh - 70px)}
+}

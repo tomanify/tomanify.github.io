@@ -26,4 +26,66 @@
       setTimeout(()=>btn.textContent=old, 1200);
     });
   });
+
+  // Lightbox: make content images open fullscreen on click/tap.
+  const lb = document.createElement('div');
+  lb.className = 'lightbox';
+  lb.setAttribute('role','dialog');
+  lb.setAttribute('aria-modal','true');
+  lb.setAttribute('aria-label','نمایش تمام‌صفحه تصویر');
+  lb.innerHTML = `
+    <div class="panel">
+      <button class="btn close" type="button" aria-label="بستن">بستن</button>
+      <img alt="" />
+    </div>
+  `;
+  document.body.appendChild(lb);
+
+  const lbImg = lb.querySelector('img');
+  const lbClose = lb.querySelector('button.close');
+
+  function lbOpen(src, alt){
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function lbCloseFn(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    // Release image to stop large memory usage on mobile.
+    lbImg.src = '';
+  }
+
+  lb.addEventListener('click', (e)=>{
+    if(e.target === lb) lbCloseFn();
+  });
+  lbClose.addEventListener('click', lbCloseFn);
+  window.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && lb.classList.contains('open')) lbCloseFn();
+  });
+
+  function isZoomable(img){
+    if(!img || !img.src) return false;
+    if(img.closest('.brand')) return false;
+    if(img.closest('header')) return false;
+    if(img.closest('footer')) return false;
+    if(img.classList.contains('no-lightbox')) return false;
+    if(img.hasAttribute('data-no-lightbox')) return false;
+    // Avoid tiny icons
+    const w = img.naturalWidth || img.width || 0;
+    const h = img.naturalHeight || img.height || 0;
+    if(w && h && (w < 220 || h < 140)) return false;
+    return true;
+  }
+
+  document.querySelectorAll('main img').forEach((img)=>{
+    if(!isZoomable(img)) return;
+    img.classList.add('zoomable');
+    img.addEventListener('click', ()=>{
+      const src = img.currentSrc || img.src;
+      lbOpen(src, img.alt);
+    });
+  });
+
 })();

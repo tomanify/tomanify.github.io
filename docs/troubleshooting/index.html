@@ -3,12 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <meta name="theme-color" content="#0A7B56">
 <title>رفع اشکال تومنی‌فای | مشکلات رایج نرخ و قیمت</title>
 <meta name="description" content="رفع اشکال تومنی‌فای: چرا قیمت محصولات وارداتی آپدیت نمی‌شود، چرا ویجت نمایش داده نمی‌شود و چک‌لیست سریع.">
-<meta name="keywords" content="تومنیفای, tomanify, افزونه تومان, افزونه ریال, ووکامرس تومان, ووکامرس ریال, تبدیل تومان ریال, تبدیل ریال تومان, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, قیمت‌گذاری محصولات وارداتی, نرخ ارز ووکامرس, نرخ بازار آزاد, نرخ ارز آزاد, نرخ خیابانی دلار, نرخ خیابانی یورو, json نرخ ارز, rss نرخ ارز, xml نرخ ارز, بانک مرکزی cbi, ExRatesRSS, بروزرسانی خودکار قیمت, ووکامرس قیمت خارجی, نمایش نرخ ارز, شورتکد نرخ ارز, قطع اینترنت, اینترنت ملی, به‌روزرسانی نرخ از بانک مرکزی, رفع اشکال, قیمت آپدیت نمی‌شود, مشکل شورتکد">
+<meta name="keywords" content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, رفع اشکال تومنیفای, مشکل بروزرسانی قیمت محصولات, چرا قیمت تغییر نمی‌کند, مشکل کران ووکامرس, wp-cron اجرا نمی‌شود, کش باعث عدم نمایش قیمت جدید, حل مشکل کش WP Rocket, پاکسازی صف purge, خطای URL منبع نرخ, مشکل https URL, نرخ صفر یا نامعتبر, خطای JSON نرخ ارز">
 <link rel="canonical" href="/docs/troubleshooting/">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:type" content="website">
@@ -199,6 +202,106 @@
   <h2 class="section">ویجت نمایش داده نمی‌شود</h2>
   <p>شورتکد را اضافه کنید و کش را پاک کنید.</p>
 </div></section>
+
+<section class="container section seo-box">
+  <div class="card">
+    <details class="seo-details">
+      <summary>کلمات کلیدی پیشنهادی برای جستجو (سئو)</summary>
+      <p class="muted" style="margin:.6rem 0 0">این بخش برای کمک به پیدا کردن همین صفحه در جستجوهای فارسی است.</p>
+      <div class="keywords" aria-label="Tomanify">
+        <span class="keyword">Tomanify</span>
+<span class="keyword">تومنیفای</span>
+<span class="keyword">افزونه تومنیفای</span>
+<span class="keyword">افزونه تبدیل قیمت</span>
+<span class="keyword">افزونه نرخ ارز ووکامرس</span>
+<span class="keyword">ووکامرس</span>
+<span class="keyword">وردپرس</span>
+<span class="keyword">قیمت گذاری اتوماتیک</span>
+<span class="keyword">قیمت‌گذاری اتوماتیک فروشگاه اینترنتی</span>
+<span class="keyword">بروزرسانی خودکار قیمت محصولات</span>
+<span class="keyword">به‌روزرسانی خودکار قیمت‌ها</span>
+<span class="keyword">محاسبه قیمت بر اساس نرخ ارز</span>
+<span class="keyword">نرخ ارز آزاد</span>
+<span class="keyword">نرخ بازار آزاد</span>
+<span class="keyword">نرخ دلار بازار آزاد</span>
+<span class="keyword">نرخ یورو بازار آزاد</span>
+<span class="keyword">نرخ درهم بازار آزاد</span>
+<span class="keyword">نرخ لیر بازار آزاد</span>
+<span class="keyword">نرخ یوان بازار آزاد</span>
+<span class="keyword">تبدیل تومان ریال</span>
+<span class="keyword">تبدیل ریال تومان</span>
+<span class="keyword">تومان</span>
+<span class="keyword">ریال</span>
+<span class="keyword">قیمت دلاری ووکامرس</span>
+<span class="keyword">قیمت یورویی ووکامرس</span>
+<span class="keyword">محصول خارجی ووکامرس</span>
+<span class="keyword">محصول وارداتی ووکامرس</span>
+<span class="keyword">قیمت محصولات خارجی</span>
+<span class="keyword">نرخ ارز لحظه‌ای</span>
+<span class="keyword">نرخ ارز امروز</span>
+<span class="keyword">نرخ ارز ایران</span>
+<span class="keyword">صرافی آنلاین</span>
+<span class="keyword">قیمت دلار امروز</span>
+<span class="keyword">قیمت یورو امروز</span>
+<span class="keyword">قیمت درهم امروز</span>
+<span class="keyword">قیمت لیر امروز</span>
+<span class="keyword">قیمت یوان امروز</span>
+<span class="keyword">تبدیل قیمت کالا به تومان</span>
+<span class="keyword">محاسبه قیمت کالا با دلار</span>
+<span class="keyword">محاسبه قیمت کالا با یورو</span>
+<span class="keyword">نرخ ارز برای فروشگاه اینترنتی</span>
+<span class="keyword">تبدیل ارز در ووکامرس</span>
+<span class="keyword">currency converter woocommerce</span>
+<span class="keyword">woocommerce exchange rate plugin</span>
+<span class="keyword">Iran toman woocommerce</span>
+<span class="keyword">rial toman conversion</span>
+<span class="keyword">افزونه چند ارزی ووکامرس ایران</span>
+<span class="keyword">قیمت گذاری محصولات وارداتی</span>
+<span class="keyword">قیمت گذاری محصولات خارجی با نرخ ارز</span>
+<span class="keyword">بروزرسانی قیمت با کران</span>
+<span class="keyword">wp-cron ووکامرس</span>
+<span class="keyword">زمان‌بندی بروزرسانی نرخ ارز</span>
+<span class="keyword">کش ووکامرس</span>
+<span class="keyword">پاکسازی کش</span>
+<span class="keyword">WP Rocket purge</span>
+<span class="keyword">به‌روزرسانی قیمت با کش</span>
+<span class="keyword">نرخ ارز JSON</span>
+<span class="keyword">فایل JSON نرخ ارز</span>
+<span class="keyword">RSS نرخ ارز</span>
+<span class="keyword">XML نرخ ارز</span>
+<span class="keyword">RSS بانک مرکزی</span>
+<span class="keyword">XML بانک مرکزی</span>
+<span class="keyword">بانک مرکزی ایران نرخ ارز</span>
+<span class="keyword">نرخ رسمی بانک مرکزی</span>
+<span class="keyword">تبدیل نرخ رسمی به بازار آزاد</span>
+<span class="keyword">premium نرخ ارز</span>
+<span class="keyword">ضریب پریمیوم نرخ ارز</span>
+<span class="keyword">مدل آفلاین نرخ ارز</span>
+<span class="keyword">محاسبه آفلاین نرخ ارز</span>
+<span class="keyword">اینترنت ملی</span>
+<span class="keyword">قطع اینترنت ایران</span>
+<span class="keyword">fallback نرخ ارز</span>
+<span class="keyword">threshold تغییر نرخ ارز</span>
+<span class="keyword">آستانه تغییر نرخ</span>
+<span class="keyword">کاهش نوسان نرخ ارز</span>
+<span class="keyword">گرد کردن قیمت</span>
+<span class="keyword">گرد کردن به هزار تومان</span>
+<span class="keyword">رفع اشکال تومنیفای</span>
+<span class="keyword">مشکل بروزرسانی قیمت محصولات</span>
+<span class="keyword">چرا قیمت تغییر نمی‌کند</span>
+<span class="keyword">مشکل کران ووکامرس</span>
+<span class="keyword">wp-cron اجرا نمی‌شود</span>
+<span class="keyword">کش باعث عدم نمایش قیمت جدید</span>
+<span class="keyword">حل مشکل کش WP Rocket</span>
+<span class="keyword">پاکسازی صف purge</span>
+<span class="keyword">خطای URL منبع نرخ</span>
+<span class="keyword">مشکل https URL</span>
+<span class="keyword">نرخ صفر یا نامعتبر</span>
+<span class="keyword">خطای JSON نرخ ارز</span>
+      </div>
+    </details>
+  </div>
+</section>
 
 </main>
 

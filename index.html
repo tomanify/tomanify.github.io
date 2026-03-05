@@ -199,28 +199,46 @@
     </div>
   </div></div>
 
-  <div class="card"><div class="inner">
-    <h2>لینک‌های بانک مرکزی (Copy/Paste برای هر ارز)</h2>
-    <p class="lead" style="margin-top:6px">برای شرایط محدودیت اینترنت یا منبع رسمی:</p>
-    <div class="copyline">
-      <pre id="copy-cbi"><code>USD — United States Dollar
-https://cbi.ir/ExRatesRSS.aspx?cid=1
+<div class="card"><div class="inner">
+  <h2>لینک‌های بانک مرکزی (Copy/Paste برای هر ارز)</h2>
+  <p class="lead" style="margin-top:6px">برای شرایط محدودیت اینترنت یا منبع رسمی:</p>
 
-EUR — Euro
-https://cbi.ir/ExRatesRSS.aspx?cid=94
+  <!-- USD -->
+  <div class="copyline">
+    <pre><code>USD — United States Dollar</code></pre>
+    <pre id="cbi-usd"><code>https://cbi.ir/ExRatesRSS.aspx?cid=1</code></pre>
+    <button class="btn" type="button" data-copy="cbi-usd">کپی لینک</button>
+  </div>
 
-AED — United Arab Emirates Dirham
-https://cbi.ir/ExRatesRSS.aspx?cid=14
+  <!-- EUR -->
+  <div class="copyline">
+    <pre><code>EUR — Euro</code></pre>
+    <pre id="cbi-eur"><code>https://cbi.ir/ExRatesRSS.aspx?cid=94</code></pre>
+    <button class="btn" type="button" data-copy="cbi-eur">کپی لینک</button>
+  </div>
 
-TRY — Turkish Lira
-https://cbi.ir/ExRatesRSS.aspx?cid=38
+  <!-- AED -->
+  <div class="copyline">
+    <pre><code>AED — United Arab Emirates Dirham</code></pre>
+    <pre id="cbi-aed"><code>https://cbi.ir/ExRatesRSS.aspx?cid=14</code></pre>
+    <button class="btn" type="button" data-copy="cbi-aed">کپی لینک</button>
+  </div>
 
-CNY — Chinese Yuan
-https://cbi.ir/ExRatesRSS.aspx?cid=85</code></pre>
-      <button class="btn" type="button" data-copy="copy-cbi">کپی</button>
-    </div>
-  </div></div>
-</section>
+  <!-- TRY -->
+  <div class="copyline">
+    <pre><code>TRY — Turkish Lira</code></pre>
+    <pre id="cbi-try"><code>https://cbi.ir/ExRatesRSS.aspx?cid=38</code></pre>
+    <button class="btn" type="button" data-copy="cbi-try">کپی لینک</button>
+  </div>
+
+  <!-- CNY -->
+  <div class="copyline">
+    <pre><code>CNY — Chinese Yuan</code></pre>
+    <pre id="cbi-cny"><code>https://cbi.ir/ExRatesRSS.aspx?cid=85</code></pre>
+    <button class="btn" type="button" data-copy="cbi-cny">کپی لینک</button>
+  </div>
+
+</div></div>
 
 <section class="grid section">
   <div class="card"><div class="inner">
@@ -252,15 +270,15 @@ https://cbi.ir/ExRatesRSS.aspx?cid=85</code></pre>
   <div class="faq">
     <details open>
   <summary>Tomanify دقیقاً چه کاری انجام می‌دهد؟</summary>
-  <p>قیمت محصولات خارجی (دلاری/یورویی/...) را با نرخ ارز به تومان/ریال تبدیل می‌کند و قیمت نهایی را در ووکامرس ذخیره می‌کند.</p>
+  <p>قیمت محصولات خارجی (دلار/یوروی/یوان/درهم/لیر) را با نرخ ارز به تومان/ریال تبدیل می‌کند و قیمت نهایی را در ووکامرس ذخیره می‌کند.</p>
 </details>
 <details >
   <summary>این افزونه نرخ «بازار آزاد» را حساب می‌کند یا رسمی؟</summary>
-  <p>تمرکز اصلی روی نرخ بازار آزاد است (نرخی که واقعاً در خرید و فروش روزمره استفاده می‌شود). در صورت نیاز می‌توانید از فید رسمی بانک مرکزی هم استفاده کنید.</p>
+  <p>تمرکز اصلی روی نرخ بازار آزاد است (نرخی که واقعاً در خرید و فروش روزمره استفاده می‌شود). همچنین می‌تواند از فید رسمی بانک مرکزی قیمت ارز آزاد را محاسبه کند.</p>
 </details>
 <details >
   <summary>وقتی اینترنت قطع یا محدود شود چه می‌شود؟</summary>
-  <p>اگر منابع بازار آزاد در دسترس نباشند، می‌توانید از فیدهای بانک مرکزی (RSS/XML) استفاده کنید تا بروزرسانی نرخ‌ها ادامه پیدا کند.</p>
+  <p>اگر فایل منابع نرخ بازار آزاد در دسترس نباشند، می‌تواند از فیدهای بانک مرکزی (که سرور داخلی هست) (RSS/XML) استفاده کند تا بروزرسانی نرخ‌ها ادامه پیدا کند.</p>
 </details>
 <details >
   <summary>چرا «پایه تومان» ذخیره می‌شود؟</summary>
@@ -281,7 +299,7 @@ https://cbi.ir/ExRatesRSS.aspx?cid=85</code></pre>
 <footer class="footer">
   <div class="container">
     <div class="wrap">
-      <p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده برای GitHub Pages</p>
+      <p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
       <p class="small">
         <a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
       </p>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<link as="font" crossorigin="" href="/assets/fonts/Vazirmatn[wght].woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/Yekan.woff2" rel="preload" type="font/woff2"/>
+<link href="/assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<meta content="#0A7B56" name="theme-color"/>
+<title>تنظیمات پیشرفته Tomanify | Threshold + Premium + Offline</title>
+<meta content="راهنمای گزینه‌های پیشرفته تومنی‌فای: Threshold (آستانه تغییر)، Premium برای تبدیل نرخ رسمی به آزاد، Offline Mode و نکات گرد کردن و پایه تومان." name="description"/>
+<meta content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, نصب افزونه تومنیفای, فعال‌سازی افزونه در وردپرس, راه‌اندازی اولیه ووکامرس تومان, تنظیم کران وردپرس, wp-cron فعال, cron job هاست, تست کران وردپرس, مجوزها و دسترسی مدیریت, تنظیم زبان افزونه, تغییر واحد تومان ریال" name="keywords"/>
+<link href="https://tomanify.github.io/docs/install/" rel="canonical"/>
+<meta content="fa_IR" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify" property="og:title"/>
+<meta content="نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی." property="og:description"/>
+<meta content="https://tomanify.github.io/assets/og.webp" property="og:image"/>
+<meta content="https://tomanify.github.io/docs/install/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify" name="twitter:title"/>
+<meta content="نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی." name="twitter:description"/>
+<meta content="https://tomanify.github.io/assets/og.webp" name="twitter:image"/>
+<link href="/assets/style.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://tomanify.github.io/#website",
+      "url": "https://tomanify.github.io/",
+      "name": "Tomanify Docs",
+      "inLanguage": [
+        "fa-IR"
+      ],
+      "publisher": {
+        "@id": "https://tomanify.github.io/#org"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://tomanify.github.io/#org",
+      "name": "Tomanify",
+      "url": "https://wordpress.org/plugins/tomanify/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
+        "width": 32,
+        "height": 32
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tomanify.github.io/#author",
+      "name": "Amin Raoufi",
+      "url": "https://tomanify.github.io/"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://tomanify.github.io/docs/install/#primaryimage",
+      "url": "https://tomanify.github.io/assets/og.webp",
+      "width": 1200,
+      "height": 630
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://tomanify.github.io/docs/install/#webpage",
+      "url": "https://tomanify.github.io/docs/install/",
+      "name": "نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify",
+      "isPartOf": {
+        "@id": "https://tomanify.github.io/#website"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
+      },
+      "inLanguage": "fa-IR",
+      "datePublished": "2026-03-03",
+      "dateModified": "2026-03-03",
+      "description": "نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.",
+      "breadcrumb": {
+        "@id": "https://tomanify.github.io/docs/install/#breadcrumb"
+      },
+      "author": {
+        "@id": "https://tomanify.github.io/#author"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://tomanify.github.io/docs/install/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "خانه",
+          "item": "https://tomanify.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Docs",
+          "item": "https://tomanify.github.io/docs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "نصب",
+          "item": "https://tomanify.github.io/docs/install/"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://tomanify.github.io/docs/install/#article",
+      "headline": "نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify",
+      "description": "نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.",
+      "inLanguage": "fa-IR",
+      "isPartOf": {
+        "@id": "https://tomanify.github.io/docs/install/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://tomanify.github.io/docs/install/#webpage"
+      },
+      "image": {
+        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
+      },
+      "author": {
+        "@id": "https://tomanify.github.io/#author"
+      },
+      "publisher": {
+        "@id": "https://tomanify.github.io/#org"
+      },
+      "datePublished": "2026-03-03",
+      "dateModified": "2026-03-03"
+    }
+  ]
+}</script>
+</head>
+<body>
+<header class="header">
+<div class="container">
+<div class="wrap">
+<a aria-label="Tomanify" class="brand" href="/">
+<img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
+<span>Tomanify — راهنمای فارسی</span>
+</a>
+<nav aria-label="ناوبری" class="nav"><a class="" href="/">خانه</a><a class="" href="/docs/">Docs</a><a class="" href="/docs/sources/">منابع نرخ</a><a class="" href="/docs/products/">محصولات خارجی</a><a class="" href="/docs/shortcode/">شورتکد</a><a class="" href="/docs/troubleshooting/">رفع اشکال</a><a class="active" href="/docs/advanced/">پیشرفته</a><a class="" href="/docs/backup/">بکاپ</a><a class="" href="/docs/security/">امنیت</a><a class="" href="/docs/faq/">FAQ</a></nav>
+<div class="controls">
+<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
+<button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer="" type="button">☰</button>
+</div>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="mobile-drawer">
+<div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
+<div class="drawer-top">
+<strong>منو</strong>
+<button class="btn" data-close-drawer="" type="button">بستن</button>
+</div>
+<a href="/">خانه</a><a href="/docs/">Docs</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">FAQ</a><hr/>
+<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
+</div>
+</div>
+<main class="container main">
+<div class="breadcrumb"><a href="/">خانه</a> / Docs / پیشرفته</div>
+<section class="card"><div class="inner">
+<h1>تنظیمات پیشرفته</h1>
+<p class="lead">این صفحه برای زمانی است که می‌خواهید رفتار افزونه را دقیق‌تر کنترل کنید: کاهش نوسان، کار در شرایط آفلاین، یا انتقال تنظیمات بین سایت‌ها.</p>
+
+<h2>۱) Threshold (آستانه تغییر نرخ)</h2>
+<p>Threshold درصد حداقل تغییر لازم برای ذخیره نرخ جدید است. اگر تغییرات کمتر از این مقدار باشد، افزونه نرخ جدید را ذخیره نمی‌کند و سراغ آپدیت محصولات نمی‌رود.</p>
+<ul>
+  <li>پیشنهاد عمومی: <strong>۰٫۱٪ تا ۰٫۵٪</strong></li>
+  <li>برای جلوگیری از نوسان زیاد و آپدیت‌های ریز: مقدار را بالاتر ببرید.</li>
+  <li>برای آپدیت همیشه: مقدار را <strong>۰</strong> بگذارید (ممکن است فشار روی هاست بیشتر شود).</li>
+</ul>
+
+<h2 class="section">۲) Premium (تبدیل نرخ رسمی به نرخ آزاد)</h2>
+<p>وقتی Source Mode روی <strong>CBI</strong> باشد، افزونه نرخ رسمی بانک مرکزی را می‌خواند و با ضریب <strong>Premium</strong> آن را به «نرخ آزاد تخمینی» تبدیل می‌کند.</p>
+<ul>
+  <li>اگر برای USD لینک بانک مرکزی را تنظیم کرده باشید و منبع JSON هم داشته باشید، افزونه می‌تواند Premium را به‌صورت تطبیقی (EMA) به‌روزرسانی کند.</li>
+  <li>اگر اینترنت محدود است یا JSON در دسترس نیست، Premium را دستی تنظیم کنید تا خروجی نزدیک‌تر به بازار آزاد باشد.</li>
+</ul>
+
+<h2 class="section">۳) Offline Mode (برآورد آفلاین)</h2>
+<p>در حالت Offline افزونه هیچ درخواست خارجی نمی‌زند و نرخ‌ها را بر اساس یک «مرجع ذخیره‌شده» و نرخ رشد سالانه (CAGR) تخمین می‌زند:</p>
+<ul>
+  <li><strong>Reference Snapshot</strong>: آخرین نرخ رسمی USD (به ریال) + زمان ذخیره.</li>
+  <li><strong>CAGR</strong>: نرخ رشد سالانه برای برآورد روند (مثلاً ۰٫۲۵ یعنی ۲۵٪ در سال).</li>
+</ul>
+<div class="note section">
+<strong>نکته:</strong> Offline یک مدل تخمینی است؛ برای قیمت‌گذاری دقیق همیشه JSON بازار آزاد یا بانک مرکزی (با Premium) گزینه‌های بهتری هستند.
+</div>
+
+<h2 class="section">۴) گرد کردن و «پایه تومان»</h2>
+<ul>
+  <li>برای جلوگیری از تبدیل دوباره، افزونه مقدار <strong>tomanify_price_base_tmn</strong> را به‌عنوان «پایه تومان» ذخیره می‌کند.</li>
+  <li>قیمت نهایی برای ووکامرس به‌صورت پیش‌فرض به نزدیک‌ترین <strong>۱۰۰۰</strong> گرد می‌شود (برای ظاهر قیمت‌گذاری بهتر).</li>
+  <li>تغییر واحد تومان/ریال باعث دریافت دوباره نرخ نمی‌شود؛ فقط قیمت ووکامرس از روی پایه تومان بازنویسی می‌شود.</li>
+</ul>
+
+<h2 class="section">مطالعه بیشتر</h2>
+<ul>
+  <li><a href="/docs/sources/">منابع نرخ</a> (Source Mode و لینک‌ها)</li>
+  <li><a href="/docs/backup/">بکاپ و انتقال</a> (Export/Import)</li>
+  <li><a href="/docs/security/">امنیت و حریم خصوصی</a></li>
+</ul>
+</div></section>
+<section class="container section seo-box">
+<div class="card">
+<section class="section">
+<h2>سوالات متداول این صفحه:</h2>
+<p class="muted" style="margin:.4rem 0 1rem">
+    ما سوالات پرتکرار را که ممکن است به درک بهتر این صفحه کمک کنند را در اینجا قرار داده ایم.
+  </p>
+<div class="faq">
+<details open="">
+<summary>Threshold را روی چه عددی بگذارم؟</summary>
+<p>برای اکثر فروشگاه‌ها ۰٫۱٪ تا ۰٫۵٪ مناسب است. اگر محصولات زیاد دارید یا نوسان‌های ریز برایتان مهم نیست، عدد بالاتر کمک می‌کند.</p>
+</details>
+<details>
+<summary>Offline دقیقاً چقدر دقیق است؟</summary>
+<p>Offline یک مدل تخمینی است و دقت آن به آخرین Reference Snapshot و تنظیم CAGR/Premium بستگی دارد. برای دقت بالا از JSON یا CBI استفاده کنید.</p>
+</details>
+<details>
+<summary>Premium را دستی تنظیم کنم یا خودکار؟</summary>
+<p>اگر هم JSON و هم URL رسمی USD بانک مرکزی را دارید، حالت خودکار می‌تواند Premium را نزدیک‌تر کند. در غیر این صورت دستی تنظیم کنید.</p>
+</details>
+</div>
+</section>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="wrap">
+<p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
+<p class="small">
+<a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
+</p>
+</div>
+</div>
+</footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

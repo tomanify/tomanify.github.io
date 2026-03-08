@@ -1,29 +1,60 @@
 <!DOCTYPE html>
-
-<html dir="rtl" lang="fa">
+<html dir="rtl" lang="fa-IR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<link as="font" crossorigin="" href="/assets/fonts/Vazirmatn[wght].woff2" rel="preload" type="font/woff2"/>
-<link as="font" crossorigin="" href="/assets/fonts/Yekan.woff2" rel="preload" type="font/woff2"/>
-<link href="/assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<meta content="#0A7B56" name="theme-color"/>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Docs">
+
 <title>بکاپ و انتقال Tomanify | Export/Import JSON</title>
-<meta content="راهنمای بکاپ تومنی‌فای: خروجی گرفتن JSON از تنظیمات و محصولات foreign و بازگردانی (Import) با match بر اساس SKU یا عنوان." name="description"/>
-<meta content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, نصب افزونه تومنیفای, فعال‌سازی افزونه در وردپرس, راه‌اندازی اولیه ووکامرس تومان, تنظیم کران وردپرس, wp-cron فعال, cron job هاست, تست کران وردپرس, مجوزها و دسترسی مدیریت, تنظیم زبان افزونه, تغییر واحد تومان ریال" name="keywords"/>
-<link href="https://tomanify.github.io/docs/install/" rel="canonical"/>
-<meta content="fa_IR" property="og:locale"/>
-<meta content="website" property="og:type"/>
-<meta content="نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify" property="og:title"/>
-<meta content="نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی." property="og:description"/>
-<meta content="https://tomanify.github.io/assets/og.webp" property="og:image"/>
-<meta content="https://tomanify.github.io/docs/install/" property="og:url"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify" name="twitter:title"/>
-<meta content="نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی." name="twitter:description"/>
-<meta content="https://tomanify.github.io/assets/og.webp" name="twitter:image"/>
-<link href="/assets/style.css" rel="stylesheet"/>
+
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta name="theme-color" content="#0A7B56">
+
+<meta name="description" content="راهنمای بکاپ تومنی‌فای: خروجی گرفتن JSON از تنظیمات و محصولات foreign و بازگردانی (Import) با match بر اساس SKU یا عنوان.">
+
+<meta name="keywords" content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, نصب افزونه تومنیفای, فعال‌سازی افزونه در وردپرس, راه‌اندازی اولیه ووکامرس تومان, تنظیم کران وردپرس, wp-cron فعال, cron job هاست, تست کران وردپرس, مجوزها و دسترسی مدیریت, تنظیم زبان افزونه, تغییر واحد تومان ریال">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://tomanify.github.io/docs/backup/">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta property="og:type" content="article">
+
+<meta property="og:title" content="بکاپ و انتقال Tomanify | Export/Import JSON">
+
+<meta property="og:description" content="راهنمای بکاپ و انتقال تنظیمات تومنی‌فای با Export و Import JSON و تطبیق محصولات بر اساس SKU یا عنوان.">
+
+<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta property="og:url" content="https://tomanify.github.io/docs/backup/">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="بکاپ و انتقال Tomanify | Export/Import JSON">
+
+<meta name="twitter:description" content="راهنمای Export و Import تنظیمات و محصولات foreign در افزونه Tomanify با فایل JSON.">
+
+<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
+<meta name="author" content="Amin Raoufi">
+<link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [

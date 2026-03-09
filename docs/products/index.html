@@ -1,272 +1,102 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="fa-IR">
-<head>
+---
+layout: default
+page_key: products
+nav_parent: products
+page_url: /docs/products/
+title: محصولات وارداتی در تومنی‌فای | پایه تومان و فرمول تبدیل
+description: 'راهنمای محصولات خارجی در Tomanify: foreign product، ارز و قیمت خرید خارجی، Margin، پایه تومان، فرمول تبدیل و دلیل درست ماندن مرتب‌سازی قیمت.'
+keywords: محصول خارجی تومنیفای, foreign product ووکامرس, محصولات وارداتی در ووکامرس, پایه تومان Tomanify, فرمول تبدیل قیمت Tomanify, Margin محصول خارجی, سورت قیمت ووکامرس با نرخ ارز, قیمت نهایی واقعی ووکامرس
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/screenshot-8.webp
+schema_image_width: 1200
+schema_image_height: 800
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: محصولات خارجی
+  path: /docs/products/
+faq_items:
+- q: کدام محصولات تحت تأثیر Tomanify قرار می‌گیرند؟
+  a: فقط محصولاتی که در متاباکس Tomanify به‌عنوان foreign/product imported علامت خورده‌اند و ارز و قیمت خرید خارجی دارند.
+- q: چرا Tomanify پایه تومان را ذخیره می‌کند؟
+  a: برای اینکه تغییر واحد تومان/ریال یا بروزرسانی‌های بعدی باعث تبدیل دوباره و خطای تجمعی نشود.
+- q: آیا مرتب‌سازی ارزان‌ترین به گران‌ترین درست می‌ماند؟
+  a: بله، چون قیمت ووکامرس بر اساس مبلغ نهایی واقعی بازنویسی می‌شود و فقط نرخ نمایشی عوض نمی‌شود.
+- q: Margin روی چه چیزی اعمال می‌شود؟
+  a: روی قیمت خرید خارجی بعد از ضرب شدن در نرخ ارز؛ یعنی در عمل بخشی از قیمت‌گذاری نهایی شماست، نه تنظیم منبع نرخ.
+- q: اگر واحد سایت را عوض کنم، دوباره قیمت خارجی محاسبه می‌شود؟
+  a: خیر. افزونه از پایه تومان استفاده می‌کند و فقط قیمت ذخیره‌شدهٔ ووکامرس را متناسب با واحد جدید بازنویسی می‌کند.
+---
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="generator" content="Tomanify Docs">
-
-<title>محصولات وارداتی در تومنی‌فای | پایه تومان و فرمول تبدیل</title>
-
-<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" href="/assets/favicon.ico" sizes="any">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<meta name="theme-color" content="#0A7B56">
-
-<meta name="description" content="محصول وارداتی در تومنی‌فای: فیلدها، فرمول تبدیل با نرخ بازار آزاد، گرد کردن قیمت و پایه تومان برای سوییچ تومان/ریال.">
-
-<meta name="keywords" content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, محصولات خارجی تومنیفای, متاباکس محصول خارجی, foreign product woocommerce, فرمول تبدیل قیمت خارجی, margin درصد سود, حاشیه سود, price base toman, baseline قیمت تومان, عدم دوباره‌تبدیل, bulk edit محصولات خارجی, ACF price update, ویرایش گروهی قیمت محصولات وارداتی">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://tomanify.github.io/docs/products/">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="author" content="Amin Raoufi">
-
-<meta property="og:site_name" content="Tomanify">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:locale:alternate" content="en_US">
-
-<meta property="og:type" content="article">
-
-<meta property="og:title" content="محصولات وارداتی در تومنی‌فای | پایه تومان و فرمول تبدیل">
-
-<meta property="og:description" content="محصول وارداتی در تومنی‌فای: فیلدها، فرمول تبدیل با نرخ بازار آزاد، گرد کردن قیمت و پایه تومان برای سوییچ تومان/ریال.">
-
-<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta property="og:url" content="https://tomanify.github.io/docs/products/">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="محصولات وارداتی در تومنی‌فای | پایه تومان و فرمول تبدیل">
-
-<meta name="twitter:description" content="محصول وارداتی در تومنی‌فای: فیلدها، فرمول تبدیل با نرخ بازار آزاد، گرد کردن قیمت و پایه تومان برای سوییچ تومان/ریال.">
-
-<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
-
-<link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://tomanify.github.io/#website",
-      "url": "https://tomanify.github.io/",
-      "name": "Tomanify Docs",
-      "inLanguage": [
-        "fa-IR"
-      ],
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://tomanify.github.io/#org",
-      "name": "Tomanify",
-      "url": "https://wordpress.org/plugins/tomanify/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
-        "width": 32,
-        "height": 32
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://tomanify.github.io/#author",
-      "name": "Amin Raoufi",
-      "url": "https://tomanify.github.io/"
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://tomanify.github.io/docs/products/#primaryimage",
-      "url": "https://tomanify.github.io/assets/og.webp",
-      "width": 1200,
-      "height": 630
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://tomanify.github.io/docs/products/#webpage",
-      "url": "https://tomanify.github.io/docs/products/",
-      "name": "محصولات وارداتی در تومنی‌فای | پایه تومان و فرمول تبدیل",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/#website"
-      },
-      "primaryImageOfPage": {
-        "@id": "https://tomanify.github.io/docs/products/#primaryimage"
-      },
-      "inLanguage": "fa-IR",
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03",
-      "description": "محصول وارداتی در تومنی‌فای: فیلدها، فرمول تبدیل با نرخ بازار آزاد، گرد کردن قیمت و پایه تومان برای سوییچ تومان/ریال.",
-      "breadcrumb": {
-        "@id": "https://tomanify.github.io/docs/products/#breadcrumb"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://tomanify.github.io/docs/products/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "خانه",
-          "item": "https://tomanify.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Docs",
-          "item": "https://tomanify.github.io/docs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "محصولات خارجی",
-          "item": "https://tomanify.github.io/docs/products/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tomanify.github.io/docs/products/#article",
-      "headline": "محصولات وارداتی در تومنی‌فای | پایه تومان و فرمول تبدیل",
-      "description": "محصول وارداتی در تومنی‌فای: فیلدها، فرمول تبدیل با نرخ بازار آزاد، گرد کردن قیمت و پایه تومان برای سوییچ تومان/ریال.",
-      "inLanguage": "fa-IR",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/docs/products/#webpage"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://tomanify.github.io/docs/products/#webpage"
-      },
-      "image": {
-        "@id": "https://tomanify.github.io/docs/products/#primaryimage"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      },
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      },
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03"
-    }
-  ]
-}</script>
-</head>
-<body>
-<header class="header">
-<div class="container">
-<div class="wrap">
-<a aria-label="Tomanify" class="brand" href="/">
-<img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
-<span>Tomanify — راهنمای فارسی</span>
-</a>
-<nav aria-label="ناوبری" class="nav"><a class="" href="/">خانه</a><a class="" href="/docs/">Docs</a><a class="" href="/docs/sources/">منابع نرخ</a><a class="active" href="/docs/products/">محصولات خارجی</a><a class="" href="/docs/shortcode/">شورتکد</a><a class="" href="/docs/troubleshooting/">رفع اشکال</a><a class="" href="/docs/advanced/">پیشرفته</a><a class="" href="/docs/backup/">بکاپ</a><a class="" href="/docs/security/">امنیت</a><a class="" href="/docs/faq/">FAQ</a></nav>
-<div class="controls">
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
-<button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer="" type="button">☰</button>
-</div>
-</div>
-</div>
-</header>
-<div aria-hidden="true" class="mobile-drawer">
-<div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
-<div class="drawer-top">
-<strong>منو</strong>
-<button class="btn" data-close-drawer="" type="button">بستن</button>
-</div>
-<a href="/">خانه</a><a href="/docs/">Docs</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">FAQ</a><hr/>
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
-</div>
-</div>
-<main class="container main">
-<div class="breadcrumb"><a href="/">خانه</a> / Docs / محصولات خارجی</div>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / محصولات خارجی</div>
 <section class="card"><div class="inner">
-<h1>محصولات خارجی (وارداتی)</h1>
-<p class="lead">با علامت‌زدن محصول به عنوان وارداتی، Tomanify قیمت را با نرخ ارز محاسبه و در ووکامرس ذخیره می‌کند.</p>
-<h2>فیلدهای لازم</h2>
-<ul style="margin:0; padding-inline-start:1.2rem">
-<li>این محصول وارداتی است</li>
-<li>واحد ارزی</li>
-<li>قیمت خرید خارجی</li>
-<li>درصد سود</li>
-</ul>
-<h2 class="section">پایه تومان</h2>
-<p>قیمت نهایی یک‌بار به تومان ذخیره می‌شود. تغییر واحد (ریال/تومان) فقط بازنویسی قیمت است.</p>
-<h2 class="section">فرمول</h2>
-<pre><code>قیمت خارجی × نرخ (تومان) × (۱ + درصد سود/۱۰۰)
-→ گرد کردن به نزدیک‌ترین ۱٬۰۰۰ تومان</code></pre>
+  <h1>محصولات خارجی و وارداتی در Tomanify</h1>
+  <p class="lead">اگر نرخ ارز را درست تنظیم کرده‌اید ولی هنوز نمی‌دانید محصول خارجی دقیقاً چطور تعریف می‌شود، این صفحه مهم‌ترین نقطهٔ بعدی است.</p>
 </div></section>
+
 <section class="grid section">
-<div class="card"><div class="inner">
-<figure class="figure">
-<img alt="Product metabox" decoding="async" loading="lazy" src="/assets/img/screenshot-8.webp"/>
-<figcaption>متاباکس محصول وارداتی</figcaption>
+  <div class="card"><div class="inner">
+    <h2>فیلدهایی که باید پر شوند</h2>
+    <ul style="margin:0;padding-inline-start:1.2rem">
+      <li>فعال کردن حالت <strong>foreign</strong></li>
+      <li>انتخاب ارز (USD / EUR / AED / TRY / CNY)</li>
+      <li>وارد کردن قیمت خرید خارجی</li>
+      <li>وارد کردن Margin یا درصد سود</li>
+    </ul>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>تصویر: متاباکس محصول خارجی</h2>
+    <figure class="figure">
+<img alt="Foreign product metabox" decoding="async" loading="lazy" src="/assets/img/screenshot-8.webp"/>
+<figcaption>محل تنظیم ارز، قیمت خرید خارجی و Margin برای هر محصول</figcaption>
 </figure>
-</div></div>
-<div class="card"><div class="inner">
-<figure class="figure">
-<img alt="Dashboard rates" decoding="async" loading="lazy" src="/assets/img/screenshot-1.webp"/>
-<figcaption>نرخ‌های ذخیره شده (تومان)</figcaption>
-</figure>
-</div></div>
+  </div></div>
 </section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>فرمول کلی</h2>
+    <p>منطق پایه این است: <strong>قیمت خرید خارجی × نرخ ارز × (۱ + درصد سود)</strong>. سپس بسته به تنظیمات شما، مبلغ نهایی گرد می‌شود و به‌عنوان قیمت ووکامرس ذخیره می‌شود.</p>
+    <p style="margin:0">یعنی افزونه از اول برای «قیمت‌گذاری واقعی» طراحی شده، نه فقط نمایش ظاهری نرخ ارز.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>پایه تومان یعنی چه؟</h2>
+    <p>افزونه یک «قیمت پایه به تومان» نگه می‌دارد تا وقتی واحد سایت بین تومان و ریال جابه‌جا شد یا بعدها دوباره بروزرسانی انجام شد، تبدیل دوباره و خطای جمع‌شونده رخ ندهد.</p>
+    <p style="margin:0">این همان چیزی است که باعث می‌شود ساختار قیمت فروشگاه پایدار بماند.</p>
+  </div></div>
+</section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>چرا سورت و فیلتر به‌هم نمی‌ریزد؟</h2>
+    <p>چون Tomanify قیمت نهایی ووکامرس را بازنویسی می‌کند و دیتابیس فروشگاه بر اساس مبلغ نهایی واقعی ذخیره می‌شود. پس وقتی کاربر «ارزان‌ترین» یا «گران‌ترین» را انتخاب می‌کند، ترتیب درست باقی می‌ماند.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>Margin را با Premium اشتباه نگیرید</h2>
+    <p><strong>Margin</strong> مربوط به قیمت‌گذاری محصول است؛ اما <strong>Premium</strong> مربوط به نزدیک کردن نرخ رسمی بانک مرکزی به نرخ آزاد. یکی روی «محصول» اثر دارد، دیگری روی «منبع نرخ».</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>مطالعه بیشتر</h2>
+  <p style="display:flex;gap:10px;flex-wrap:wrap;margin:0"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/troubleshooting/">رفع اشکال</a></p>
+</div></section>
+
 <section class="container section seo-box">
-<div class="card">
-<section class="section">
-<h2>سوالات متداول این صفحه:</h2>
-<p class="muted" style="margin:.4rem 0 1rem">
-    ما سوالات پرتکرار را که ممکن است به درک بهتر این صفحه کمک کنند را در اینجا قرار داده ایم.
-  </p>
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
 <div class="faq">
-<details open="">
-<summary>کدام محصولات پردازش می‌شوند؟</summary>
-<p>فقط محصولاتی که گزینه foreign فعال باشد و currency/price/margin داشته باشند.</p>
-</details>
-<details>
-<summary>فرمول تبدیل قیمت چیست؟</summary>
-<p>قیمت خارجی × نرخ تومان × (۱ + درصد سود/۱۰۰) و سپس گرد کردن به نزدیک‌ترین ۱٬۰۰۰ تومان.</p>
-</details>
-<details>
-<summary>اگر نرخ ارز موجود نباشد چه می‌شود؟</summary>
-<p>محصول برای جلوگیری از قیمت اشتباه، آپدیت نمی‌شود تا نرخ معتبر ذخیره شود.</p>
-</details>
-<details>
-<summary>چرا قیمت‌ها گرد می‌شوند؟</summary>
-<p>برای تجربه خرید بهتر و جلوگیری از قیمت‌های ریز و نامعمول در فروشگاه.</p>
-</details>
+<details open><summary>کدام محصولات تحت تأثیر Tomanify قرار می‌گیرند؟</summary><p>فقط محصولاتی که در متاباکس Tomanify به‌عنوان foreign/product imported علامت خورده‌اند و ارز و قیمت خرید خارجی دارند.</p></details>
+<details><summary>چرا Tomanify پایه تومان را ذخیره می‌کند؟</summary><p>برای اینکه تغییر واحد تومان/ریال یا بروزرسانی‌های بعدی باعث تبدیل دوباره و خطای تجمعی نشود.</p></details>
+<details><summary>آیا مرتب‌سازی ارزان‌ترین به گران‌ترین درست می‌ماند؟</summary><p>بله، چون قیمت ووکامرس بر اساس مبلغ نهایی واقعی بازنویسی می‌شود و فقط نرخ نمایشی عوض نمی‌شود.</p></details>
+<details><summary>Margin روی چه چیزی اعمال می‌شود؟</summary><p>روی قیمت خرید خارجی بعد از ضرب شدن در نرخ ارز؛ یعنی در عمل بخشی از قیمت‌گذاری نهایی شماست، نه تنظیم منبع نرخ.</p></details>
+<details><summary>اگر واحد سایت را عوض کنم، دوباره قیمت خارجی محاسبه می‌شود؟</summary><p>خیر. افزونه از پایه تومان استفاده می‌کند و فقط قیمت ذخیره‌شدهٔ ووکامرس را متناسب با واحد جدید بازنویسی می‌کند.</p></details>
 </div>
+</section></div>
 </section>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="wrap">
-<p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
-<p class="small">
-<a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
-</p>
-</div>
-</div>
-</footer>
-<script src="/assets/site.js"></script>
-</body>
-</html>

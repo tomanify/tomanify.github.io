@@ -1,0 +1,122 @@
+---
+layout: default
+page_key: free-api
+nav_parent: sources
+page_url: /docs/free-api/
+title: API رایگان نرخ ارز برای ووکامرس | JSON بازار آزاد Tomanify
+description: 'راهنمای API رایگان نرخ ارز برای Tomanify: لینک آمادهٔ JSON بازار آزاد، فرمت سازگار با افزونه، زمان استفاده از Margin، و زمانی که API شخصی بهتر است.'
+keywords: API رایگان نرخ ارز ووکامرس, JSON بازار آزاد ووکامرس, API رایگان دلار برای ووکامرس, Tomanify free API, لینک JSON نرخ ارز, منبع رایگان نرخ ارز ایران, خرید API نرخ ارز لازم است, فرمت JSON تومنیفای, API شخصی نرخ ارز ووکامرس, market rate JSON for WooCommerce
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/screenshot-3.webp
+schema_image_width: 1200
+schema_image_height: 800
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: API رایگان
+  path: /docs/free-api/
+faq_items:
+- q: آیا برای استفاده از Tomanify حتماً باید API پولی بخرم؟
+  a: برای اکثر فروشگاه‌ها خیر. می‌توانید با منبع رایگان بازار آزاد شروع کنید و در صورت حساس بودن کسب‌وکار، Margin یا API شخصی‌تر در نظر بگیرید.
+- q: لینک آمادهٔ JSON کجاست؟
+  a: لینک پیشنهادی این صفحه همان فایل JSON بازار آزاد است که در تب Sources وارد می‌کنید. هر API شخصی دیگری هم اگر ساختار سازگار داشته باشد قابل استفاده است.
+- q: فرمت JSON سازگار با افزونه چیست؟
+  a: ساده‌ترین فرمت مستند و سازگار این است که کلید values داشته باشد و ارزها را با مقادیر عددیِ تومان برگرداند؛ مثلاً USD، EUR، AED، TRY و CNY.
+- q: این منبع رایگان همیشه لحظه‌ای است؟
+  a: منبع رایگان برای اکثر فروشگاه‌ها کافی است، اما اگر روی نوسان‌های خیلی کوچک حساس هستید، باید احتمال تأخیر بروزرسانی را در نظر بگیرید و با Margin یا API اختصاصی جبران کنید.
+- q: اگر JSON در دسترس نبود چه کنم؟
+  a: فیدهای بانک مرکزی را هم به‌عنوان پشتیبان تنظیم کنید و Source Mode را طوری بچینید که فقط به یک منبع وابسته نباشید.
+- q: اگر از API شخصی استفاده کنم چه چیزی باید به توسعه‌دهنده بگویم؟
+  a: به او بگویید خروجی را به ساختار JSON سازگار با Tomanify و مقادیر تومانِ بدون ویرگول تبدیل کند و لینک را با HTTPS در اختیار شما بگذارد.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / API رایگان</div>
+<section class="card"><div class="inner">
+  <h1>API رایگان نرخ ارز برای ووکامرس؛ آیا برای Tomanify لازم است چیزی بخرید؟</h1>
+  <p class="lead">در خیلی از فروشگاه‌ها پاسخ کوتاه این است: <strong>نه</strong>. شما می‌توانید با یک فید JSON رایگان بازار آزاد شروع کنید و فقط اگر کسب‌وکارتان به نوسان‌های بسیار کوچک حساس است، بعداً به سراغ API اختصاصی‌تر بروید.</p>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>لینک پیشنهادی آماده</h2>
+    <p>این لینک را در تب <strong>Sources</strong> و فیلد JSON قرار دهید:</p>
+    <div class="copyline">
+<pre><code id="free-api-json-url">https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
+<button class="btn" data-copy="free-api-json-url" type="button">کپی</button>
+</div>
+    <p style="margin:10px 0 0">برای اکثر فروشگاه‌ها، این سریع‌ترین راه شروع است و نیاز شما را به خرید API جداگانه از سرویس‌دهنده‌های دیگر از بین می‌برد.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>اگر فروشگاه شما حساس است</h2>
+    <p>اگر نوسان‌های خیلی کوچک هم برایتان مهم است، دو راه دارید:</p>
+    <ol style="margin:0;padding-inline-start:1.2rem">
+      <li>از همین منبع رایگان استفاده کنید ولی <strong>Margin</strong> محافظه‌کارانه بگذارید.</li>
+      <li>از API شخصی یا سفارشی استفاده کنید که نرخ را با بروزرسانی سریع‌تر در اختیارتان بگذارد.</li>
+    </ol>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>ساختار JSON سازگار با Tomanify</h2>
+  <p>اگر از یک برنامه‌نویس می‌خواهید برایتان API بسازد یا می‌خواهید از یک سرویس دیگر استفاده کنید، ساده‌ترین فرمتی که باید بخواهید این است:</p>
+  <div class="copyline">
+<pre><code id="free-api-json-format">{"values":{"USD":65000,"EUR":71000,"AED":17800,"TRY":2300,"CNY":9000}}</code></pre>
+<button class="btn" data-copy="free-api-json-format" type="button">کپی</button>
+</div>
+  <p style="margin:10px 0 0">نکته: اعداد باید به <strong>تومان</strong> و بدون ویرگول باشند. اگر سرویس شما خروجی دیگری می‌دهد، قبل از استفاده در افزونه آن را به این ساختار تبدیل کنید.</p>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>این منبع رایگان چه مزیتی دارد؟</h2>
+    <p>راه‌اندازی سریع، نداشتن هزینهٔ اشتراک ماهانه، و قابل استفاده بودن برای بیشتر فروشگاه‌های ایرانی. همچنین برای رعایت امنیت و الزامات وردپرس، افزونه هیچ URL آماده‌ای را به‌صورت پیش‌فرض داخل تنظیمات پر نمی‌کند و این تصمیم را به مدیر سایت می‌سپارد.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>محدودیت واقعی چیست؟</h2>
+    <p>مهم‌ترین محدودیت این است که منبع رایگان لزوماً «لحظه‌ایِ ثانیه‌به‌ثانیه» نیست. برای بیشتر فروشگاه‌ها این مسئله با Cron مناسب و Margin معقول قابل پوشش است؛ اما برای قیمت‌گذاری بسیار رقابتی یا کالاهای بسیار حساس، API اختصاصی‌تر انتخاب حرفه‌ای‌تری است.</p>
+  </div></div>
+</section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>پیشنهاد عملی برای کاهش ریسک</h2>
+    <ul style="margin:0;padding-inline-start:1.2rem">
+      <li>JSON بازار آزاد را به‌عنوان منبع اصلی تنظیم کنید.</li>
+      <li>فیدهای بانک مرکزی را هم در Sources وارد کنید.</li>
+      <li>Source Mode و Cron را طوری تنظیم کنید که فقط به یک منبع وابسته نباشید.</li>
+      <li>برای پوشش تأخیر احتمالی، Margin محافظه‌کارانه بگذارید.</li>
+    </ul>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>تصویر: محل ورود لینک در Sources</h2>
+    <figure class="figure">
+<img alt="Sources tab" decoding="async" loading="lazy" src="/assets/img/screenshot-3.webp"/>
+<figcaption>جایی که لینک JSON رایگان را در تب Sources وارد می‌کنید</figcaption>
+</figure>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>صفحه‌های مرتبط</h2>
+  <p style="display:flex;gap:10px;flex-wrap:wrap;margin:0"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/quick-start/">شروع سریع</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/troubleshooting/">رفع اشکال</a></p>
+</div></section>
+
+<section class="container section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open><summary>آیا برای استفاده از Tomanify حتماً باید API پولی بخرم؟</summary><p>برای اکثر فروشگاه‌ها خیر. می‌توانید با منبع رایگان بازار آزاد شروع کنید و در صورت حساس بودن کسب‌وکار، Margin یا API شخصی‌تر در نظر بگیرید.</p></details>
+<details><summary>لینک آمادهٔ JSON کجاست؟</summary><p>لینک پیشنهادی این صفحه همان فایل JSON بازار آزاد است که در تب Sources وارد می‌کنید. هر API شخصی دیگری هم اگر ساختار سازگار داشته باشد قابل استفاده است.</p></details>
+<details><summary>فرمت JSON سازگار با افزونه چیست؟</summary><p>ساده‌ترین فرمت مستند و سازگار این است که کلید values داشته باشد و ارزها را با مقادیر عددیِ تومان برگرداند؛ مثلاً USD، EUR، AED، TRY و CNY.</p></details>
+<details><summary>این منبع رایگان همیشه لحظه‌ای است؟</summary><p>منبع رایگان برای اکثر فروشگاه‌ها کافی است، اما اگر روی نوسان‌های خیلی کوچک حساس هستید، باید احتمال تأخیر بروزرسانی را در نظر بگیرید و با Margin یا API اختصاصی جبران کنید.</p></details>
+<details><summary>اگر JSON در دسترس نبود چه کنم؟</summary><p>فیدهای بانک مرکزی را هم به‌عنوان پشتیبان تنظیم کنید و Source Mode را طوری بچینید که فقط به یک منبع وابسته نباشید.</p></details>
+<details><summary>اگر از API شخصی استفاده کنم چه چیزی باید به توسعه‌دهنده بگویم؟</summary><p>به او بگویید خروجی را به ساختار JSON سازگار با Tomanify و مقادیر تومانِ بدون ویرگول تبدیل کند و لینک را با HTTPS در اختیار شما بگذارد.</p></details>
+</div>
+</section></div>
+</section>

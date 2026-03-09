@@ -23,7 +23,7 @@
 
 ---
 
-## ساختار پوشه‌ها و URLها (Clean URLs)
+## ساختار پوشه‌ها و URLها)
 
 ```
 /index.html                          → صفحه اصلی (Landing)
@@ -61,15 +61,6 @@ robots.txt
 
 ---
 
-## توسعه و تغییرات آینده (Roadmap)
-
-1. افزایش عمق محتوا در هر صفحه (اسکرین‌شات‌های بیشتر، مثال‌ها، Edge caseها)
-2. افزودن Docs Search سمت کلاینت (بدون بک‌اند)
-3. ساخت صفحات SEO جدید برای کوئری‌های فارسی (هرکدام در `/docs/<topic>/index.html`)
-4. حفظ UI فعلی به عنوان baseline و بهبودها فقط در همین چارچوب انجام شوند (نه جایگزینی کامل)
-
----
-
 ## مشارکت (Contributing)
 
 اگر می‌خواهید در این پروژه مشارکت داشته باشید به من پیام دهید.
@@ -78,34 +69,3 @@ robots.txt
 ## لایسنس
 
 * نام و دارایی‌های برند Tomanify متعلق به پروژه Tomanify است.
-
-## معماری جدید برای حذف تکرار هدر و فوتر
-
-این نسخه برای GitHub Pages به ساختار **Jekyll-compatible** تبدیل شده تا تگ‌های ثابت `<head>` و اجزای تکراری هدر/فوتر فقط یک‌بار نگهداری شوند:
-
-```text
-/_layouts/default.html      → اسکلت اصلی تمام صفحات
-/_includes/head.html        → پارامترهای ثابت head
-/_includes/header.html      → هدر و ناوبری مشترک
-/_includes/footer.html      → فوتر مشترک
-/_includes/schema.html      → خروجی JSON-LD بر اساس متادیتای هر صفحه
-```
-
-هر صفحه فقط متادیتای متغیر خودش را در front matter نگه می‌دارد؛ مثل:
-- title
-- description
-- keywords
-- robots
-- og_type
-- schema_type
-- breadcrumbs
-
-### چرا فایل‌ها همچنان `index.html` مانده‌اند؟
-
-برای **GitHub Pages** و حفظ **clean URL**‌ها، ساختار پوشه‌ای استانداردتر و سازگارتر است:
-
-- `/docs/install/index.html` → آدرس نهایی: `/docs/install/`
-- `/docs/sources/index.html` → آدرس نهایی: `/docs/sources/`
-
-تغییر همه فایل‌ها به `install.html` یا `sources.html` باعث از بین رفتن همین URLهای تمیز می‌شود، بنابراین ساختار `folder/index.html` عمداً حفظ شده است.
-

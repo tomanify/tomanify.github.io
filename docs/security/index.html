@@ -1,275 +1,83 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="fa-IR">
-<head>
+---
+layout: default
+page_key: security
+nav_parent: security
+page_url: /docs/security/
+title: امنیت و حریم خصوصی Tomanify | درخواست‌های خارجی و داده‌ها
+description: 'امنیت و حریم خصوصی در Tomanify: درخواست‌های خارجی فقط از URLهای واردشده توسط مدیر، عدم ارسال داده‌های مشتری، ذخیره‌سازی تنظیمات و روش استفادهٔ امن‌تر از افزونه.'
+keywords: امنیت تومنیفای, حریم خصوصی Tomanify, درخواست خارجی در Tomanify, داده مشتری در تومنیفای, URL پیش فرض تومنیفای, HTTPS در منابع نرخ, امنیت افزونه نرخ ارز ووکامرس
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/og.webp
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: امنیت
+  path: /docs/security/
+faq_items:
+- q: آیا افزونه خودش مخفیانه به جایی وصل می‌شود؟
+  a: خیر. درخواست بیرونی فقط وقتی انجام می‌شود که مدیر سایت خودش URL منبع نرخ را وارد کرده باشد.
+- q: آیا اطلاعات مشتری یا سفارش به بیرون فرستاده می‌شود؟
+  a: خیر. منطق درخواست‌های خارجی مربوط به دریافت نرخ ارز از URLهای تعیین‌شده توسط مدیر است، نه ارسال اطلاعات شخصی کاربران.
+- q: آیا می‌توانم URLهای پیش‌فرض را خالی نگه دارم؟
+  a: بله، و دقیقاً همین هم پیش‌فرض افزونه است. شما تصمیم می‌گیرید از چه منبعی استفاده شود.
+- q: برای کاهش ریسک چه تنظیمی پیشنهاد می‌شود؟
+  a: استفاده از چند منبع پشتیبان، Cron مناسب، Margin محافظه‌کارانه و بررسی منظم نتیجهٔ نهایی در داشبورد.
+- q: آیا پاک‌سازی کش می‌تواند باعث درخواست به دامنه‌های دیگر شود؟
+  a: پاک‌سازی کش باید فقط روی آدرس‌های همان سایت شما اعمال شود و برای استفادهٔ امن‌تر لازم است تنظیمات و دامنه‌ها را با دقت بررسی کنید.
+---
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="generator" content="Tomanify Docs">
-
-<title>امنیت و حریم خصوصی Tomanify | External Requests & Data</title>
-
-<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" href="/assets/favicon.ico" sizes="any">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<meta name="theme-color" content="#0A7B56">
-
-<meta name="description" content="توضیح امنیت و حریم خصوصی تومنی‌فای: درخواست‌های خارجی فقط با URLهای واردشده توسط مدیر و ذخیره‌سازی داده‌ها در دیتابیس.">
-
-<meta name="keywords" content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, نصب افزونه تومنیفای, فعال‌سازی افزونه در وردپرس, راه‌اندازی اولیه ووکامرس تومان, تنظیم کران وردپرس, wp-cron فعال, cron job هاست, تست کران وردپرس, مجوزها و دسترسی مدیریت, تنظیم زبان افزونه, تغییر واحد تومان ریال">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://tomanify.github.io/docs/security/">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta property="og:site_name" content="Tomanify">
-<meta name="author" content="Amin Raoufi">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:locale:alternate" content="en_US">
-
-<meta property="og:type" content="article">
-
-<meta property="og:title" content="امنیت و حریم خصوصی Tomanify | External Requests & Data">
-
-<meta property="og:description" content="بررسی امنیت و حریم خصوصی افزونه Tomanify: نحوه درخواست‌های خارجی، کنترل URL توسط مدیر و ذخیره‌سازی داده‌ها در دیتابیس.">
-
-<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta property="og:url" content="https://tomanify.github.io/docs/security/">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="امنیت و حریم خصوصی Tomanify | External Requests & Data">
-
-<meta name="twitter:description" content="نحوه مدیریت درخواست‌های خارجی و ذخیره داده‌ها در افزونه Tomanify و توضیح سیاست امنیت و حریم خصوصی.">
-
-<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
-
-<link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://tomanify.github.io/#website",
-      "url": "https://tomanify.github.io/",
-      "name": "Tomanify Docs",
-      "inLanguage": [
-        "fa-IR"
-      ],
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://tomanify.github.io/#org",
-      "name": "Tomanify",
-      "url": "https://wordpress.org/plugins/tomanify/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
-        "width": 32,
-        "height": 32
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://tomanify.github.io/#author",
-      "name": "Amin Raoufi",
-      "url": "https://tomanify.github.io/"
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://tomanify.github.io/docs/install/#primaryimage",
-      "url": "https://tomanify.github.io/assets/og.webp",
-      "width": 1200,
-      "height": 630
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://tomanify.github.io/docs/install/#webpage",
-      "url": "https://tomanify.github.io/docs/install/",
-      "name": "نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/#website"
-      },
-      "primaryImageOfPage": {
-        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
-      },
-      "inLanguage": "fa-IR",
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03",
-      "description": "نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.",
-      "breadcrumb": {
-        "@id": "https://tomanify.github.io/docs/install/#breadcrumb"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://tomanify.github.io/docs/install/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "خانه",
-          "item": "https://tomanify.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Docs",
-          "item": "https://tomanify.github.io/docs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "نصب",
-          "item": "https://tomanify.github.io/docs/install/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tomanify.github.io/docs/install/#article",
-      "headline": "نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify",
-      "description": "نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.",
-      "inLanguage": "fa-IR",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/docs/install/#webpage"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://tomanify.github.io/docs/install/#webpage"
-      },
-      "image": {
-        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      },
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      },
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03"
-    }
-  ]
-}</script>
-</head>
-<body>
-<header class="header">
-<div class="container">
-<div class="wrap">
-<a aria-label="Tomanify" class="brand" href="/">
-<img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
-<span>Tomanify — راهنمای فارسی</span>
-</a>
-<nav aria-label="ناوبری" class="nav"><a class="" href="/">خانه</a><a class="" href="/docs/">Docs</a><a class="" href="/docs/sources/">منابع نرخ</a><a class="" href="/docs/products/">محصولات خارجی</a><a class="" href="/docs/shortcode/">شورتکد</a><a class="" href="/docs/troubleshooting/">رفع اشکال</a><a class="" href="/docs/advanced/">پیشرفته</a><a class="" href="/docs/backup/">بکاپ</a><a class="active" href="/docs/security/">امنیت</a><a class="" href="/docs/faq/">FAQ</a></nav>
-<div class="controls">
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
-<button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer="" type="button">☰</button>
-</div>
-</div>
-</div>
-</header>
-<div aria-hidden="true" class="mobile-drawer">
-<div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
-<div class="drawer-top">
-<strong>منو</strong>
-<button class="btn" data-close-drawer="" type="button">بستن</button>
-</div>
-<a href="/">خانه</a><a href="/docs/">Docs</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">FAQ</a><hr/>
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
-</div>
-</div>
-<main class="container main">
-<div class="breadcrumb"><a href="/">خانه</a> / Docs / امنیت</div>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / امنیت</div>
 <section class="card"><div class="inner">
-<h1>امنیت و حریم خصوصی</h1>
-<p class="lead">Tomanify طوری طراحی شده که رفتار آن قابل پیش‌بینی و امن باشد: <strong>هیچ URL پیش‌فرضی ندارد</strong> و فقط زمانی درخواست خارجی می‌زند که شما در تنظیمات URL وارد کرده باشید.</p>
-
-<h2>افزونه چه چیزی را از اینترنت دریافت می‌کند؟</h2>
-<ul>
-  <li>فقط <strong>نرخ ارز</strong> را از URLهایی که مدیر سایت وارد می‌کند (JSON یا RSS/XML).</li>
-  <li>درخواست‌ها از نوع GET هستند و هدفشان فقط دریافت فایل نرخ است.</li>
-  <li>URLها قبل از ذخیره و قبل از درخواست <strong>اعتبارسنجی</strong> می‌شوند و فقط <strong>HTTPS</strong> پذیرفته می‌شود.</li>
-</ul>
-
-<h2 class="section">افزونه چه چیزی را ارسال یا ردیابی می‌کند؟</h2>
-<ul>
-  <li>هیچ داده‌ای از مشتریان، سفارش‌ها، پرداخت‌ها یا محتوای سایت را به بیرون ارسال نمی‌کند.</li>
-  <li>هیچ سیستم تبلیغاتی/آنالیتیکس/Tracking داخل افزونه وجود ندارد.</li>
-</ul>
-
-<h2 class="section">چه داده‌هایی در دیتابیس ذخیره می‌شود؟</h2>
-<ul>
-  <li><strong>Options</strong>: تنظیمات افزونه (واحد، زبان، زمان‌بندی، Source Mode، Threshold، Premium و ...)</li>
-  <li><strong>Rates</strong>: نرخ‌های نهایی هر ارز (به تومان) برای استفاده در محاسبه محصولات.</li>
-  <li><strong>Product Meta</strong>: برای محصولات foreign، مقادیر currency/price/margin و همچنین <strong>پایه تومان</strong> (<code>tomanify_price_base_tmn</code>).</li>
-</ul>
-
-<h2 class="section">حذف افزونه و پاک‌سازی داده‌ها</h2>
-<p>در حالت پیش‌فرض، هنگام حذف افزونه داده‌های محصول (metaها) حفظ می‌شوند تا اگر دوباره نصب کردید اطلاعات از بین نرود. اگر می‌خواهید همه چیز پاک شود:</p>
-<ul>
-  <li>در تب Backup گزینه <strong>Data Removal on Uninstall</strong> را فعال کنید.</li>
-  <li>بعد از فعال‌سازی، هنگام uninstall علاوه بر options/transients، metaهای مرتبط با محصول foreign هم حذف می‌شوند.</li>
-</ul>
-
-<h2 class="section">پیشنهادهای عملی برای امنیت بیشتر</h2>
-<ul>
-  <li>اگر امکانش را دارید، فایل JSON نرخ را در یک منبع قابل اعتماد میزبانی کنید (مثلاً GitHub یا حتی هاست خودتان).</li>
-  <li>URLهای ناشناس/بی‌اعتبار را وارد نکنید؛ چون منبع نرخ عملاً روی قیمت‌گذاری فروشگاه اثر مستقیم دارد.</li>
-  <li>قبل از تغییرات مهم، از صفحه <a href="/docs/backup/">بکاپ</a> خروجی بگیرید.</li>
-</ul>
+  <h1>امنیت و حریم خصوصی در Tomanify</h1>
+  <p class="lead">این صفحه برای پاسخ به یک نگرانی مهم ساخته شده: افزونه دقیقاً چه چیزی را از اینترنت می‌گیرد، چه چیزی را ذخیره می‌کند، و چه چیزی را هرگز ارسال نمی‌کند.</p>
 </div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>چه چیزی از اینترنت گرفته می‌شود؟</h2>
+    <p>فقط دادهٔ نرخ ارز؛ آن هم از URLهایی که مدیر سایت خودش مشخص کرده باشد. اگر فیلدهای منبع نرخ خالی بمانند، افزونه چیزی برای دریافت ندارد.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>چه چیزی ارسال نمی‌شود؟</h2>
+    <p>اطلاعات مشتری، سفارش‌ها، داده‌های شخصی و محتوای فروشگاه برای منطق نرخ‌گیری ارسال نمی‌شود. این بخش صرفاً مربوط به دریافت نرخ است، نه تله‌متری یا انتقال دادهٔ کاربر.</p>
+  </div></div>
+</section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>چرا URLها از اول خالی‌اند؟</h2>
+    <p>به‌خاطر امنیت، شفافیت و این‌که مدیر سایت خودش دربارهٔ منبع نرخ تصمیم بگیرد. این کار هم از نظر وردپرس منطقی‌تر است، هم از نظر کنترل و مسئولیت‌پذیری.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>چه داده‌هایی در دیتابیس ذخیره می‌شوند؟</h2>
+    <p>تنظیمات افزونه، نرخ‌های ذخیره‌شده، متادیتای محصولات foreign و داده‌های لازم برای بروزرسانی‌های صف‌بندی‌شده. این اطلاعات برای کارکرد افزونه لازم‌اند و ربطی به دادهٔ شخصی مشتری ندارند.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>پیشنهاد عملی برای استفادهٔ امن‌تر</h2>
+  <ol style="margin:0;padding-inline-start:1.2rem">
+    <li>فقط URLهای HTTPS معتبر وارد کنید.</li>
+    <li>به یک منبع نرخ وابسته نمانید و روش‌های پشتیبان را هم تنظیم کنید.</li>
+    <li>برای سناریوهای حساس، Margin و بازهٔ Cron را آگاهانه تنظیم کنید.</li>
+    <li>پس از تغییرات بزرگ، نتیجهٔ واقعی قیمت‌ها را در محصولات نمونه چک کنید.</li>
+  </ol>
+</div></section>
+
 <section class="container section seo-box">
-<div class="card">
-<section class="section">
-<h2>سوالات متداول این صفحه:</h2>
-<p class="muted" style="margin:.4rem 0 1rem">
-    ما سوالات پرتکرار را که ممکن است به درک بهتر این صفحه کمک کنند را در اینجا قرار داده ایم.
-  </p>
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
 <div class="faq">
-<details open="">
-<summary>آیا افزونه اطلاعات مشتریان را به بیرون می‌فرستد؟</summary>
-<p>خیر. درخواست‌های خارجی فقط برای دریافت نرخ ارز هستند و به داده‌های مشتری/سفارش ارتباطی ندارند.</p>
-</details>
-<details>
-<summary>چرا URL پیش‌فرض ندارد؟</summary>
-<p>برای امنیت و شفافیت. فقط URLهایی که مدیر سایت وارد می‌کند می‌توانند fetch شوند.</p>
-</details>
-<details>
-<summary>می‌توانم کاملاً بدون اینترنت از افزونه استفاده کنم؟</summary>
-<p>بله. Source Mode را روی Manual یا Offline بگذارید (توجه کنید Offline تخمینی است).</p>
-</details>
+<details open><summary>آیا افزونه خودش مخفیانه به جایی وصل می‌شود؟</summary><p>خیر. درخواست بیرونی فقط وقتی انجام می‌شود که مدیر سایت خودش URL منبع نرخ را وارد کرده باشد.</p></details>
+<details><summary>آیا اطلاعات مشتری یا سفارش به بیرون فرستاده می‌شود؟</summary><p>خیر. منطق درخواست‌های خارجی مربوط به دریافت نرخ ارز از URLهای تعیین‌شده توسط مدیر است، نه ارسال اطلاعات شخصی کاربران.</p></details>
+<details><summary>آیا می‌توانم URLهای پیش‌فرض را خالی نگه دارم؟</summary><p>بله، و دقیقاً همین هم پیش‌فرض افزونه است. شما تصمیم می‌گیرید از چه منبعی استفاده شود.</p></details>
+<details><summary>برای کاهش ریسک چه تنظیمی پیشنهاد می‌شود؟</summary><p>استفاده از چند منبع پشتیبان، Cron مناسب، Margin محافظه‌کارانه و بررسی منظم نتیجهٔ نهایی در داشبورد.</p></details>
+<details><summary>آیا پاک‌سازی کش می‌تواند باعث درخواست به دامنه‌های دیگر شود؟</summary><p>پاک‌سازی کش باید فقط روی آدرس‌های همان سایت شما اعمال شود و برای استفادهٔ امن‌تر لازم است تنظیمات و دامنه‌ها را با دقت بررسی کنید.</p></details>
 </div>
+</section></div>
 </section>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="wrap">
-<p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
-<p class="small">
-<a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
-</p>
-</div>
-</div>
-</footer>
-<script src="/assets/site.js"></script>
-</body>
-</html>

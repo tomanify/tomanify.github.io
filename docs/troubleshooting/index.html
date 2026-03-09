@@ -1,316 +1,102 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="fa-IR">
-<head>
+---
+layout: default
+page_key: troubleshooting
+nav_parent: troubleshooting
+page_url: /docs/troubleshooting/
+title: رفع اشکال تومنی‌فای | مشکلات رایج نرخ و قیمت
+description: 'رفع اشکال Tomanify: چرا قیمت محصولات foreign آپدیت نمی‌شود، چرا JSON خطا می‌دهد، چرا Cron اجرا نمی‌شود و چرا ویجت نرخ‌ها نمایش داده نمی‌شود.'
+keywords: رفع اشکال تومنیفای, مشکل آپدیت قیمت در Tomanify, JSON error Tomanify, cron تومنیفای, threshold مشکل, ویجت نرخ ارز نمایش داده نمی شود, troubleshooting Tomanify, foreign product not updating
+robots: index, follow
+og_type: article
+schema_type: FAQPage
+schema_image: /assets/img/screenshot-1.webp
+schema_image_width: 1200
+schema_image_height: 800
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: رفع اشکال
+  path: /docs/troubleshooting/
+faq_items:
+- q: نرخ‌ها آپدیت می‌شوند ولی قیمت محصول تغییر نمی‌کند
+  a: اول مطمئن شوید محصول foreign است و ارز، قیمت خرید و Margin دارد. بعد Threshold را بررسی کنید و ببینید نرخ ارز مربوطه واقعاً ذخیره شده یا نه.
+- q: لینک JSON خطا می‌دهد
+  a: HTTPS بودن لینک، اعتبار گواهی SSL، و ساختار JSON را بررسی کنید. همچنین مطمئن شوید خروجی به تومان و عددی است.
+- q: کران اجرا نمی‌شود
+  a: در هاست اشتراکی ممکن است WP-Cron وابسته به بازدید باشد. برای دقت بیشتر از cron واقعی هاست یا سرویس Cron استفاده کنید.
+- q: شورتکد چیزی نمایش نمی‌دهد
+  a: نرخ‌ها باید قبلاً ذخیره شده باشند و شورتکد هم دقیقاً داخل محتوای همان صفحه قرار گرفته باشد.
+- q: تغییر واحد تومان/ریال باعث نتایج عجیب شده
+  a: اگر پایه تومان قبلاً درست ساخته شده باشد، تغییر واحد نباید مشکل ایجاد کند. در غیر این صورت صفحه محصولات خارجی و سپس بکاپ/بازیابی را بررسی کنید.
+- q: با افزونه‌های کش مشکل خواهم داشت؟
+  a: معمولاً خیر، اما بعد از تغییرات بزرگ بهتر است کش را پاک کنید تا کاربر فوراً قیمت‌های جدید را ببیند.
+---
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<meta name="generator" content="Tomanify Docs">
-<meta name="author" content="Amin Raoufi">
-
-<title>رفع اشکال تومنی‌فای | مشکلات رایج نرخ و قیمت</title>
-
-<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" href="/assets/favicon.ico" sizes="any">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<meta name="theme-color" content="#0A7B56">
-
-<meta name="description" content="رفع اشکال تومنی‌فای: چرا قیمت محصولات وارداتی آپدیت نمی‌شود، چرا ویجت نمایش داده نمی‌شود و چک‌لیست سریع.">
-
-<meta name="keywords" content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, رفع اشکال تومنیفای, مشکل بروزرسانی قیمت محصولات, چرا قیمت تغییر نمی‌کند, مشکل کران ووکامرس, wp-cron اجرا نمی‌شود, کش باعث عدم نمایش قیمت جدید, حل مشکل کش WP Rocket, پاکسازی صف purge, خطای URL منبع نرخ, مشکل https URL, نرخ صفر یا نامعتبر, خطای JSON نرخ ارز">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://tomanify.github.io/docs/troubleshooting/">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta property="og:site_name" content="Tomanify">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:locale:alternate" content="en_US">
-
-<meta property="og:type" content="article">
-
-<meta property="og:title" content="رفع اشکال تومنی‌فای | مشکلات رایج نرخ و قیمت">
-<meta property="og:description" content="رفع اشکال تومنی‌فای: چرا قیمت محصولات وارداتی آپدیت نمی‌شود، چرا ویجت نمایش داده نمی‌شود و چک‌لیست سریع.">
-
-<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta property="og:url" content="https://tomanify.github.io/docs/troubleshooting/">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="رفع اشکال تومنی‌فای | مشکلات رایج نرخ و قیمت">
-<meta name="twitter:description" content="رفع اشکال تومنی‌فای: چرا قیمت محصولات وارداتی آپدیت نمی‌شود و چک‌لیست سریع رفع مشکل.">
-<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
-
-<link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://tomanify.github.io/#website",
-      "url": "https://tomanify.github.io/",
-      "name": "Tomanify Docs",
-      "inLanguage": [
-        "fa-IR"
-      ],
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://tomanify.github.io/#org",
-      "name": "Tomanify",
-      "url": "https://wordpress.org/plugins/tomanify/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
-        "width": 32,
-        "height": 32
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://tomanify.github.io/#author",
-      "name": "Amin Raoufi",
-      "url": "https://tomanify.github.io/"
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://tomanify.github.io/docs/troubleshooting/#primaryimage",
-      "url": "https://tomanify.github.io/assets/og.webp",
-      "width": 1200,
-      "height": 630
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://tomanify.github.io/docs/troubleshooting/#webpage",
-      "url": "https://tomanify.github.io/docs/troubleshooting/",
-      "name": "رفع اشکال تومنی‌فای | مشکلات رایج نرخ و قیمت",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/#website"
-      },
-      "primaryImageOfPage": {
-        "@id": "https://tomanify.github.io/docs/troubleshooting/#primaryimage"
-      },
-      "inLanguage": "fa-IR",
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03",
-      "description": "رفع اشکال تومنی‌فای: چرا قیمت محصولات وارداتی آپدیت نمی‌شود، چرا ویجت نمایش داده نمی‌شود و چک‌لیست سریع.",
-      "breadcrumb": {
-        "@id": "https://tomanify.github.io/docs/troubleshooting/#breadcrumb"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://tomanify.github.io/docs/troubleshooting/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "خانه",
-          "item": "https://tomanify.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Docs",
-          "item": "https://tomanify.github.io/docs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "رفع اشکال",
-          "item": "https://tomanify.github.io/docs/troubleshooting/"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://tomanify.github.io/docs/troubleshooting/#faqpage",
-      "headline": "رفع اشکال تومنی‌فای | مشکلات رایج نرخ و قیمت",
-      "description": "رفع اشکال تومنی‌فای: چرا قیمت محصولات وارداتی آپدیت نمی‌شود، چرا ویجت نمایش داده نمی‌شود و چک‌لیست سریع.",
-      "inLanguage": "fa-IR",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/docs/troubleshooting/#webpage"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://tomanify.github.io/docs/troubleshooting/#webpage"
-      },
-      "image": {
-        "@id": "https://tomanify.github.io/docs/troubleshooting/#primaryimage"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      },
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      },
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "نرخ‌ها آپدیت می‌شوند ولی قیمت محصولات تغییر نمی‌کند",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "محصول باید وارداتی باشد و ارز/قیمت/سود وارد شده باشد و نرخ ارز مربوطه موجود باشد."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "ویجت نرخ‌ها نمایش داده نمی‌شود",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "شورتکد [tomanify_rates] را داخل صفحه قرار دهید و کش را پاک کنید."
-          }
-        }
-      ]
-    }
-  ]
-}</script>
-</head>
-<body>
-<header class="header">
-<div class="container">
-<div class="wrap">
-<a aria-label="Tomanify" class="brand" href="/">
-<img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
-<span>Tomanify — راهنمای فارسی</span>
-</a>
-<nav aria-label="ناوبری" class="nav"><a class="" href="/">خانه</a><a class="" href="/docs/">Docs</a><a class="" href="/docs/sources/">منابع نرخ</a><a class="" href="/docs/products/">محصولات خارجی</a><a class="" href="/docs/shortcode/">شورتکد</a><a class="active" href="/docs/troubleshooting/">رفع اشکال</a><a class="" href="/docs/advanced/">پیشرفته</a><a class="" href="/docs/backup/">بکاپ</a><a class="" href="/docs/security/">امنیت</a><a class="" href="/docs/faq/">FAQ</a></nav>
-<div class="controls">
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
-<button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer="" type="button">☰</button>
-</div>
-</div>
-</div>
-</header>
-<div aria-hidden="true" class="mobile-drawer">
-<div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
-<div class="drawer-top">
-<strong>منو</strong>
-<button class="btn" data-close-drawer="" type="button">بستن</button>
-</div>
-<a href="/">خانه</a><a href="/docs/">Docs</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">FAQ</a><hr/>
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
-</div>
-</div>
-<main class="container main">
-<div class="breadcrumb"><a href="/">خانه</a> / Docs / رفع اشکال</div>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / رفع اشکال</div>
 <section class="card"><div class="inner">
-<h1>رفع اشکال</h1>
-<p class="lead">اگر چیزی درست کار نمی‌کند، از این چک‌لیست‌ها شروع کنید. اکثر مشکلات در کمتر از ۲ دقیقه پیدا می‌شوند.</p>
-
-<h2>۱) قیمت محصولات آپدیت نمی‌شود</h2>
-<ul>
-  <li>آیا محصول واقعاً <strong>foreign</strong> است؟ (در متاباکس Tomanify تیک خورده باشد)</li>
-  <li>آیا <strong>Currency</strong> انتخاب شده و <strong>Price</strong> (قیمت خارجی) وارد شده است؟</li>
-  <li>آیا نرخ آن ارز در Dashboard نمایش داده می‌شود؟</li>
-  <li>اگر نرخ‌ها «خیلی کم» تغییر کرده‌اند، <strong>Threshold</strong> ممکن است باعث شود افزونه نرخ جدید را ذخیره نکند.</li>
-  <li>اگر سایت کش دارد، بعد از بروزرسانی کش را پاک کنید.</li>
-</ul>
-
-<h2 class="section">۲) نرخ‌ها آپدیت می‌شوند ولی قیمت محصول تغییر نمی‌کند</h2>
-<p>این حالت معمولاً یکی از این علت‌ها را دارد:</p>
-<ul>
-  <li><strong>Threshold</strong>: نرخ جدید ذخیره نشده، پس آپدیت محصولات هم اجرا نشده است.</li>
-  <li><strong>عدم تطابق ارز</strong>: محصول روی EUR است اما شما فقط USD را نرخ داده‌اید.</li>
-  <li><strong>داده محصول ناقص</strong>: price/currency/margin درست ذخیره نشده‌اند.</li>
-</ul>
-<p class="muted">راهنما: صفحه <a href="/docs/advanced/">پیشرفته</a> (Threshold) و <a href="/docs/products/">محصولات خارجی</a> را ببینید.</p>
-
-<h2 class="section">۳) خطاهای URL / HTTPS / SSL</h2>
-<ul>
-  <li>افزونه فقط URLهای <strong>HTTPS</strong> را قبول می‌کند. (به‌خاطر امنیت)</li>
-  <li>اگر هاست/شبکه شما به دامنه منبع دسترسی ندارد، منبع را عوض کنید یا فایل نرخ را در هاست خودتان میزبانی کنید.</li>
-  <li>برای JSON مطمئن شوید خروجی واقعاً JSON است و ساختار <code>values</code> دارد.</li>
-</ul>
-
-<h2 class="section">۴) فرمت JSON اشتباه است</h2>
-<p>نمونه ساختار صحیح (مقادیر به <strong>تومان</strong>):</p>
-<pre><code>{
-  "values": {
-    "USD": 12345,
-    "EUR": 13456,
-    "AED": 3456,
-    "TRY": 456,
-    "CNY": 1789
-  }
-}</code></pre>
-<p class="muted">فقط همین کلیدها خوانده می‌شوند. اگر نام ارز یا ساختار متفاوت باشد، افزونه آن را نادیده می‌گیرد.</p>
-
-<h2 class="section">۵) ویجت نمایش داده نمی‌شود</h2>
-<ul>
-  <li>شورتکد <code>[tomanify_rates]</code> را در یک برگه/پست قرار دهید.</li>
-  <li>اگر از کش/مینیفای استفاده می‌کنید، کش را پاک کنید. (اسکریپت/استایل فقط وقتی شورتکد وجود داشته باشد لود می‌شوند.)</li>
-</ul>
-
-<h2 class="section">۶) کران اجرا نمی‌شود</h2>
-<ul>
-  <li>WP-Cron به بازدید وابسته است. اگر سایت بازدید کم دارد، ممکن است دیر اجرا شود.</li>
-  <li>برای دقت بالا، از کران واقعی هاست یا یک سرویس ping دوره‌ای برای اجرای wp-cron.php استفاده کنید.</li>
-</ul>
-
-<h2 class="section">۷) فرق «آپدیت نرخ» با «آپدیت قیمت محصولات» چیست؟</h2>
-<ul>
-  <li><strong>Update Rates</strong>: نرخ‌ها را از منبع می‌گیرد و ذخیره می‌کند. اگر تغییر از Threshold کمتر باشد، هیچ ذخیره‌ای انجام نمی‌شود.</li>
-  <li><strong>آپدیت محصولات</strong>: وقتی نرخ ذخیره شد، محصولات foreign مرتبط با همان ارز آپدیت می‌شوند. همچنین با ذخیره هر محصول، یک محاسبه تک‌محصولی انجام می‌شود.</li>
-</ul>
+  <h1>رفع اشکال Tomanify</h1>
+  <p class="lead">این صفحه برای وقتی است که می‌دانید افزونه تقریباً چطور کار می‌کند، اما نتیجه‌ای که می‌بینید با چیزی که انتظار داشتید یکی نیست.</p>
 </div></section>
+
+<section class="card section"><div class="inner">
+  <h2>۱) قیمت محصولات اصلاً آپدیت نمی‌شود</h2>
+  <ol style="margin:0;padding-inline-start:1.2rem">
+    <li>بررسی کنید محصول foreign فعال باشد.</li>
+    <li>ارز، قیمت خرید خارجی و Margin محصول خالی نباشد.</li>
+    <li>نرخ ارز مربوطه واقعاً در داشبورد ذخیره شده باشد.</li>
+    <li>اگر تغییر نرخ خیلی کوچک بوده، Threshold را هم چک کنید.</li>
+  </ol>
+</div></section>
+
+<section class="card section"><div class="inner">
+  <h2>۲) لینک منبع نرخ خطا می‌دهد</h2>
+  <p>سه مورد را اول چک کنید: <strong>HTTPS</strong>، <strong>SSL</strong> و <strong>ساختار خروجی</strong>. اگر JSON شما به‌صورت استاندارد و عددی برنگردد، افزونه چیزی برای ذخیره کردن ندارد.</p>
+  <div class="copyline">
+<pre><code id="trouble-json-format">{"values":{"USD":65000,"EUR":71000,"AED":17800,"TRY":2300,"CNY":9000}}</code></pre>
+<button class="btn" data-copy="trouble-json-format" type="button">نمونه فرمت</button>
+</div>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>۳) Cron اجرا نمی‌شود</h2>
+    <p>اگر سایت بازدید کمی دارد، WP-Cron ممکن است دقیق کار نکند. در این حالت Cron واقعی هاست یا سرویس‌های Cron زمان‌بندی را قابل اتکاتر می‌کنند.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>۴) ویجت نمایش داده نمی‌شود</h2>
+    <p>شورتکد باید داخل محتوای همان صفحه قرار بگیرد و نرخ‌ها هم قبلاً در افزونه ذخیره شده باشند. این صفحه را با شورتکد اشتباه نگیرید: شورتکد فقط «نمایش» است.</p>
+  </div></div>
+</section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>۵) قیمت‌ها عقب‌تر از بازارند</h2>
+    <p>این مشکل معمولاً به منبع نرخ، فاصلهٔ Cron یا Margin برمی‌گردد. اگر منبع رایگان دارید و بازار پرنوسان است، هم Interval و هم Margin را بازبینی کنید.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>۶) بعد از پاک‌سازی کش نتیجه بهتر می‌شود</h2>
+    <p>اگر نرخ و قیمت در پنل تغییر کرده ولی در فرانت‌اند نه، کش صفحه و CDN را پاک کنید تا کاربر نسخهٔ تازه را ببیند.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>صفحه‌های مرتبط</h2>
+  <p style="display:flex;gap:10px;flex-wrap:wrap;margin:0"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/products/">محصولات خارجی</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/security/">امنیت</a></p>
+</div></section>
+
 <section class="container section seo-box">
-<div class="card">
-<section class="section">
-<h2>سوالات متداول این صفحه:</h2>
-<p class="muted" style="margin:.4rem 0 1rem">
-    ما سوالات پرتکرار را که ممکن است به درک بهتر این صفحه کمک کنند را در اینجا قرار داده ایم.
-  </p>
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
 <div class="faq">
-<details open="">
-<summary>نرخ‌ها آپدیت می‌شوند ولی قیمت محصول تغییر نمی‌کند</summary>
-<p>مطمئن شوید محصول foreign است و ارز/قیمت/سود دارد؛ سپس Threshold و کش سایت را بررسی کنید.</p>
-</details>
-<details>
-<summary>چرا کران اجرا نمی‌شود؟</summary>
-<p>WP-Cron وابسته به بازدید است؛ پیشنهاد: کران واقعی هاست یا ping دوره‌ای.</p>
-</details>
-<details>
-<summary>فرمت JSON دقیقاً باید چطور باشد؟</summary>
-<p>یک شیء JSON با کلید <code>values</code> که نرخ‌ها را به تومان نگه می‌دارد. نمونه در همین صفحه آمده است.</p>
-</details>
-<details>
-<summary>پرج کش چه محدودیتی دارد؟</summary>
-<p>فقط URLهای هم‌دامنه purge می‌شوند تا ریسک امنیتی کاهش یابد.</p>
-</details>
+<details open><summary>نرخ‌ها آپدیت می‌شوند ولی قیمت محصول تغییر نمی‌کند</summary><p>اول مطمئن شوید محصول foreign است و ارز، قیمت خرید و Margin دارد. بعد Threshold را بررسی کنید و ببینید نرخ ارز مربوطه واقعاً ذخیره شده یا نه.</p></details>
+<details><summary>لینک JSON خطا می‌دهد</summary><p>HTTPS بودن لینک، اعتبار گواهی SSL، و ساختار JSON را بررسی کنید. همچنین مطمئن شوید خروجی به تومان و عددی است.</p></details>
+<details><summary>کران اجرا نمی‌شود</summary><p>در هاست اشتراکی ممکن است WP-Cron وابسته به بازدید باشد. برای دقت بیشتر از cron واقعی هاست یا سرویس Cron استفاده کنید.</p></details>
+<details><summary>شورتکد چیزی نمایش نمی‌دهد</summary><p>نرخ‌ها باید قبلاً ذخیره شده باشند و شورتکد هم دقیقاً داخل محتوای همان صفحه قرار گرفته باشد.</p></details>
+<details><summary>تغییر واحد تومان/ریال باعث نتایج عجیب شده</summary><p>اگر پایه تومان قبلاً درست ساخته شده باشد، تغییر واحد نباید مشکل ایجاد کند. در غیر این صورت صفحه محصولات خارجی و سپس بکاپ/بازیابی را بررسی کنید.</p></details>
+<details><summary>با افزونه‌های کش مشکل خواهم داشت؟</summary><p>معمولاً خیر، اما بعد از تغییرات بزرگ بهتر است کش را پاک کنید تا کاربر فوراً قیمت‌های جدید را ببیند.</p></details>
 </div>
+</section></div>
 </section>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="wrap">
-<p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
-<p class="small">
-<a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
-</p>
-</div>
-</div>
-</footer>
-<script src="/assets/site.js"></script>
-</body>
-</html>

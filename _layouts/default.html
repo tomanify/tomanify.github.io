@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+  {% include head.html %}
+  {% assign page_abs = site.url | append: page.page_url %}
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="keywords" content="{{ page.keywords }}">
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}">
+  <link rel="canonical" href="{{ page_abs }}">
+  <meta property="og:type" content="{{ page.og_type | default: 'article' }}">
+  <meta property="og:title" content="{{ page.og_title | default: page.title }}">
+  <meta property="og:description" content="{{ page.og_description | default: page.description }}">
+  <meta property="og:url" content="{{ page_abs }}">
+  <meta name="twitter:title" content="{{ page.twitter_title | default: page.og_title | default: page.title }}">
+  <meta name="twitter:description" content="{{ page.twitter_description | default: page.og_description | default: page.description }}">
+  {% include schema.html %}
+</head>
+<body>
+  {% include header.html %}
+  <main class="container main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="/assets/site.js"></script>
+</body>
+</html>

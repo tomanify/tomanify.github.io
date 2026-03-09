@@ -1,234 +1,82 @@
-<!DOCTYPE html>
+---
+layout: default
+page_key: about
+nav_parent: docs
+page_url: /docs/about/
+title: درباره تومنی‌فای | Tooltip راهنمای دقیق تب‌ها
+description: 'صفحه درباره Tomanify: چرا این سایت ساخته شده، راهنمای Tooltip چه کمکی می‌کند، و مستندات اصلی افزونه را در کجا باید دنبال کنید.'
+keywords: درباره تومنیفای, About Tomanify, Tooltip تومنیفای, راهنمای تب های افزونه, مستندات اصلی Tomanify, سازنده افزونه Tomanify, Amin Raoufi, راهنمای فارسی افزونه ووکامرس نرخ ارز, سایت راهنمای Tomanify
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/screenshot-10.webp
+schema_image_width: 1200
+schema_image_height: 800
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: درباره
+  path: /docs/about/
+faq_items:
+- q: راهنمای اصلی Tomanify را از کجا پیدا کنم؟
+  a: 'سه مرجع اصلی وجود دارد: صفحه WordPress.org، راهنمای داخل پنل افزونه، و همین سایت که نسخهٔ فارسی و متمرکز راهنماها را نگه می‌دارد.'
+- q: Tooltip یا تور داخل افزونه چه کمکی می‌کند؟
+  a: برای فهم سریع نقش هر تب و مسیرهای اصلی مناسب است. اگر نمی‌خواهید همه مستندات را یک‌جا بخوانید، Tooltip سریع‌ترین راه شروع است.
+- q: آیا این سایت فقط برای برنامه‌نویس‌هاست؟
+  a: خیر. بخش مهمی از بازنویسی جدید سایت برای این بوده که محتوای کاربرپسند، تصمیم‌محور و قابل استفاده برای صاحب فروشگاه هم اضافه شود.
+- q: چرا این سایت با وجود رایگان بودن افزونه مهم است؟
+  a: چون پراکندگی اطلاعات را کم می‌کند و یک مرجع فارسی واحد برای بروزرسانی‌ها، توضیح تنظیمات و روش‌های کار در اختیار کاربر می‌گذارد.
+---
 
-<html dir="rtl" lang="fa-IR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="generator" content="Tomanify Docs">
-<title>درباره تومنی‌فای | Tooltip راهنمای دقیق تب‌ها</title>
-<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" href="/assets/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#0A7B56">
-<meta content="راهنمای صفحه درباره تومنی‌فای: Tooltip توضیح تب‌ها + نکته بازار آزاد و استفاده از بانک مرکزی در زمان محدودیت اینترنت." name="description"/>
-<meta content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, درباره تومنیفای, About Tomanify, مجوز GPL, وردپرس پلاگین رسمی, نویسنده افزونه, Amin Raoufi, توسعه افزونه ووکامرس ایران" name="keywords"/>
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://tomanify.github.io/docs/about/">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta property="og:site_name" content="Tomanify">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:locale:alternate" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content="درباره تومنی‌فای | Tooltip راهنمای دقیق تب‌ها">
-<meta property="og:description" content="راهنمای صفحه درباره تومنی‌فای: Tooltip توضیح تب‌ها + نکته بازار آزاد و استفاده از بانک مرکزی در زمان محدودیت اینترنت.">
-<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://tomanify.github.io/docs/about/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="درباره تومنی‌فای | Tooltip راهنمای دقیق تب‌ها">
-<meta name="twitter:description" content="راهنمای صفحه درباره تومنی‌فای: Tooltip توضیح تب‌ها + نکته بازار آزاد و استفاده از بانک مرکزی در زمان محدودیت اینترنت.">
-<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
-<meta name="author" content="Amin Raoufi">
-<link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://tomanify.github.io/#website",
-      "url": "https://tomanify.github.io/",
-      "name": "Tomanify Docs",
-      "inLanguage": [
-        "fa-IR"
-      ],
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://tomanify.github.io/#org",
-      "name": "Tomanify",
-      "url": "https://wordpress.org/plugins/tomanify/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
-        "width": 32,
-        "height": 32
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://tomanify.github.io/#author",
-      "name": "Amin Raoufi",
-      "url": "https://tomanify.github.io/"
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://tomanify.github.io/docs/about/#primaryimage",
-      "url": "https://tomanify.github.io/assets/og.webp",
-      "width": 1200,
-      "height": 630
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://tomanify.github.io/docs/about/#webpage",
-      "url": "https://tomanify.github.io/docs/about/",
-      "name": "درباره تومنی‌فای | Tooltip راهنمای دقیق تب‌ها",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/#website"
-      },
-      "primaryImageOfPage": {
-        "@id": "https://tomanify.github.io/docs/about/#primaryimage"
-      },
-      "inLanguage": "fa-IR",
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03",
-      "description": "راهنمای صفحه درباره تومنی‌فای: Tooltip توضیح تب‌ها + نکته بازار آزاد و استفاده از بانک مرکزی در زمان محدودیت اینترنت.",
-      "breadcrumb": {
-        "@id": "https://tomanify.github.io/docs/about/#breadcrumb"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://tomanify.github.io/docs/about/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "خانه",
-          "item": "https://tomanify.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Docs",
-          "item": "https://tomanify.github.io/docs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "درباره",
-          "item": "https://tomanify.github.io/docs/about/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tomanify.github.io/docs/about/#article",
-      "headline": "درباره تومنی‌فای | Tooltip راهنمای دقیق تب‌ها",
-      "description": "راهنمای صفحه درباره تومنی‌فای: Tooltip توضیح تب‌ها + نکته بازار آزاد و استفاده از بانک مرکزی در زمان محدودیت اینترنت.",
-      "inLanguage": "fa-IR",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/docs/about/#webpage"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://tomanify.github.io/docs/about/#webpage"
-      },
-      "image": {
-        "@id": "https://tomanify.github.io/docs/about/#primaryimage"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      },
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      },
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03"
-    }
-  ]
-}</script>
-</head>
-<body>
-<header class="header">
-<div class="container">
-<div class="wrap">
-<a aria-label="Tomanify" class="brand" href="/">
-<img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
-<span>Tomanify — راهنمای فارسی</span>
-</a>
-<nav aria-label="ناوبری" class="nav"><a class="" href="/">خانه</a><a class="" href="/docs/">Docs</a><a class="" href="/docs/sources/">منابع نرخ</a><a class="" href="/docs/products/">محصولات خارجی</a><a class="" href="/docs/shortcode/">شورتکد</a><a class="" href="/docs/troubleshooting/">رفع اشکال</a><a class="" href="/docs/advanced/">پیشرفته</a><a class="" href="/docs/backup/">بکاپ</a><a class="" href="/docs/security/">امنیت</a><a class="" href="/docs/faq/">FAQ</a></nav>
-<div class="controls">
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
-<button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer="" type="button">☰</button>
-</div>
-</div>
-</div>
-</header>
-<div aria-hidden="true" class="mobile-drawer">
-<div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
-<div class="drawer-top">
-<strong>منو</strong>
-<button class="btn" data-close-drawer="" type="button">بستن</button>
-</div>
-<a href="/">خانه</a><a href="/docs/">Docs</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">FAQ</a><hr/>
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
-</div>
-</div>
-<main class="container main">
-<div class="breadcrumb"><a href="/">خانه</a> / Docs / درباره</div>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / درباره</div>
 <section class="card"><div class="inner">
-<h1>درباره افزونه و راهنمای Tooltip</h1>
-<p class="lead">
-    در صفحه «درباره» داخل پنل افزونه، یک Tooltip/راهنمای کوتاه وجود دارد که توضیح می‌دهد هر تب چه کاری انجام می‌دهد.
-    اگر جایی گیج شدید، همان Tooltip دقیق‌ترین راهنمای سریع است.
-  </p>
-<div class="note">در این صفحه، همان توضیحات را با تصویر و نکته‌های تکمیلی می‌بینید.</div>
+  <h1>درباره Tomanify و این سایت راهنما</h1>
+  <p class="lead">اگر حس کرده‌اید اطلاعات افزونه بین پنل وردپرس، WordPress.org و توضیح‌های پراکنده پخش شده، این صفحه برای همین ساخته شده است: یک مرجع فارسی واحد، شفاف و قابل پیگیری.</p>
+  <div class="note">این سایت فقط ترجمهٔ متن‌های فنی نیست؛ هدفش این است که مسیر استفاده، تصمیم‌گیری و عیب‌یابی را برای کاربر واقعی ساده کند.</div>
 </div></section>
+
 <section class="grid section">
-<div class="card"><div class="inner">
-<h2>اسکرین‌شات صفحه درباره</h2>
-<figure class="figure">
-<img alt="About page tooltip" decoding="async" loading="lazy" src="/assets/img/screenshot-10.webp"/>
-<figcaption>صفحه درباره + توضیح تب‌ها (Tooltip)</figcaption>
+  <div class="card"><div class="inner">
+    <h2>سه جایی که باید Tomanify را بشناسید</h2>
+    <ol style="margin:0;padding-inline-start:1.2rem">
+      <li><strong>WordPress.org</strong> برای معرفی رسمی افزونه و انتشار نسخه‌ها</li>
+      <li><strong>راهنمای داخل پنل افزونه</strong> برای شروع سریع و Tooltipها</li>
+      <li><strong>همین سایت</strong> برای توضیح فارسی، مثال‌ها، منابع نرخ، FAQ و راه‌حل‌های عملی</li>
+    </ol>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>چرا Tooltip مهم است؟</h2>
+    <p>Tooltip داخل افزونه سریع‌ترین راه برای درک نقش تب‌هاست: Dashboard، General، Sources، Advanced، Shortcode، Products، Backup و About. این بخش برای لحظه‌ای ساخته شده که تازه افزونه را باز کرده‌اید و می‌خواهید بدون آزمون و خطا بفهمید از کجا باید شروع کنید.</p>
+    <p style="margin:0">در این سایت، همان منطق را با مثال، تصویر و توضیح‌های تکمیلی باز کرده‌ایم.</p>
+  </div></div>
+</section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>اسکرین‌شات صفحه درباره</h2>
+    <figure class="figure">
+<img alt="About tooltip screenshot" decoding="async" loading="lazy" src="/assets/img/screenshot-10.webp"/>
+<figcaption>نمونه‌ای از بخش About و راهنمای Tooltip برای توضیح تب‌ها</figcaption>
 </figure>
-</div></div>
-<div class="card"><div class="inner">
-<h2>نکته کلیدی: بازار آزاد + بانک مرکزی</h2>
-<p>برای محاسبه قیمت محصولات: نرخ بازار آزاد. برای شرایط قطع/محدودیت اینترنت: RSS/XML بانک مرکزی.</p>
-<p style="margin:0"><a class="btn" href="/docs/sources/">راهنمای منابع نرخ</a></p>
-</div></div>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>پیام اصلی این سایت</h2>
+    <p>Tomanify یک افزونهٔ رایگان و متن‌باز است، اما استفادهٔ حرفه‌ای از آن نیاز به توضیح دقیق دارد: انتخاب منبع نرخ، درک Premium و Margin، و فهم این‌که چه وقت منبع رایگان کافی است و چه وقت باید سراغ API شخصی‌تر رفت.</p>
+    <p style="margin:0">این سایت برای همین سطح از شفافیت ساخته شده است.</p>
+  </div></div>
 </section>
+
 <section class="container section seo-box">
-<div class="card">
-<section class="section">
-<h2>سوالات متداول این صفحه:</h2>
-<p class="muted" style="margin:.4rem 0 1rem">
-    ما سوالات پرتکرار را که ممکن است به درک بهتر این صفحه کمک کنند را در اینجا قرار داده ایم.
-  </p>
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
 <div class="faq">
-<details open="">
-<summary>تولتیپ/تور داخل افزونه چیست؟</summary>
-<p>راهنمای مرحله‌به‌مرحله داخل پنل Tomanify است که به شما نشان می‌دهد هر گزینه دقیقاً چه کاری می‌کند.</p>
-</details>
-<details>
-<summary>چرا افزونه امن است؟</summary>
-<p>URLها پیش‌فرض خالی‌اند، HTTPS اجباری است، و ورودی‌ها validate/sanitize می‌شوند.</p>
-</details>
+<details open><summary>راهنمای اصلی Tomanify را از کجا پیدا کنم؟</summary><p>سه مرجع اصلی وجود دارد: صفحه WordPress.org، راهنمای داخل پنل افزونه، و همین سایت که نسخهٔ فارسی و متمرکز راهنماها را نگه می‌دارد.</p></details>
+<details><summary>Tooltip یا تور داخل افزونه چه کمکی می‌کند؟</summary><p>برای فهم سریع نقش هر تب و مسیرهای اصلی مناسب است. اگر نمی‌خواهید همه مستندات را یک‌جا بخوانید، Tooltip سریع‌ترین راه شروع است.</p></details>
+<details><summary>آیا این سایت فقط برای برنامه‌نویس‌هاست؟</summary><p>خیر. بخش مهمی از بازنویسی جدید سایت برای این بوده که محتوای کاربرپسند، تصمیم‌محور و قابل استفاده برای صاحب فروشگاه هم اضافه شود.</p></details>
+<details><summary>چرا این سایت با وجود رایگان بودن افزونه مهم است؟</summary><p>چون پراکندگی اطلاعات را کم می‌کند و یک مرجع فارسی واحد برای بروزرسانی‌ها، توضیح تنظیمات و روش‌های کار در اختیار کاربر می‌گذارد.</p></details>
 </div>
+</section></div>
 </section>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="wrap">
-<p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
-<p class="small">
-<a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
-</p>
-</div>
-</div>
-</footer>
-<script src="/assets/site.js"></script>
-</body>
-</html>

@@ -1,8 +1,8 @@
 {
   "name": "Tomanify",
   "short_name": "Tomanify",
-  "description": "قیمت‌گذاری و تبدیل هوشمند ارز خارجی به ریال یا تومان برای ووکامرس.",
-  "lang": "fa",
+  "description": "مستندات فارسی و راهنمای کاربرپسند افزونه Tomanify برای قیمت‌گذاری محصولات خارجی ووکامرس با نرخ بازار آزاد.",
+  "lang": "fa-IR",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

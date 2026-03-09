@@ -35,11 +35,12 @@
 /docs/shortcode/index.html           → شورتکد
 /docs/troubleshooting/index.html     → رفع اشکال
 /docs/faq/index.html                 → سوالات پرتکرار
+/docs/free-api/index.html            → API رایگان نرخ ارز
 /404.html                            → صفحه 404
 
 /assets/style.css                    → استایل سراسری
 /assets/site.js                      → JS حداقلی (منوی موبایل و تعاملات کوچک)
-/assets/og.png                       → تصویر OpenGraph (1200×630)
+/assets/og.webp                      → تصویر OpenGraph (1200×630)
 /assets/favicon-16x16.png
 /assets/favicon-32x32.png
 /assets/fonts/                       → فونت‌های لوکال (woff2)
@@ -77,3 +78,34 @@ robots.txt
 ## لایسنس
 
 * نام و دارایی‌های برند Tomanify متعلق به پروژه Tomanify است.
+
+## معماری جدید برای حذف تکرار هدر و فوتر
+
+این نسخه برای GitHub Pages به ساختار **Jekyll-compatible** تبدیل شده تا تگ‌های ثابت `<head>` و اجزای تکراری هدر/فوتر فقط یک‌بار نگهداری شوند:
+
+```text
+/_layouts/default.html      → اسکلت اصلی تمام صفحات
+/_includes/head.html        → پارامترهای ثابت head
+/_includes/header.html      → هدر و ناوبری مشترک
+/_includes/footer.html      → فوتر مشترک
+/_includes/schema.html      → خروجی JSON-LD بر اساس متادیتای هر صفحه
+```
+
+هر صفحه فقط متادیتای متغیر خودش را در front matter نگه می‌دارد؛ مثل:
+- title
+- description
+- keywords
+- robots
+- og_type
+- schema_type
+- breadcrumbs
+
+### چرا فایل‌ها همچنان `index.html` مانده‌اند؟
+
+برای **GitHub Pages** و حفظ **clean URL**‌ها، ساختار پوشه‌ای استانداردتر و سازگارتر است:
+
+- `/docs/install/index.html` → آدرس نهایی: `/docs/install/`
+- `/docs/sources/index.html` → آدرس نهایی: `/docs/sources/`
+
+تغییر همه فایل‌ها به `install.html` یا `sources.html` باعث از بین رفتن همین URLهای تمیز می‌شود، بنابراین ساختار `folder/index.html` عمداً حفظ شده است.
+

@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tomanify.github.io/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://tomanify.github.io/docs/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://tomanify.github.io/docs/about/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tomanify.github.io/docs/quick-start/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tomanify.github.io/docs/install/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tomanify.github.io/docs/sources/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tomanify.github.io/docs/products/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tomanify.github.io/docs/shortcode/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tomanify.github.io/docs/troubleshooting/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://tomanify.github.io/docs/advanced/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://tomanify.github.io/docs/backup/</loc>
-    <lastmod>2026-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://tomanify.github.io/docs/security/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
     <loc>https://tomanify.github.io/docs/faq/</loc>
-    <lastmod>2026-03-06</lastmod>
+    <lastmod>2026-03-09</lastmod>
   </url>
   <url>
-    <loc>https://tomanify.github.io/404.html</loc>
-    <lastmod>2026-03-06</lastmod>
+    <loc>https://tomanify.github.io/docs/free-api/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://tomanify.github.io/docs/install/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://tomanify.github.io/docs/products/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://tomanify.github.io/docs/quick-start/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://tomanify.github.io/docs/security/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://tomanify.github.io/docs/shortcode/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://tomanify.github.io/docs/sources/</loc>
+    <lastmod>2026-03-09</lastmod>
+  </url>
+  <url>
+    <loc>https://tomanify.github.io/docs/troubleshooting/</loc>
+    <lastmod>2026-03-09</lastmod>
   </url>
 </urlset>

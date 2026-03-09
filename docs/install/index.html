@@ -1,287 +1,123 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="fa-IR">
-<head>
+---
+layout: default
+page_key: install
+nav_parent: docs
+page_url: /docs/install/
+title: نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify
+description: 'آموزش نصب و راه‌اندازی Tomanify: نصب افزونه، وارد کردن منبع نرخ، بروزرسانی نرخ‌ها، ساخت اولین محصول foreign و تنظیم Cron.'
+keywords: نصب تومنیفای, راه اندازی Tomanify, نصب افزونه تومنیفای در وردپرس, فعال سازی Tomanify, تنظیم اولیه ووکامرس تومان, تنظیم منابع نرخ در Tomanify, Update Rates, Cron تومنیفای, wp-cron تومنیفای, راه اندازی محصول خارجی ووکامرس
+robots: index, follow
+og_type: article
+schema_type: HowTo
+schema_name: نصب و راه‌اندازی اولیه Tomanify
+schema_image: /assets/img/screenshot-1.webp
+schema_image_width: 1200
+schema_image_height: 800
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: نصب
+  path: /docs/install/
+faq_items:
+- q: بعد از نصب، اولین کار چیست؟
+  a: منبع نرخ را در تب Sources تنظیم کنید، بعد از داشبورد Update Rates بزنید و سپس اولین محصول foreign را تست کنید.
+- q: اگر هنوز URL منبع را وارد نکرده باشم چه می‌شود؟
+  a: افزونه به‌صورت پیش‌فرض هیچ URL آماده‌ای را داخل تنظیمات قرار نمی‌دهد؛ بنابراین تا وقتی شما آدرس را وارد نکنید، درخواست خارجی هم انجام نمی‌شود.
+- q: آیا WP-Cron همیشه دقیق اجرا می‌شود؟
+  a: در هاست اشتراکی ممکن است به بازدید سایت وابسته باشد. اگر زمان‌بندی دقیق‌تری می‌خواهید، از Cron واقعی هاست یا سرویس cron استفاده کنید.
+- q: تغییر واحد از تومان به ریال دوباره نرخ را می‌گیرد؟
+  a: خیر. فقط قیمت ووکامرس از روی پایه تومان بازنویسی می‌شود و تبدیل دوباره انجام نمی‌شود.
+- q: برای شروع Margin را روی چه عددی بگذارم؟
+  a: برای اکثر فروشگاه‌هایی که با JSON رایگان بازار آزاد شروع می‌کنند، Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ می‌تواند ریسک عقب‌ماندن نرخ را پوشش دهد.
+howto_steps:
+- name: افزونه را نصب و فعال کنید
+  text: از WordPress.org افزونه را نصب و فعال کنید تا منوی Tomanify در پیشخوان ظاهر شود.
+- name: واحد و زبان را بررسی کنید
+  text: در تب General، واحد نمایش را روی تومان یا ریال و زبان را مطابق نیازتان تنظیم کنید.
+- name: منبع نرخ را وارد کنید
+  text: در تب Sources، یک لینک HTTPS برای JSON بازار آزاد یا فیدهای بانک مرکزی وارد کنید.
+- name: نرخ‌ها را بروزرسانی کنید
+  text: در داشبورد افزونه روی Update Rates بزنید تا نرخ‌های ذخیره‌شده ساخته شوند.
+- name: اولین محصول foreign را تنظیم کنید
+  text: در صفحه محصول، گزینه محصول خارجی را فعال و ارز، قیمت خرید و Margin را وارد کنید.
+- name: کران و بروزرسانی خودکار را تنظیم کنید
+  text: اگر نمی‌خواهید دستی بروزرسانی کنید، Update Interval را در General تنظیم کنید.
+---
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="generator" content="Tomanify Docs">
-
-<title>نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify</title>
-
-<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" href="/assets/favicon.ico" sizes="any">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<meta name="theme-color" content="#0A7B56">
-
-<meta name="description" content="نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.">
-
-<meta name="keywords" content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, نصب افزونه تومنیفای, فعال‌سازی افزونه در وردپرس, راه‌اندازی اولیه ووکامرس تومان, تنظیم کران وردپرس, wp-cron فعال, cron job هاست, تست کران وردپرس, مجوزها و دسترسی مدیریت, تنظیم زبان افزونه, تغییر واحد تومان ریال">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://tomanify.github.io/docs/install/">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="author" content="Amin Raoufi">
-
-<meta property="og:site_name" content="Tomanify">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:locale:alternate" content="en_US">
-
-<meta property="og:type" content="article">
-
-<meta property="og:title" content="نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify">
-
-<meta property="og:description" content="نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.">
-
-<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta property="og:url" content="https://tomanify.github.io/docs/install/">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify">
-
-<meta name="twitter:description" content="نصب و راه‌اندازی اولیه افزونه Tomanify و آماده‌سازی فروشگاه ووکامرس برای محصولات وارداتی.">
-
-<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
-
-<link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://tomanify.github.io/#website",
-      "url": "https://tomanify.github.io/",
-      "name": "Tomanify Docs",
-      "inLanguage": [
-        "fa-IR"
-      ],
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://tomanify.github.io/#org",
-      "name": "Tomanify",
-      "url": "https://wordpress.org/plugins/tomanify/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
-        "width": 32,
-        "height": 32
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://tomanify.github.io/#author",
-      "name": "Amin Raoufi",
-      "url": "https://tomanify.github.io/"
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://tomanify.github.io/docs/install/#primaryimage",
-      "url": "https://tomanify.github.io/assets/og.webp",
-      "width": 1200,
-      "height": 630
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://tomanify.github.io/docs/install/#webpage",
-      "url": "https://tomanify.github.io/docs/install/",
-      "name": "نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/#website"
-      },
-      "primaryImageOfPage": {
-        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
-      },
-      "inLanguage": "fa-IR",
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03",
-      "description": "نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.",
-      "breadcrumb": {
-        "@id": "https://tomanify.github.io/docs/install/#breadcrumb"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://tomanify.github.io/docs/install/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "خانه",
-          "item": "https://tomanify.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Docs",
-          "item": "https://tomanify.github.io/docs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "نصب",
-          "item": "https://tomanify.github.io/docs/install/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tomanify.github.io/docs/install/#article",
-      "headline": "نصب تومنی‌فای | راه‌اندازی اولیه افزونه Tomanify",
-      "description": "نصب و راه‌اندازی اولیه تومنی‌فای: نصب افزونه، وارد کردن منبع نرخ و آماده‌سازی محصول وارداتی.",
-      "inLanguage": "fa-IR",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/docs/install/#webpage"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://tomanify.github.io/docs/install/#webpage"
-      },
-      "image": {
-        "@id": "https://tomanify.github.io/docs/install/#primaryimage"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      },
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      },
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03"
-    }
-  ]
-}</script>
-</head>
-<body>
-<header class="header">
-<div class="container">
-<div class="wrap">
-<a aria-label="Tomanify" class="brand" href="/">
-<img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
-<span>Tomanify — راهنمای فارسی</span>
-</a>
-<nav aria-label="ناوبری" class="nav"><a class="" href="/">خانه</a><a class="" href="/docs/">Docs</a><a class="" href="/docs/sources/">منابع نرخ</a><a class="" href="/docs/products/">محصولات خارجی</a><a class="" href="/docs/shortcode/">شورتکد</a><a class="" href="/docs/troubleshooting/">رفع اشکال</a><a class="" href="/docs/advanced/">پیشرفته</a><a class="" href="/docs/backup/">بکاپ</a><a class="" href="/docs/security/">امنیت</a><a class="" href="/docs/faq/">FAQ</a></nav>
-<div class="controls">
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
-<button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer="" type="button">☰</button>
-</div>
-</div>
-</div>
-</header>
-<div aria-hidden="true" class="mobile-drawer">
-<div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
-<div class="drawer-top">
-<strong>منو</strong>
-<button class="btn" data-close-drawer="" type="button">بستن</button>
-</div>
-<a href="/">خانه</a><a href="/docs/">Docs</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">FAQ</a><hr/>
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
-</div>
-</div>
-<main class="container main">
-<div class="breadcrumb"><a href="/">خانه</a> / Docs / نصب</div>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / نصب</div>
 <section class="card"><div class="inner">
-<h1>نصب و راه‌اندازی</h1>
-<p class="lead">هدف این صفحه: در کمتر از ۱۰ دقیقه، اولین محصول خارجی را درست تنظیم کنید تا قیمت تومان/ریال آن به‌صورت خودکار محاسبه و بروزرسانی شود.</p>
-
-<h2>پیش‌نیازها</h2>
-<ul>
-  <li><strong>WordPress</strong> + <strong>WooCommerce</strong> باید فعال باشد.</li>
-  <li>در تنظیمات Tomanify، واحد خروجی را مشخص کنید: <strong>تومان</strong> یا <strong>ریال</strong> (بعداً هم قابل تغییر است).</li>
-  <li>برای دریافت نرخ از منابع آنلاین، باید <strong>URLها را خودتان وارد کنید</strong> (افزونه هیچ URL پیش‌فرضی را به‌صورت خودکار fetch نمی‌کند).</li>
-</ul>
-
-<h2 class="section">مراحل راه‌اندازی در ۶ قدم</h2>
-<ol>
-  <li><strong>نصب و فعال‌سازی</strong> افزونه از مخزن وردپرس.</li>
-  <li>از منوی مدیریت به <strong>Tomanify → General</strong> بروید و واحد (تومان/ریال)، زبان افزونه و زمان‌بندی Cron را تنظیم کنید.</li>
-  <li>به تب <strong>Sources</strong> بروید و <strong>Source Mode</strong> را انتخاب کنید (پیشنهاد: <strong>Auto</strong>).</li>
-  <li>در همین تب، URL <strong>JSON بازار آزاد</strong> را وارد کنید و (اختیاری) لینک‌های <strong>بانک مرکزی</strong> را برای fallback تنظیم کنید؛ سپس <strong>Premium</strong> و <strong>Threshold</strong> را مطابق نیاز تنظیم کنید.</li>
-  <li>به تب <strong>Dashboard</strong> برگردید و روی <strong>Update Rates</strong> بزنید تا نرخ‌ها ذخیره شوند و زمان آخرین بروزرسانی را ببینید.</li>
-  <li>حالا یک محصول را ویرایش کنید: در متاباکس <strong>Foreign Product (Tomanify)</strong> گزینه foreign را فعال کنید، ارز، قیمت خرید خارجی و درصد سود را وارد کنید و ذخیره کنید. (برای تعداد زیاد، از تب <strong>Products</strong> استفاده کنید.)</li>
-</ol>
-
-<h2 class="section">منبع نرخ آماده (JSON بازار آزاد)</h2>
-<p class="muted">این لینک را در تب <strong>Sources</strong> وارد کنید:</p>
-<div class="copyline">
-<pre id="i-json"><code>https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
-<button class="btn" data-copy="i-json" type="button">کپی</button>
-</div>
-
-<div class="note section">
-<strong>اگر بعد از نصب قیمت‌ها آپدیت نشد:</strong>
-<ul>
-  <li>صفحه <a href="/docs/troubleshooting/">رفع اشکال</a> را ببینید (چک‌لیست ۲ دقیقه‌ای).</li>
-  <li>مطمئن شوید محصول واقعاً foreign است و ارز/قیمت/سود وارد شده‌اند.</li>
-  <li>اگر نرخ‌ها تغییر خیلی کمی دارند، <strong>Threshold</strong> ممکن است مانع آپدیت شود.</li>
-  <li>اگر از کش استفاده می‌کنید (مثل WP Rocket)، بعد از اولین تست کش را پاک کنید.</li>
-</ul>
-</div>
-
-<h2 class="section">مطالعه بیشتر</h2>
-<ul>
-  <li><a href="/docs/sources/">منابع نرخ</a> (توضیح Source Mode، Premium و Threshold)</li>
-  <li><a href="/docs/products/">محصولات خارجی</a> (فرمول محاسبه و نکات متاباکس)</li>
-  <li><a href="/docs/advanced/">پیشرفته</a> (گزینه‌های حساس و سناریوهای حرفه‌ای)</li>
-</ul>
+  <h1>نصب و راه‌اندازی Tomanify</h1>
+  <p class="lead">این صفحه برای راه‌اندازی استاندارد است: مناسب کسی که می‌خواهد افزونه را نصب کند، منبع نرخ را وارد کند، اولین محصول خارجی را بسازد و بعد بروزرسانی‌ها را خودکار کند.</p>
 </div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>قبل از شروع</h2>
+    <ul style="margin:0;padding-inline-start:1.2rem">
+      <li>ووکامرس باید فعال باشد.</li>
+      <li>بهتر است تصمیم بگیرید واحد نهایی سایت <strong>تومان</strong> باشد یا <strong>ریال</strong>.</li>
+      <li>یک منبع نرخ HTTPS آماده داشته باشید؛ ساده‌ترین گزینه، JSON بازار آزاد است.</li>
+      <li>اگر فروشگاه حساسی دارید، از همین ابتدا دربارهٔ Margin و منابع پشتیبان فکر کنید.</li>
+    </ul>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>لینک پیشنهادی شروع سریع</h2>
+    <p>برای اولین تست، این لینک را در Sources وارد کنید:</p>
+    <div class="copyline">
+<pre><code id="install-json-url">https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
+<button class="btn" data-copy="install-json-url" type="button">کپی</button>
+</div>
+    <p style="margin:10px 0 0">بعد از آن، داشبورد افزونه را باز کنید و بروزرسانی نرخ‌ها را اجرا کنید.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>مسیر راه‌اندازی در ۶ قدم</h2>
+  <ol style="margin:0;padding-inline-start:1.2rem">
+    <li><strong>نصب و فعال‌سازی:</strong> افزونه را نصب و فعال کنید.</li>
+    <li><strong>General:</strong> واحد، زبان و بازهٔ Cron را بررسی کنید.</li>
+    <li><strong>Sources:</strong> JSON یا RSS/XML را وارد کنید.</li>
+    <li><strong>Dashboard:</strong> روی Update Rates بزنید و آخرین منبع/زمان را ببینید.</li>
+    <li><strong>Product:</strong> اولین محصول را foreign کنید و قیمت خرید/ارز/Margin را وارد کنید.</li>
+    <li><strong>Validation:</strong> قیمت نهایی، مرتب‌سازی و در صورت نیاز شورتکد را تست کنید.</li>
+  </ol>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>تصویر: داشبورد و بروزرسانی نرخ‌ها</h2>
+    <figure class="figure">
+<img alt="Dashboard screenshot" decoding="async" loading="lazy" src="/assets/img/screenshot-1.webp"/>
+<figcaption>داشبورد افزونه: دکمه بروزرسانی نرخ‌ها و مشاهدهٔ نرخ‌های ذخیره‌شده</figcaption>
+</figure>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>تصویر: تب منابع نرخ</h2>
+    <figure class="figure">
+<img alt="Sources screenshot" decoding="async" loading="lazy" src="/assets/img/screenshot-3.webp"/>
+<figcaption>جایی که لینک JSON بازار آزاد و فیدهای بانک مرکزی را وارد می‌کنید</figcaption>
+</figure>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>بعد از نصب چه صفحه‌هایی مهم‌ترند؟</h2>
+  <p style="display:flex;gap:10px;flex-wrap:wrap;margin:0"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/products/">محصولات خارجی</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/free-api/">API رایگان</a></p>
+</div></section>
+
 <section class="container section seo-box">
-<div class="card">
-<section class="section">
-<h2>سوالات متداول این صفحه:</h2>
-<p class="muted" style="margin:.4rem 0 1rem">
-    ما سوالات پرتکرار را که ممکن است به درک بهتر این صفحه کمک کنند را در اینجا قرار داده ایم.
-  </p>
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
 <div class="faq">
-<details open="">
-<summary>بعد از نصب، اولین قدم چیست؟</summary>
-<p>در تب Sources منبع نرخ را تنظیم کنید، سپس در Dashboard روی Update Rates بزنید و بعد محصولات foreign را تنظیم کنید.</p>
-</details>
-<details>
-<summary>فقط کدام محصولات تحت تاثیر هستند؟</summary>
-<p>فقط محصولاتی که در متاباکس Tomanify، گزینه foreign برایشان فعال شده باشد.</p>
-</details>
-<details>
-<summary>WP-Cron همیشه دقیق اجرا می‌شود؟</summary>
-<p>در هاست اشتراکی ممکن است وابسته به بازدید باشد. برای دقت بیشتر می‌توانید کران واقعی هاست یا سرویس‌های Cron استفاده کنید.</p>
-</details>
-<details>
-<summary>تغییر واحد تومان/ریال نرخ را دوباره دریافت می‌کند؟</summary>
-<p>خیر. فقط قیمت ووکامرس از روی «پایه تومان» بازنویسی می‌شود.</p>
-</details>
+<details open><summary>بعد از نصب، اولین کار چیست؟</summary><p>منبع نرخ را در تب Sources تنظیم کنید، بعد از داشبورد Update Rates بزنید و سپس اولین محصول foreign را تست کنید.</p></details>
+<details><summary>اگر هنوز URL منبع را وارد نکرده باشم چه می‌شود؟</summary><p>افزونه به‌صورت پیش‌فرض هیچ URL آماده‌ای را داخل تنظیمات قرار نمی‌دهد؛ بنابراین تا وقتی شما آدرس را وارد نکنید، درخواست خارجی هم انجام نمی‌شود.</p></details>
+<details><summary>آیا WP-Cron همیشه دقیق اجرا می‌شود؟</summary><p>در هاست اشتراکی ممکن است به بازدید سایت وابسته باشد. اگر زمان‌بندی دقیق‌تری می‌خواهید، از Cron واقعی هاست یا سرویس cron استفاده کنید.</p></details>
+<details><summary>تغییر واحد از تومان به ریال دوباره نرخ را می‌گیرد؟</summary><p>خیر. فقط قیمت ووکامرس از روی پایه تومان بازنویسی می‌شود و تبدیل دوباره انجام نمی‌شود.</p></details>
+<details><summary>برای شروع Margin را روی چه عددی بگذارم؟</summary><p>برای اکثر فروشگاه‌هایی که با JSON رایگان بازار آزاد شروع می‌کنند، Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ می‌تواند ریسک عقب‌ماندن نرخ را پوشش دهد.</p></details>
 </div>
+</section></div>
 </section>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="wrap">
-<p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
-<p class="small">
-<a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
-</p>
-</div>
-</div>
-</footer>
-<script src="/assets/site.js"></script>
-</body>
-</html>

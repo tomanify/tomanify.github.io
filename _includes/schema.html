@@ -1,0 +1,166 @@
+{% assign page_abs = site.url | append: page.page_url %}
+{% assign primary_image_path = page.schema_image | default: '/assets/og.webp' %}
+{% assign primary_image_url = site.url | append: primary_image_path %}
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "Tomanify Docs",
+      "inLanguage": ["fa-IR"],
+      "publisher": {"@id": "{{ site.url }}/#org"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#org",
+      "name": "Tomanify",
+      "url": "https://wordpress.org/plugins/tomanify/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/favicon-32x32.png",
+        "width": 32,
+        "height": 32
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#author",
+      "name": "Amin Raoufi",
+      "url": "{{ site.url }}/"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page_abs }}#primaryimage",
+      "url": "{{ primary_image_url }}",
+      "width": {{ page.schema_image_width | default: 1200 }},
+      "height": {{ page.schema_image_height | default: 630 }}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ page_abs }}#webpage",
+      "url": "{{ page_abs }}",
+      "name": {{ page.title | jsonify }},
+      "isPartOf": {"@id": "{{ site.url }}/#website"},
+      "primaryImageOfPage": {"@id": "{{ page_abs }}#primaryimage"},
+      "inLanguage": "fa-IR",
+      "datePublished": {{ page.date_published | default: '2026-03-09' | jsonify }},
+      "dateModified": {{ page.date_modified | default: '2026-03-09' | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "breadcrumb": {"@id": "{{ page_abs }}#breadcrumb"},
+      "author": {"@id": "{{ site.url }}/#author"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ page_abs }}#breadcrumb",
+      "itemListElement": [
+        {% for crumb in page.breadcrumbs %}{
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ crumb.name | jsonify }},
+          "item": "{{ site.url }}{{ crumb.path }}"
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% if page.software_app %},
+    {
+      "@type": "SoftwareApplication",
+      "@id": "{{ site.url }}/#software",
+      "name": "Tomanify",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "WooCommerce currency conversion plugin",
+      "operatingSystem": "WordPress / WooCommerce",
+      "softwareVersion": {{ page.software_version | default: 'current public release' | jsonify }},
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "https://wordpress.org/plugins/tomanify/",
+      "author": {"@id": "{{ site.url }}/#author"},
+      "publisher": {"@id": "{{ site.url }}/#org"}
+    }{% endif %}{% if page.doc_links %},
+    {
+      "@type": "ItemList",
+      "@id": "{{ page_abs }}#itemlist",
+      "itemListElement": [
+        {% for item in page.doc_links %}{
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ item.name | jsonify }},
+          "url": "{{ site.url }}{{ item.path }}"
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% endif %}{% if page.schema_type == 'Article' %},
+    {
+      "@type": "Article",
+      "@id": "{{ page_abs }}#article",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "inLanguage": "fa-IR",
+      "isPartOf": {"@id": "{{ page_abs }}#webpage"},
+      "mainEntityOfPage": {"@id": "{{ page_abs }}#webpage"},
+      "image": {"@id": "{{ page_abs }}#primaryimage"},
+      "author": {"@id": "{{ site.url }}/#author"},
+      "publisher": {"@id": "{{ site.url }}/#org"},
+      "datePublished": {{ page.date_published | default: '2026-03-09' | jsonify }},
+      "dateModified": {{ page.date_modified | default: '2026-03-09' | jsonify }}
+    }{% elsif page.schema_type == 'CollectionPage' %},
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ page_abs }}#collectionpage",
+      "name": {{ page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "inLanguage": "fa-IR",
+      "isPartOf": {"@id": "{{ page_abs }}#webpage"},
+      "mainEntityOfPage": {"@id": "{{ page_abs }}#webpage"}
+    }{% elsif page.schema_type == 'HowTo' %},
+    {
+      "@type": "HowTo",
+      "@id": "{{ page_abs }}#howto",
+      "name": {{ page.schema_name | default: page.title | jsonify }},
+      "description": {{ page.description | jsonify }},
+      "inLanguage": "fa-IR",
+      "isPartOf": {"@id": "{{ page_abs }}#webpage"},
+      "mainEntityOfPage": {"@id": "{{ page_abs }}#webpage"},
+      "step": [
+        {% for step in page.howto_steps %}{
+          "@type": "HowToStep",
+          "position": {{ forloop.index }},
+          "name": {{ step.name | jsonify }},
+          "text": {{ step.text | jsonify }}
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% elsif page.schema_type == 'FAQPage' %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ page_abs }}#faqpage",
+      "inLanguage": "fa-IR",
+      "mainEntity": [
+        {% for item in page.faq_items %}{
+          "@type": "Question",
+          "name": {{ item.q | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ item.a | jsonify }}
+          }
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% endif %}{% if page.faq_items and page.schema_type != 'FAQPage' %},
+    {
+      "@type": "FAQPage",
+      "@id": "{{ page_abs }}#faqpage",
+      "inLanguage": "fa-IR",
+      "mainEntity": [
+        {% for item in page.faq_items %}{
+          "@type": "Question",
+          "name": {{ item.q | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ item.a | jsonify }}
+          }
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% endif %}
+  ]
+}</script>

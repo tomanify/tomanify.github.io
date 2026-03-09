@@ -1,323 +1,138 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="fa-IR">
-<head>
+---
+layout: default
+page_key: sources
+nav_parent: sources
+page_url: /docs/sources/
+title: منابع نرخ تومنی‌فای | JSON بازار آزاد + RSS/XML بانک مرکزی
+description: 'آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، فیدهای RSS/XML بانک مرکزی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.'
+keywords: منابع نرخ تومنیفای, JSON بازار آزاد, RSS بانک مرکزی, XML بانک مرکزی, Source Mode Tomanify, Premium تومنیفای, Threshold تومنیفای, Offline Mode تومنیفای, JSON سازگار با Tomanify, URL منبع نرخ ووکامرس, بانک مرکزی برای ووکامرس
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/screenshot-3.webp
+schema_image_width: 1200
+schema_image_height: 800
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: منابع نرخ
+  path: /docs/sources/
+faq_items:
+- q: بهترین Source Mode برای شروع کدام است؟
+  a: برای بیشتر فروشگاه‌ها، JSON بازار آزاد بهترین نقطه شروع است. بعد از آن فیدهای بانک مرکزی را به‌عنوان لایهٔ پشتیبان اضافه کنید.
+- q: Premium دقیقاً چه مشکلی را حل می‌کند؟
+  a: Premium کمک می‌کند نرخ رسمی بانک مرکزی به نرخ آزاد نزدیک شود. یعنی وقتی از RSS/XML رسمی استفاده می‌کنید، تبدیل صرفاً با همان رقم رسمی باقی نمی‌ماند.
+- q: اگر JSON من کار نکرد اول کجا را چک کنم؟
+  a: HTTPS بودن URL، ساختار JSON، عددی بودن مقادیر، و این‌که آیا واقعاً همه ارزها به تومان برمی‌گردند یا نه.
+- q: آیا می‌توانم فقط بعضی ارزها را از بانک مرکزی بگیرم؟
+  a: بله. هر فید برای هر ارز جداگانه وارد می‌شود و می‌توانید ترکیب منبع‌ها را مطابق نیازتان بچینید.
+- q: Offline Mode چه زمانی مفید است؟
+  a: وقتی هیچ منبع بیرونی در دسترس نیست و می‌خواهید افزونه با مدل مرجع/پیش‌بینی، کار را به‌طور موقت ادامه دهد.
+- q: Threshold چرا گاهی باعث می‌شود قیمت‌ها آپدیت نشوند؟
+  a: چون تغییرهای خیلی کوچک را برای جلوگیری از نویز نادیده می‌گیرد. اگر می‌خواهید حساس‌تر باشید، مقدار آن را کمتر کنید.
+---
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="generator" content="Tomanify Docs">
-
-<title>منابع نرخ تومنی‌فای | JSON بازار آزاد + RSS/XML بانک مرکزی</title>
-
-<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" href="/assets/favicon.ico" sizes="any">
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-
-<meta name="theme-color" content="#0A7B56">
-
-<meta name="description" content="تنظیم منابع نرخ تومنی‌فای: JSON بازار آزاد و لینک‌های RSS/XML بانک مرکزی (Copy/Paste) برای زمان قطعی/محدودیت اینترنت.">
-
-<meta name="keywords" content="Tomanify, تومنیفای, افزونه تومنیفای, افزونه تبدیل قیمت, افزونه نرخ ارز ووکامرس, ووکامرس, وردپرس, قیمت گذاری اتوماتیک, قیمت‌گذاری اتوماتیک فروشگاه اینترنتی, بروزرسانی خودکار قیمت محصولات, به‌روزرسانی خودکار قیمت‌ها, محاسبه قیمت بر اساس نرخ ارز, نرخ ارز آزاد, نرخ بازار آزاد, نرخ دلار بازار آزاد, نرخ یورو بازار آزاد, نرخ درهم بازار آزاد, نرخ لیر بازار آزاد, نرخ یوان بازار آزاد, تبدیل تومان ریال, تبدیل ریال تومان, تومان, ریال, قیمت دلاری ووکامرس, قیمت یورویی ووکامرس, محصول خارجی ووکامرس, محصول وارداتی ووکامرس, قیمت محصولات خارجی, نرخ ارز لحظه‌ای, نرخ ارز امروز, نرخ ارز ایران, صرافی آنلاین, قیمت دلار امروز, قیمت یورو امروز, قیمت درهم امروز, قیمت لیر امروز, قیمت یوان امروز, تبدیل قیمت کالا به تومان, محاسبه قیمت کالا با دلار, محاسبه قیمت کالا با یورو, نرخ ارز برای فروشگاه اینترنتی, تبدیل ارز در ووکامرس, currency converter woocommerce, woocommerce exchange rate plugin, Iran toman woocommerce, rial toman conversion, افزونه چند ارزی ووکامرس ایران, قیمت گذاری محصولات وارداتی, قیمت گذاری محصولات خارجی با نرخ ارز, بروزرسانی قیمت با کران, wp-cron ووکامرس, زمان‌بندی بروزرسانی نرخ ارز, کش ووکامرس, پاکسازی کش, WP Rocket purge, به‌روزرسانی قیمت با کش, نرخ ارز JSON, فایل JSON نرخ ارز, RSS نرخ ارز, XML نرخ ارز, RSS بانک مرکزی, XML بانک مرکزی, بانک مرکزی ایران نرخ ارز, نرخ رسمی بانک مرکزی, تبدیل نرخ رسمی به بازار آزاد, premium نرخ ارز, ضریب پریمیوم نرخ ارز, مدل آفلاین نرخ ارز, محاسبه آفلاین نرخ ارز, اینترنت ملی, قطع اینترنت ایران, fallback نرخ ارز, threshold تغییر نرخ ارز, آستانه تغییر نرخ, کاهش نوسان نرخ ارز, گرد کردن قیمت, گرد کردن به هزار تومان, منابع نرخ تومنیفای, انتخاب منبع نرخ ارز, نرخ ارز بازار آزاد JSON, تنظیم RSS/XML بانک مرکزی, نرخ دستی ارز, manual rates, fallback بانک مرکزی, محاسبه نرخ بازار آزاد از نرخ رسمی, premium free/official, تنظیم آستانه تغییر, threshold rate change, مدل آفلاین بر اساس مرجع">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical" href="https://tomanify.github.io/docs/sources/">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta property="og:site_name" content="Tomanify">
-<meta name="author" content="Amin Raoufi">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:locale:alternate" content="en_US">
-
-<meta property="og:type" content="article">
-
-<meta property="og:title" content="منابع نرخ تومنی‌فای | JSON بازار آزاد + RSS/XML بانک مرکزی">
-<meta property="og:description" content="تنظیم منابع نرخ تومنی‌فای: JSON بازار آزاد و لینک‌های RSS/XML بانک مرکزی برای زمان محدودیت اینترنت.">
-
-<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta property="og:url" content="https://tomanify.github.io/docs/sources/">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="منابع نرخ تومنی‌فای | JSON بازار آزاد + RSS/XML بانک مرکزی">
-<meta name="twitter:description" content="تنظیم منابع نرخ تومنی‌فای و لینک‌های RSS/XML بانک مرکزی برای fallback در زمان محدودیت اینترنت.">
-<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
-
-<link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://tomanify.github.io/#website",
-      "url": "https://tomanify.github.io/",
-      "name": "Tomanify Docs",
-      "inLanguage": [
-        "fa-IR"
-      ],
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://tomanify.github.io/#org",
-      "name": "Tomanify",
-      "url": "https://wordpress.org/plugins/tomanify/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tomanify.github.io/assets/favicon-32x32.png",
-        "width": 32,
-        "height": 32
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://tomanify.github.io/#author",
-      "name": "Amin Raoufi",
-      "url": "https://tomanify.github.io/"
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://tomanify.github.io/docs/sources/#primaryimage",
-      "url": "https://tomanify.github.io/assets/og.webp",
-      "width": 1200,
-      "height": 630
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://tomanify.github.io/docs/sources/#webpage",
-      "url": "https://tomanify.github.io/docs/sources/",
-      "name": "منابع نرخ تومنی‌فای | JSON بازار آزاد + RSS/XML بانک مرکزی",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/#website"
-      },
-      "primaryImageOfPage": {
-        "@id": "https://tomanify.github.io/docs/sources/#primaryimage"
-      },
-      "inLanguage": "fa-IR",
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03",
-      "description": "تنظیم منابع نرخ تومنی‌فای: JSON بازار آزاد و لینک‌های RSS/XML بانک مرکزی (Copy/Paste) برای زمان قطعی/محدودیت اینترنت.",
-      "breadcrumb": {
-        "@id": "https://tomanify.github.io/docs/sources/#breadcrumb"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://tomanify.github.io/docs/sources/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "خانه",
-          "item": "https://tomanify.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Docs",
-          "item": "https://tomanify.github.io/docs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "منابع نرخ",
-          "item": "https://tomanify.github.io/docs/sources/"
-        }
-      ]
-    },
-    {
-      "@type": "Article",
-      "@id": "https://tomanify.github.io/docs/sources/#article",
-      "headline": "منابع نرخ تومنی‌فای | JSON بازار آزاد + RSS/XML بانک مرکزی",
-      "description": "تنظیم منابع نرخ تومنی‌فای: JSON بازار آزاد و لینک‌های RSS/XML بانک مرکزی (Copy/Paste) برای زمان قطعی/محدودیت اینترنت.",
-      "inLanguage": "fa-IR",
-      "isPartOf": {
-        "@id": "https://tomanify.github.io/docs/sources/#webpage"
-      },
-      "mainEntityOfPage": {
-        "@id": "https://tomanify.github.io/docs/sources/#webpage"
-      },
-      "image": {
-        "@id": "https://tomanify.github.io/docs/sources/#primaryimage"
-      },
-      "author": {
-        "@id": "https://tomanify.github.io/#author"
-      },
-      "publisher": {
-        "@id": "https://tomanify.github.io/#org"
-      },
-      "datePublished": "2026-03-03",
-      "dateModified": "2026-03-03"
-    }
-  ]
-}</script>
-</head>
-<body>
-<header class="header">
-<div class="container">
-<div class="wrap">
-<a aria-label="Tomanify" class="brand" href="/">
-<img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
-<span>Tomanify — راهنمای فارسی</span>
-</a>
-<nav aria-label="ناوبری" class="nav"><a class="" href="/">خانه</a><a class="" href="/docs/">Docs</a><a class="active" href="/docs/sources/">منابع نرخ</a><a class="" href="/docs/products/">محصولات خارجی</a><a class="" href="/docs/shortcode/">شورتکد</a><a class="" href="/docs/troubleshooting/">رفع اشکال</a><a class="" href="/docs/advanced/">پیشرفته</a><a class="" href="/docs/backup/">بکاپ</a><a class="" href="/docs/security/">امنیت</a><a class="" href="/docs/faq/">FAQ</a></nav>
-<div class="controls">
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
-<button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer="" type="button">☰</button>
-</div>
-</div>
-</div>
-</header>
-<div aria-hidden="true" class="mobile-drawer">
-<div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
-<div class="drawer-top">
-<strong>منو</strong>
-<button class="btn" data-close-drawer="" type="button">بستن</button>
-</div>
-<a href="/">خانه</a><a href="/docs/">Docs</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">FAQ</a><hr/>
-<a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
-</div>
-</div>
-<main class="container main">
-<div class="breadcrumb"><a href="/">خانه</a> / Docs / منابع نرخ</div>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / منابع نرخ</div>
 <section class="card"><div class="inner">
-<h1>منابع نرخ</h1>
-<p class="lead">نرخ‌ها به‌صورت <strong>تومان</strong> ذخیره می‌شوند و برای محاسبه محصولات خارجی استفاده می‌گردند. پیشنهاد عمومی: <strong>JSON بازار آزاد</strong>. برای شرایط اختلال/محدودیت اینترنت: <strong>بانک مرکزی</strong> (تخمینی با Premium).</p>
-
-<h2>JSON بازار آزاد</h2>
-<p class="muted">این URL را در تب <strong>Sources</strong> وارد کنید. ساختار مورد انتظار: <code>{"values":{"USD":12345,...}}</code> (همه به <strong>تومان</strong>).</p>
-<div class="copyline">
-<pre id="s-json"><code>https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
-<button class="btn" data-copy="s-json" type="button">کپی</button>
-</div>
-
-<h2 class="section">RSS/XML بانک مرکزی</h2>
-<p class="muted">برای هر ارز یک URL جداگانه وارد می‌شود. سپس افزونه نرخ رسمی را می‌گیرد و با <strong>Premium</strong> به نرخ آزاد تخمینی تبدیل می‌کند.</p>
-<div class="copyline">
-<pre id="s-cbi"><code>USD — United States Dollar
-https://cbi.ir/ExRatesRSS.aspx?cid=1
-
-EUR — Euro
-https://cbi.ir/ExRatesRSS.aspx?cid=94
-
-AED — United Arab Emirates Dirham
-https://cbi.ir/ExRatesRSS.aspx?cid=14
-
-TRY — Turkish Lira
-https://cbi.ir/ExRatesRSS.aspx?cid=38
-
-CNY — Chinese Yuan
-https://cbi.ir/ExRatesRSS.aspx?cid=85</code></pre>
-<button class="btn" data-copy="s-cbi" type="button">کپی</button>
-</div>
-
-<div class="note section">
-<strong>یادآوری:</strong> نرخ آزاد = نرخ واقعی بازار. بانک مرکزی = منبع رسمی (قابل استفاده برای تخمین نرخ آزاد در زمان قطعی/محدودیت اینترنت).
-</div>
-
-<h2 class="section">Source Mode چیست و هر گزینه دقیقاً چه می‌کند؟</h2>
-<p>Source Mode تعیین می‌کند افزونه از کدام «مسیر» نرخ‌ها را بسازد. اگر روی <strong>Auto</strong> باشد، افزونه به ترتیب زیر تلاش می‌کند و اولین منبع معتبر را انتخاب می‌کند:</p>
-<ul>
-  <li><strong>Auto</strong>: تلاش به ترتیب <strong>JSON → بانک مرکزی → آفلاین → دستی</strong> و انتخاب اولین نتیجه معتبر.</li>
-  <li><strong>JSON</strong>: فقط از URL JSON بازار آزاد استفاده می‌کند.</li>
-  <li><strong>CBI</strong> (Bank): فقط از RSS/XML بانک مرکزی استفاده می‌کند و با <strong>Premium</strong> نرخ آزاد را تخمین می‌زند.</li>
-  <li><strong>Offline</strong>: بدون درخواست خارجی؛ با تکیه بر «مرجع ذخیره‌شده» (Reference Snapshot) و رشد سالانه (CAGR) نرخ را تخمین می‌زند.</li>
-  <li><strong>Manual</strong>: بدون درخواست خارجی؛ نرخ‌ها را دقیقاً از ورودی‌های دستی شما (به تومان) می‌گیرد.</li>
-</ul>
-
-<h3 class="section">دو سناریوی پیشنهادی</h3>
-<ul>
-  <li><strong>سناریوی پیشنهادی (اکثر فروشگاه‌ها):</strong> Source Mode را روی <strong>Auto</strong> بگذارید، URL JSON را وارد کنید و برای مواقع اضطراری URLهای بانک مرکزی را هم ثبت کنید.</li>
-  <li><strong>سناریوی بدون درخواست خارجی:</strong> Source Mode را روی <strong>Manual</strong> بگذارید و نرخ‌ها را دستی وارد کنید (برای محیط‌های حساس/آفلاین).</li>
-</ul>
-
-<h2 class="section">Threshold چیست و چرا مهم است؟</h2>
-<p><strong>آستانه تغییر نرخ (Change Threshold %)</strong> مشخص می‌کند نرخ جدید «چقدر» باید با نرخ قبلی تفاوت داشته باشد تا افزونه آن را ذخیره کند و سراغ آپدیت محصولات برود. این گزینه برای کاهش نوسان، کاهش فشار روی هاست و جلوگیری از آپدیت‌های خیلی ریز طراحی شده است.</p>
-<ul>
-  <li>مثال: اگر Threshold را روی <strong>۰٫۳٪</strong> بگذارید، تغییرات کمتر از ۰٫۳٪ نادیده گرفته می‌شوند.</li>
-  <li>اگر می‌خواهید همیشه آپدیت انجام شود، مقدار را <strong>۰</strong> بگذارید (با احتیاط).</li>
-  <li>پیشنهاد عمومی: بین <strong>۰٫۱٪ تا ۰٫۵٪</strong> (بسته به حساسیت قیمت‌گذاری و تعداد محصولات).</li>
-</ul>
-<div class="note section">
-<strong>نکته مهم:</strong> اگر به‌خاطر Threshold نرخ‌ها «ذخیره نشوند»، به‌صورت طبیعی آپدیت قیمت محصولات هم انجام نمی‌شود. برای جزئیات بیشتر، صفحه <a href="/docs/advanced/">پیشرفته</a> و <a href="/docs/troubleshooting/">رفع اشکال</a> را ببینید.
-</div>
+  <h1>منابع نرخ در Tomanify</h1>
+  <p class="lead">مهم‌ترین صفحه برای راه‌اندازی درست افزونه همین‌جاست؛ چون کیفیت منبع نرخ تعیین می‌کند قیمت‌های فروشگاه چقدر دقیق، پایدار و قابل اتکا باشند.</p>
+  <div class="note">برای رعایت امنیت و الزامات وردپرس، افزونه هیچ URL آماده‌ای را از قبل در تنظیمات قرار نمی‌دهد. یعنی شما باید لینک‌های منبع را خودتان وارد کنید.</div>
 </div></section>
+
 <section class="grid section">
-<div class="card"><div class="inner">
-<h2>تصویر: تب منابع نرخ</h2>
-<figure class="figure">
+  <div class="card"><div class="inner">
+    <h2>۱) JSON بازار آزاد — بهترین راه برای شروع</h2>
+    <p>اگر می‌خواهید نرخ واقعی‌تری نسبت به نرخ‌های رسمی داشته باشید و بدون هزینهٔ API کار را شروع کنید، JSON بازار آزاد مناسب‌ترین گزینه است.</p>
+    <div class="copyline">
+<pre><code id="sources-json-url">https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
+<button class="btn" data-copy="sources-json-url" type="button">کپی</button>
+</div>
+    <p style="margin:10px 0 0">اگر JSON اختصاصی دارید، کافی است خروجی را به فرمت سازگار با افزونه برگردانید.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>۲) RSS/XML بانک مرکزی — روش پشتیبان</h2>
+    <p>اگر به هر دلیل منبع آزاد در دسترس نبود، فیدهای رسمی بانک مرکزی می‌توانند لایهٔ پشتیبان شما باشند. با کمک Premium، نرخ رسمی به نرخ آزاد نزدیک‌تر می‌شود.</p>
+    <p style="margin:0"><a class="btn" href="/docs/advanced/">توضیح Premium و Threshold</a></p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>لینک‌های فید بانک مرکزی برای هر ارز</h2>
+  <p>این لینک‌ها را در فیلدهای جداگانهٔ مربوط به هر ارز وارد کنید:</p>
+  <div class="copyline"><pre><code id="usd-rss">USD — https://cbi.ir/ExRatesRSS.aspx?cid=1</code></pre><button class="btn" data-copy="usd-rss" type="button">کپی</button></div>
+  <div class="copyline"><pre><code id="eur-rss">EUR — https://cbi.ir/ExRatesRSS.aspx?cid=94</code></pre><button class="btn" data-copy="eur-rss" type="button">کپی</button></div>
+  <div class="copyline"><pre><code id="aed-rss">AED — https://cbi.ir/ExRatesRSS.aspx?cid=14</code></pre><button class="btn" data-copy="aed-rss" type="button">کپی</button></div>
+  <div class="copyline"><pre><code id="try-rss">TRY — https://cbi.ir/ExRatesRSS.aspx?cid=38</code></pre><button class="btn" data-copy="try-rss" type="button">کپی</button></div>
+  <div class="copyline"><pre><code id="cny-rss">CNY — https://cbi.ir/ExRatesRSS.aspx?cid=85</code></pre><button class="btn" data-copy="cny-rss" type="button">کپی</button></div>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>ساختار JSON سازگار</h2>
+    <p>اگر خودتان API دارید یا برایتان API سفارشی ساخته می‌شود، ساده‌ترین فرمت سازگار این است:</p>
+    <div class="copyline">
+<pre><code id="sources-json-format">{"values":{"USD":65000,"EUR":71000,"AED":17800,"TRY":2300,"CNY":9000}}</code></pre>
+<button class="btn" data-copy="sources-json-format" type="button">کپی</button>
+</div>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>Source Mode را چطور انتخاب کنم؟</h2>
+    <ul style="margin:0;padding-inline-start:1.2rem">
+      <li><strong>JSON / Auto:</strong> برای منبع اصلی بازار آزاد</li>
+      <li><strong>Bank:</strong> وقتی می‌خواهید روی فیدهای رسمی تکیه کنید</li>
+      <li><strong>Offline:</strong> برای شرایط اضطراری و عدم دسترسی به منابع بیرونی</li>
+      <li><strong>Manual:</strong> وقتی همه چیز را دستی کنترل می‌کنید</li>
+    </ul>
+  </div></div>
+</section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>تصویر: تب منابع نرخ</h2>
+    <figure class="figure">
 <img alt="Sources tab" decoding="async" loading="lazy" src="/assets/img/screenshot-3.webp"/>
-<figcaption>تنظیم JSON + لینک‌های RSS/XML</figcaption>
+<figcaption>تب منابع نرخ: تنظیم JSON بازار آزاد و فیدهای بانک مرکزی</figcaption>
 </figure>
-</div></div>
-<div class="card"><div class="inner">
-<h2>تصویر: تنظیمات پیشرفته</h2>
-<figure class="figure">
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>تصویر: تنظیمات پیشرفته</h2>
+    <figure class="figure">
 <img alt="Advanced settings" decoding="async" loading="lazy" src="/assets/img/screenshot-4.webp"/>
-<figcaption>تنظیمات پیشرفته: Threshold</figcaption>
+<figcaption>Threshold، Premium و دیگر تنظیمات حساس که روی رفتار منابع نرخ اثر می‌گذارند</figcaption>
 </figure>
-</div></div>
+  </div></div>
 </section>
+
+<section class="card section"><div class="inner">
+  <h2>چه ترکیبی برای بیشتر فروشگاه‌ها خوب است؟</h2>
+  <ol style="margin:0;padding-inline-start:1.2rem">
+    <li>JSON بازار آزاد به‌عنوان منبع اصلی</li>
+    <li>فیدهای بانک مرکزی به‌عنوان پشتیبان</li>
+    <li>Threshold معقول برای جلوگیری از نویز</li>
+    <li>Margin محافظه‌کارانه برای پوشش تأخیر احتمالی</li>
+    <li>Offline یا Manual برای شرایط اضطراری</li>
+  </ol>
+</div></section>
+
+<section class="card section"><div class="inner">
+  <h2>مطالعه بیشتر</h2>
+  <p style="display:flex;gap:10px;flex-wrap:wrap;margin:0"><a class="btn primary" href="/docs/free-api/">API رایگان</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/troubleshooting/">رفع اشکال</a> <a class="btn" href="/docs/quick-start/">شروع سریع</a></p>
+</div></section>
+
 <section class="container section seo-box">
-<div class="card">
-<section class="section">
-<h2>سوالات متداول این صفحه:</h2>
-<p class="muted" style="margin:.4rem 0 1rem">
-    ما سوالات پرتکرار را که ممکن است به درک بهتر این صفحه کمک کنند را در اینجا قرار داده ایم.
-  </p>
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
 <div class="faq">
-<details open="">
-<summary>بهترین منبع نرخ برای شروع چیست؟</summary>
-<p>معمولاً JSON بازار آزاد (HTTPS) ساده‌ترین و پایدارترین گزینه است.</p>
-</details>
-<details>
-<summary>Auto دقیقاً چه اولویتی دارد؟</summary>
-<p>در حالت Auto، افزونه به ترتیب <strong>JSON → بانک مرکزی → آفلاین → دستی</strong> تلاش می‌کند و اولین نتیجه معتبر را استفاده می‌کند.</p>
-</details>
-<details>
-<summary>Threshold چیست و چرا بعضی وقت‌ها آپدیت انجام نمی‌شود؟</summary>
-<p>Threshold حداقل درصد تغییر لازم برای ذخیره نرخ جدید است. اگر تغییرات کمتر از Threshold باشد، افزونه برای کاهش نوسان و فشار روی هاست، آپدیت را انجام نمی‌دهد.</p>
-</details>
-<details>
-<summary>فید بانک مرکزی رسمی است؛ چطور به بازار آزاد نزدیک می‌شود؟</summary>
-<p>با ضریب Premium (نسبت بازار آزاد به رسمی). افزونه نرخ رسمی را می‌گیرد و با Premium به نرخ آزاد تخمینی تبدیل می‌کند.</p>
-</details>
-<details>
-<summary>می‌توانم هیچ درخواست خارجی نزنم؟</summary>
-<p>بله. Source Mode را روی Manual بگذارید و نرخ‌ها را دستی به تومان وارد کنید.</p>
-</details>
-<details>
-<summary>چرا URLها به‌صورت پیش‌فرض خالی هستند؟</summary>
-<p>به‌خاطر امنیت. افزونه هیچ URL پیش‌فرضی قرار نمی‌دهد و فقط URLهایی را که شما وارد می‌کنید fetch می‌کند.</p>
-</details>
+<details open><summary>بهترین Source Mode برای شروع کدام است؟</summary><p>برای بیشتر فروشگاه‌ها، JSON بازار آزاد بهترین نقطه شروع است. بعد از آن فیدهای بانک مرکزی را به‌عنوان لایهٔ پشتیبان اضافه کنید.</p></details>
+<details><summary>Premium دقیقاً چه مشکلی را حل می‌کند؟</summary><p>Premium کمک می‌کند نرخ رسمی بانک مرکزی به نرخ آزاد نزدیک شود. یعنی وقتی از RSS/XML رسمی استفاده می‌کنید، تبدیل صرفاً با همان رقم رسمی باقی نمی‌ماند.</p></details>
+<details><summary>اگر JSON من کار نکرد اول کجا را چک کنم؟</summary><p>HTTPS بودن URL، ساختار JSON، عددی بودن مقادیر، و این‌که آیا واقعاً همه ارزها به تومان برمی‌گردند یا نه.</p></details>
+<details><summary>آیا می‌توانم فقط بعضی ارزها را از بانک مرکزی بگیرم؟</summary><p>بله. هر فید برای هر ارز جداگانه وارد می‌شود و می‌توانید ترکیب منبع‌ها را مطابق نیازتان بچینید.</p></details>
+<details><summary>Offline Mode چه زمانی مفید است؟</summary><p>وقتی هیچ منبع بیرونی در دسترس نیست و می‌خواهید افزونه با مدل مرجع/پیش‌بینی، کار را به‌طور موقت ادامه دهد.</p></details>
+<details><summary>Threshold چرا گاهی باعث می‌شود قیمت‌ها آپدیت نشوند؟</summary><p>چون تغییرهای خیلی کوچک را برای جلوگیری از نویز نادیده می‌گیرد. اگر می‌خواهید حساس‌تر باشید، مقدار آن را کمتر کنید.</p></details>
 </div>
+</section></div>
 </section>
-</div>
-</section>
-</main>
-<footer class="footer">
-<div class="container">
-<div class="wrap">
-<p class="small">© 2026 — مستندات فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p>
-<p class="small">
-<a href="/docs/">Docs</a> · <a href="/docs/faq/">FAQ</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a>
-</p>
-</div>
-</div>
-</footer>
-<script src="/assets/site.js"></script>
-</body>
-</html>

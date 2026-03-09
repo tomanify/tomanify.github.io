@@ -1,0 +1,46 @@
+<header class="header">
+  <div class="container">
+    <div class="wrap">
+      <a aria-label="Tomanify" class="brand" href="/">
+        <img alt="Tomanify" src="/assets/img/icon-256x256.png"/>
+        <span>Tomanify — راهنمای فارسی</span>
+      </a>
+      <nav aria-label="ناوبری" class="nav">
+        <a class="{% if page.nav_parent == 'home' %}active{% endif %}" href="/">خانه</a>
+        <a class="{% if page.nav_parent == 'docs' %}active{% endif %}" href="/docs/">Docs</a>
+        <a class="{% if page.nav_parent == 'sources' %}active{% endif %}" href="/docs/sources/">منابع نرخ</a>
+        <a class="{% if page.nav_parent == 'products' %}active{% endif %}" href="/docs/products/">محصولات خارجی</a>
+        <a class="{% if page.nav_parent == 'shortcode' %}active{% endif %}" href="/docs/shortcode/">شورتکد</a>
+        <a class="{% if page.nav_parent == 'troubleshooting' %}active{% endif %}" href="/docs/troubleshooting/">رفع اشکال</a>
+        <a class="{% if page.nav_parent == 'advanced' %}active{% endif %}" href="/docs/advanced/">پیشرفته</a>
+        <a class="{% if page.nav_parent == 'backup' %}active{% endif %}" href="/docs/backup/">بکاپ</a>
+        <a class="{% if page.nav_parent == 'security' %}active{% endif %}" href="/docs/security/">امنیت</a>
+        <a class="{% if page.nav_parent == 'faq' %}active{% endif %}" href="/docs/faq/">FAQ</a>
+      </nav>
+      <div class="controls">
+        <a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a>
+        <button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button>
+      </div>
+    </div>
+  </div>
+</header>
+<div aria-hidden="true" class="mobile-drawer">
+  <div aria-label="منوی موبایل" class="drawer-panel" role="dialog">
+    <div class="drawer-top">
+      <strong>منو</strong>
+      <button class="btn" data-close-drawer type="button">بستن</button>
+    </div>
+    <a href="/">خانه</a>
+    <a href="/docs/">Docs</a>
+    <a href="/docs/sources/">منابع نرخ</a>
+    <a href="/docs/products/">محصولات خارجی</a>
+    <a href="/docs/shortcode/">شورتکد</a>
+    <a href="/docs/troubleshooting/">رفع اشکال</a>
+    <a href="/docs/advanced/">پیشرفته</a>
+    <a href="/docs/backup/">بکاپ</a>
+    <a href="/docs/security/">امنیت</a>
+    <a href="/docs/faq/">FAQ</a>
+    <hr/>
+    <a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a>
+  </div>
+</div>

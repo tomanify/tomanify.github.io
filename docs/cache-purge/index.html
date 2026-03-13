@@ -1,0 +1,88 @@
+---
+layout: default
+page_key: cache-purge
+nav_parent: features
+page_url: /docs/cache-purge/
+title: پاک‌سازی کش بعد از تغییر قیمت | قابلیت Purge در Tomanify
+description: توضیح کامل قابلیت purge در Tomanify: پاک‌سازی کش همان صفحه بعد از بروزرسانی قیمت، بدون نیاز اجباری به افزونه جداگانه، با محدودیت امن روی همان دامنه سایت.
+keywords: purge cache ووکامرس, پاکسازی کش بعد از تغییر قیمت, افزونه purge cache وردپرس, پاکسازی خودکار کش صفحه محصول, پاک کردن کش بعد از بروزرسانی قیمت ووکامرس, Tomanify purge, کش صفحه محصول بعد از تغییر قیمت
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/screenshot-1.webp
+schema_image_width: 1200
+schema_image_height: 800
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: Docs
+  path: /docs/
+- name: پاک‌سازی کش
+  path: /docs/cache-purge/
+doc_links:
+- name: قابلیت‌ها
+  path: /docs/features/
+- name: رفع اشکال
+  path: /docs/troubleshooting/
+- name: امنیت
+  path: /docs/security/
+faq_items:
+- q: آیا برای پاک‌سازی کش حتماً باید افزونه جدا نصب کنم؟
+  a: نه لزوماً. اگر این قابلیت را در Tomanify فعال کنید، خود افزونه می‌تواند بعد از آپدیت قیمت URLهای مرتبط را برای پاک‌سازی دوباره صدا بزند.
+- q: آیا purge کل سایت را پاک می‌کند؟
+  a: هدف این قابلیت پاک‌سازی محدود و هدفمند است، نه خالی کردن کامل همه کش‌های سایت بعد از هر تغییر کوچک.
+- q: آیا این قابلیت از نظر امنیتی محدود شده است؟
+  a: بله، برای استفاده امن باید فقط روی همان دامنه سایت شما عمل کند و نباید به هاست‌های دیگر درخواست بفرستد.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">Docs</a> / پاک‌سازی کش</div>
+<section class="card"><div class="inner">
+  <h1>پاک‌سازی کش بعد از بروزرسانی قیمت</h1>
+  <p class="lead">یکی از مشکلات رایج فروشگاه‌ها این است که قیمت در پنل عوض می‌شود، اما کاربر هنوز نسخهٔ کش‌شدهٔ قدیمی را می‌بیند. قابلیت Purge در Tomanify برای همین ساخته شده است.</p>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>این قابلیت دقیقاً چه می‌کند؟</h2>
+    <p>وقتی قیمت یک محصول آپدیت می‌شود، افزونه می‌تواند فقط همان URLهای مربوط به آن محصول یا برگه‌های مرتبط را برای پاک‌سازی دوباره علامت بزند. یعنی لازم نیست همه کش سایت یا CDN را بعد از هر تغییر خالی کنید.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>مزیتش چیست؟</h2>
+    <p>هم فشار روی سرور کمتر می‌شود، هم کاربر سریع‌تر قیمت جدید را می‌بیند. این روش مخصوصاً برای فروشگاه‌هایی که تعداد زیادی محصول دارند یا کش صفحه‌ای فعال است خیلی مفید است.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>چه زمانی این قابلیت به دردتان می‌خورد؟</h2>
+  <ul style="margin:0;padding-inline-start:1.2rem">
+    <li>وقتی بعد از آپدیت قیمت، نسخه قدیمی محصول هنوز در فرانت‌اند دیده می‌شود.</li>
+    <li>وقتی از کش صفحه، reverse proxy یا CDN استفاده می‌کنید.</li>
+    <li>وقتی نمی‌خواهید برای هر بار بروزرسانی کل کش سایت پاک شود.</li>
+    <li>وقتی می‌خواهید بدون نصب یک افزونه کش جداگانه، حداقل purge هدفمند داشته باشید.</li>
+  </ul>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>نکته مهم امنیتی</h2>
+    <p>پاک‌سازی کش باید فقط روی آدرس‌های همان سایت شما اعمال شود. اگر تنظیمات purge به دامنه‌های دیگر اشاره کند، هم از نظر امنیتی ریسک ایجاد می‌کند و هم با فلسفه استفاده امن افزونه سازگار نیست.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>بعداً چه اسکرین‌شاتی اینجا بگذارید؟</h2>
+    <p>بهترین تصویر برای این صفحه یک اسکرین‌شات WebP از تب <strong>General</strong> یا جایی است که گزینه فعال/غیرفعال کردن purge دیده می‌شود. فعلاً این صفحه بدون تصویر هم کامل است، ولی بعداً اگر اسکرین‌شات بگذارید درک کاربر سریع‌تر می‌شود.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>صفحه‌های مرتبط</h2>
+  <p style="display:flex;gap:10px;flex-wrap:wrap;margin:0"><a class="btn primary" href="/docs/features/">مرور قابلیت‌ها</a> <a class="btn" href="/docs/security/">امنیت</a> <a class="btn" href="/docs/troubleshooting/">رفع اشکال</a></p>
+</div></section>
+
+<section class="container section seo-box"><div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<div class="faq">
+<details open><summary>آیا برای پاک‌سازی کش حتماً باید افزونه جدا نصب کنم؟</summary><p>نه لزوماً. اگر این قابلیت را در Tomanify فعال کنید، خود افزونه می‌تواند بعد از آپدیت قیمت URLهای مرتبط را برای پاک‌سازی دوباره صدا بزند.</p></details>
+<details><summary>آیا purge کل سایت را پاک می‌کند؟</summary><p>هدف این قابلیت پاک‌سازی محدود و هدفمند است، نه خالی کردن کامل همه کش‌های سایت بعد از هر تغییر کوچک.</p></details>
+<details><summary>آیا این قابلیت از نظر امنیتی محدود شده است؟</summary><p>بله، برای استفاده امن باید فقط روی همان دامنه سایت شما عمل کند و نباید به هاست‌های دیگر درخواست بفرستد.</p></details>
+</div></section></div></section>

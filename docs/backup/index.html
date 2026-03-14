@@ -1,35 +1,46 @@
----
-layout: default
-page_key: backup
-nav_parent: backup
-page_url: /docs/backup/
-title: بکاپ و انتقال تومنی‌فای | Export، Import و حذف داده‌ها
-description: راهنمای Export و Import در Tomanify برای بکاپ، انتقال تنظیمات بین سایت تست و اصلی، و انتخاب حذف کامل یا سبک داده‌ها هنگام حذف افزونه.
-keywords: بکاپ تومنیفای, Export Import Tomanify, انتقال تنظیمات تومنیفای, backup JSON تومنیفای, انتقال از سایت تست به اصلی, restore Tomanify settings
-robots: index, follow
-og_type: article
-schema_type: Article
-schema_image: /assets/img/tomanify-backup-uninstall-data-removal.webp
-schema_image_width: 529
-schema_image_height: 155
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: بکاپ
-  path: /docs/backup/
-faq_items:
-- q: Export دقیقاً چه کمکی می‌کند؟
-  a: برای زمانی که می‌خواهید تنظیمات و محصولات foreign را از سایت تست به سایت اصلی یا برعکس منتقل کنید و دوباره همه چیز را دستی نسازید.
-- q: آیا بعد از Import باید چیزی را دوباره چک کنم؟
-  a: بله، بهتر است منابع نرخ، نرخ‌های ذخیره‌شده و چند محصول نمونه را بعد از import بررسی کنید.
-- q: اگر نام یا SKU محصول‌ها فرق کند چه می‌شود؟
-  a: تطبیق محصولات در import باید با دقت انجام شود؛ بنابراین قبل از انتقال گسترده، روی چند محصول نمونه تست بگیرید.
-- q: بکاپ جایگزین منبع نرخ زنده است؟
-  a: خیر. بکاپ برای انتقال تنظیمات و متادیتاست؛ منبع نرخ زنده و اعتبار آن باید جداگانه درست تنظیم شود.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/img/tomanify-backup-uninstall-data-removal.webp">
+<meta property="og:image:width" content="529">
+<meta property="og:image:height" content="155">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/img/tomanify-backup-uninstall-data-removal.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>بکاپ و انتقال تومنی‌فای | Export، Import و حذف داده‌ها</title>
+<meta name="description" content="راهنمای Export و Import در Tomanify برای بکاپ، انتقال تنظیمات بین سایت تست و اصلی، و انتخاب حذف کامل یا سبک داده‌ها هنگام حذف افزونه.">
+<meta name="keywords" content="بکاپ تومنیفای, Export Import Tomanify, انتقال تنظیمات تومنیفای, backup JSON تومنیفای, انتقال از سایت تست به اصلی, restore Tomanify settings">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/backup/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="بکاپ و انتقال تومنی‌فای | Export، Import و حذف داده‌ها">
+<meta property="og:description" content="راهنمای Export و Import در Tomanify برای بکاپ، انتقال تنظیمات بین سایت تست و اصلی، و انتخاب حذف کامل یا سبک داده‌ها هنگام حذف افزونه.">
+<meta property="og:url" content="https://tomanify.github.io/docs/backup/">
+<meta name="twitter:title" content="بکاپ و انتقال تومنی‌فای | Export، Import و حذف داده‌ها">
+<meta name="twitter:description" content="راهنمای Export و Import در Tomanify برای بکاپ، انتقال تنظیمات بین سایت تست و اصلی، و انتخاب حذف کامل یا سبک داده‌ها هنگام حذف افزونه.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/backup/#primaryimage","url":"https://tomanify.github.io/assets/img/tomanify-backup-uninstall-data-removal.webp","width":529,"height":155},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/backup/#webpage","url":"https://tomanify.github.io/docs/backup/","name":"بکاپ و انتقال تومنی‌فای | Export، Import و حذف داده‌ها","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/backup/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"راهنمای Export و Import در Tomanify برای بکاپ، انتقال تنظیمات بین سایت تست و اصلی، و انتخاب حذف کامل یا سبک داده‌ها هنگام حذف افزونه.","breadcrumb":{"@id":"https://tomanify.github.io/docs/backup/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/backup/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"بکاپ","item":"https://tomanify.github.io/docs/backup/"}]},{"@type":"Article","@id":"https://tomanify.github.io/docs/backup/#article","headline":"بکاپ و انتقال تومنی‌فای | Export، Import و حذف داده‌ها","description":"راهنمای Export و Import در Tomanify برای بکاپ، انتقال تنظیمات بین سایت تست و اصلی، و انتخاب حذف کامل یا سبک داده‌ها هنگام حذف افزونه.","inLanguage":"fa-IR","isPartOf":{"@id":"https://tomanify.github.io/docs/backup/#webpage"},"mainEntityOfPage":{"@id":"https://tomanify.github.io/docs/backup/#webpage"},"image":{"@id":"https://tomanify.github.io/docs/backup/#primaryimage"},"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"},"datePublished":"2026-03-09","dateModified":"2026-03-09"},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/backup/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"Export دقیقاً چه کمکی می‌کند؟","acceptedAnswer":{"@type":"Answer","text":"برای زمانی که می‌خواهید تنظیمات و محصولات foreign را از سایت تست به سایت اصلی یا برعکس منتقل کنید و دوباره همه چیز را دستی نسازید."}},{"@type":"Question","name":"آیا بعد از Import باید چیزی را دوباره چک کنم؟","acceptedAnswer":{"@type":"Answer","text":"بله، بهتر است منابع نرخ، نرخ‌های ذخیره‌شده و چند محصول نمونه را بعد از import بررسی کنید."}},{"@type":"Question","name":"اگر نام یا SKU محصول‌ها فرق کند چه می‌شود؟","acceptedAnswer":{"@type":"Answer","text":"تطبیق محصولات در import باید با دقت انجام شود؛ بنابراین قبل از انتقال گسترده، روی چند محصول نمونه تست بگیرید."}},{"@type":"Question","name":"بکاپ جایگزین منبع نرخ زنده است؟","acceptedAnswer":{"@type":"Answer","text":"خیر. بکاپ برای انتقال تنظیمات و متادیتاست؛ منبع نرخ زنده و اعتبار آن باید جداگانه درست تنظیم شود."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a class="active" href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / بکاپ</div>
 <section class="card"><div class="inner">
   <h1>بکاپ و انتقال تنظیمات Tomanify</h1>
@@ -84,3 +95,8 @@ faq_items:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

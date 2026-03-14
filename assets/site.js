@@ -70,6 +70,7 @@
     if(img.closest('.brand')) return false;
     if(img.closest('header')) return false;
     if(img.closest('footer')) return false;
+    if(img.closest('.video-poster')) return false;
     if(img.classList.contains('no-lightbox')) return false;
     if(img.hasAttribute('data-no-lightbox')) return false;
     // Avoid tiny icons

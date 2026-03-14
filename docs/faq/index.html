@@ -1,39 +1,46 @@
----
-layout: default
-page_key: faq
-nav_parent: faq
-page_url: /docs/faq/
-title: سوالات پرتکرار تومنی‌فای | پاسخ‌های کوتاه و کاربردی
-description: پاسخ به سوالات پرتکرار Tomanify درباره API، نرخ بازار آزاد، محدودیت اینترنت، داده‌های ذخیره‌شده، امنیت و نحوه کار افزونه.
-keywords: FAQ تومنیفای, سوالات پرتکرار Tomanify, آیا API پولی لازم است, نرخ بازار آزاد یا رسمی, اطلاعات مشتری در Tomanify, اینترنت محدود و تومنیفای, پرسش های رایج افزونه نرخ ارز ووکامرس
-robots: index, follow
-og_type: article
-schema_type: FAQPage
-schema_image: /assets/og.webp
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: FAQ
-  path: /docs/faq/
-faq_items:
-- q: آیا Tomanify به‌صورت پیش‌فرض URL منبع نرخ را پر می‌کند؟
-  a: خیر. فیلدهای URL به‌صورت پیش‌فرض خالی هستند و فقط پس از ورود آدرس توسط مدیر، درخواست خارجی انجام می‌شود.
-- q: آیا برای استفاده از Tomanify حتماً باید API بخریم؟
-  a: برای اکثر فروشگاه‌ها خیر. می‌توانید با JSON رایگان بازار آزاد شروع کنید و در صورت نیاز، Margin و منابع پشتیبان را تنظیم کنید.
-- q: آیا افزونه نرخ بازار آزاد را می‌فهمد یا فقط نرخ رسمی؟
-  a: تمرکز اصلی روی نرخ بازار آزاد است، اما در صورت نیاز می‌تواند از فیدهای رسمی بانک مرکزی هم استفاده کند و با Premium آن‌ها را به نرخ آزاد نزدیک‌تر کند.
-- q: اگر اینترنت محدود یا قطع شود چه می‌شود؟
-  a: می‌توانید فیدهای بانک مرکزی، Offline Mode و نرخ دستی را به‌عنوان پشتیبان تنظیم کنید تا فروشگاه فقط به یک منبع وابسته نماند.
-- q: چرا مرتب‌سازی قیمت در فروشگاه درست می‌ماند؟
-  a: چون افزونه قیمت نهایی ووکامرس را بازنویسی می‌کند و صرفاً یک نرخ نمایشی روی فرانت‌اند نشان نمی‌دهد.
-- q: آیا داده‌های مشتری یا سفارش به بیرون فرستاده می‌شود؟
-  a: خیر. درخواست‌های خارجی فقط برای گرفتن نرخ از URLهایی است که مدیر وارد می‌کند و اطلاعات شخصی مشتری ارسال نمی‌شود.
-- q: اگر فروشگاه من خیلی حساس است بهترین کار چیست؟
-  a: یا Margin محافظه‌کارانه بگذارید، یا از API اختصاصی‌تر استفاده کنید. منبع رایگان برای اکثر فروشگاه‌ها خوب است ولی نه لزوماً برای سناریوهای بسیار حساس.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/og.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/og.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>سوالات پرتکرار تومنی‌فای | پاسخ‌های کوتاه و کاربردی</title>
+<meta name="description" content="پاسخ به سوالات پرتکرار Tomanify درباره API، نرخ بازار آزاد، محدودیت اینترنت، داده‌های ذخیره‌شده، امنیت و نحوه کار افزونه.">
+<meta name="keywords" content="FAQ تومنیفای, سوالات پرتکرار Tomanify, آیا API پولی لازم است, نرخ بازار آزاد یا رسمی, اطلاعات مشتری در Tomanify, اینترنت محدود و تومنیفای, پرسش های رایج افزونه نرخ ارز ووکامرس">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/faq/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="سوالات پرتکرار تومنی‌فای | پاسخ‌های کوتاه و کاربردی">
+<meta property="og:description" content="پاسخ به سوالات پرتکرار Tomanify درباره API، نرخ بازار آزاد، محدودیت اینترنت، داده‌های ذخیره‌شده، امنیت و نحوه کار افزونه.">
+<meta property="og:url" content="https://tomanify.github.io/docs/faq/">
+<meta name="twitter:title" content="سوالات پرتکرار تومنی‌فای | پاسخ‌های کوتاه و کاربردی">
+<meta name="twitter:description" content="پاسخ به سوالات پرتکرار Tomanify درباره API، نرخ بازار آزاد، محدودیت اینترنت، داده‌های ذخیره‌شده، امنیت و نحوه کار افزونه.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/faq/#primaryimage","url":"https://tomanify.github.io/assets/og.webp","width":1200,"height":630},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/faq/#webpage","url":"https://tomanify.github.io/docs/faq/","name":"سوالات پرتکرار تومنی‌فای | پاسخ‌های کوتاه و کاربردی","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/faq/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"پاسخ به سوالات پرتکرار Tomanify درباره API، نرخ بازار آزاد، محدودیت اینترنت، داده‌های ذخیره‌شده، امنیت و نحوه کار افزونه.","breadcrumb":{"@id":"https://tomanify.github.io/docs/faq/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/faq/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"FAQ","item":"https://tomanify.github.io/docs/faq/"}]},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/faq/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"آیا Tomanify به‌صورت پیش‌فرض URL منبع نرخ را پر می‌کند؟","acceptedAnswer":{"@type":"Answer","text":"خیر. فیلدهای URL به‌صورت پیش‌فرض خالی هستند و فقط پس از ورود آدرس توسط مدیر، درخواست خارجی انجام می‌شود."}},{"@type":"Question","name":"آیا برای استفاده از Tomanify حتماً باید API بخریم؟","acceptedAnswer":{"@type":"Answer","text":"برای اکثر فروشگاه‌ها خیر. می‌توانید با JSON رایگان بازار آزاد شروع کنید و در صورت نیاز، Margin و منابع پشتیبان را تنظیم کنید."}},{"@type":"Question","name":"آیا افزونه نرخ بازار آزاد را می‌فهمد یا فقط نرخ رسمی؟","acceptedAnswer":{"@type":"Answer","text":"تمرکز اصلی روی نرخ بازار آزاد است، اما در صورت نیاز می‌تواند از فیدهای رسمی بانک مرکزی هم استفاده کند و با Premium آن‌ها را به نرخ آزاد نزدیک‌تر کند."}},{"@type":"Question","name":"اگر اینترنت محدود یا قطع شود چه می‌شود؟","acceptedAnswer":{"@type":"Answer","text":"می‌توانید فیدهای بانک مرکزی، Offline Mode و نرخ دستی را به‌عنوان پشتیبان تنظیم کنید تا فروشگاه فقط به یک منبع وابسته نماند."}},{"@type":"Question","name":"چرا مرتب‌سازی قیمت در فروشگاه درست می‌ماند؟","acceptedAnswer":{"@type":"Answer","text":"چون افزونه قیمت نهایی ووکامرس را بازنویسی می‌کند و صرفاً یک نرخ نمایشی روی فرانت‌اند نشان نمی‌دهد."}},{"@type":"Question","name":"آیا داده‌های مشتری یا سفارش به بیرون فرستاده می‌شود؟","acceptedAnswer":{"@type":"Answer","text":"خیر. درخواست‌های خارجی فقط برای گرفتن نرخ از URLهایی است که مدیر وارد می‌کند و اطلاعات شخصی مشتری ارسال نمی‌شود."}},{"@type":"Question","name":"اگر فروشگاه من خیلی حساس است بهترین کار چیست؟","acceptedAnswer":{"@type":"Answer","text":"یا Margin محافظه‌کارانه بگذارید، یا از API اختصاصی‌تر استفاده کنید. منبع رایگان برای اکثر فروشگاه‌ها خوب است ولی نه لزوماً برای سناریوهای بسیار حساس."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a class="active" href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / FAQ</div>
 <section class="card"><div class="inner">
   <h1>سوالات پرتکرار درباره Tomanify</h1>
@@ -66,3 +73,8 @@ faq_items:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

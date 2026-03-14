@@ -1,48 +1,46 @@
----
-layout: default
-page_key: quick-start
-nav_parent: docs
-page_url: /docs/quick-start/
-title: شروع سریع تومنی‌فای | راه‌اندازی افزونه در چند دقیقه
-description: راهنمای کوتاه Tomanify برای شروع سریع: ورود JSON بازار آزاد، بروزرسانی نرخ‌ها، ساخت اولین محصول خارجی و استفاده اختیاری از شورتکد نرخ‌ها.
-keywords: شروع سریع تومنیفای, Quick start Tomanify, راه اندازی 5 دقیقه ای Tomanify, JSON بازار آزاد, Update Rates تومنیفای, محصول foreign ووکامرس, Margin در Tomanify, shortcode نرخ ارز
-robots: index, follow
-og_type: article
-schema_type: HowTo
-schema_name: شروع سریع Tomanify در ۵ دقیقه
-schema_image: /assets/img/tomanify-dashboard-manual-update-cron.webp
-schema_image_width: 706
-schema_image_height: 376
-software_app: true
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: شروع سریع
-  path: /docs/quick-start/
-faq_items:
-- q: برای سریع‌ترین تست کدام روش را انتخاب کنم؟
-  a: JSON بازار آزاد سریع‌ترین و ساده‌ترین نقطه شروع است. بعد از وارد کردن URL، فقط کافی است Update Rates بزنید و یک محصول foreign را تست کنید.
-- q: اگر قیمت کالاهایم خیلی حساس است چه کنم؟
-  a: در شروع سریع هم بهتر است Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ بگذارید تا اگر منبع رایگان کمی با تأخیر بروزرسانی شد، حاشیهٔ امن داشته باشید.
-- q: آیا برای شروع حتماً باید همهٔ فیدهای بانک مرکزی را هم وارد کنم؟
-  a: خیر، ولی برای پایداری بهتر توصیه می‌شود بعد از تست اولیه، فیدهای پشتیبان را هم اضافه کنید.
-- q: شورتکد از همان اول لازم است؟
-  a: نه. شورتکد فقط برای نمایش نرخ‌ها به کاربر است و بر محاسبهٔ قیمت محصولات اثری ندارد.
-- q: بعد از شروع سریع، کدام صفحه را بخوانم؟
-  a: معمولاً منابع نرخ و محصولات خارجی مهم‌ترین قدم‌های بعدی هستند؛ اگر فروشگاه شما حساس‌تر است، صفحه پیشرفته را هم بخوانید.
-howto_steps:
-- name: JSON URL را در Sources قرار دهید
-  text: لینک HTTPS منبع نرخ بازار آزاد را در فیلد JSON وارد کنید.
-- name: نرخ‌ها را بروزرسانی کنید
-  text: در داشبورد روی Update Rates بزنید تا نرخ‌ها و زمان آخرین بروزرسانی ذخیره شوند.
-- name: یک محصول را foreign کنید
-  text: در متاباکس محصول، foreign را فعال کنید و ارز، قیمت خرید و Margin را وارد کنید.
-- name: در صورت نیاز شورتکد را نمایش دهید
-  text: برای نمایش نرخ‌ها در فرانت‌اند از [tomanify_rates] استفاده کنید.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp">
+<meta property="og:image:width" content="706">
+<meta property="og:image:height" content="376">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>شروع سریع تومنی‌فای | راه‌اندازی افزونه در چند دقیقه</title>
+<meta name="description" content="راهنمای کوتاه Tomanify برای شروع سریع: ورود JSON بازار آزاد، بروزرسانی نرخ‌ها، ساخت اولین محصول خارجی و استفاده اختیاری از شورتکد نرخ‌ها.">
+<meta name="keywords" content="شروع سریع تومنیفای, Quick start Tomanify, راه اندازی 5 دقیقه ای Tomanify, JSON بازار آزاد, Update Rates تومنیفای, محصول foreign ووکامرس, Margin در Tomanify, shortcode نرخ ارز">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/quick-start/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="شروع سریع تومنی‌فای | راه‌اندازی افزونه در چند دقیقه">
+<meta property="og:description" content="راهنمای کوتاه Tomanify برای شروع سریع: ورود JSON بازار آزاد، بروزرسانی نرخ‌ها، ساخت اولین محصول خارجی و استفاده اختیاری از شورتکد نرخ‌ها.">
+<meta property="og:url" content="https://tomanify.github.io/docs/quick-start/">
+<meta name="twitter:title" content="شروع سریع تومنی‌فای | راه‌اندازی افزونه در چند دقیقه">
+<meta name="twitter:description" content="راهنمای کوتاه Tomanify برای شروع سریع: ورود JSON بازار آزاد، بروزرسانی نرخ‌ها، ساخت اولین محصول خارجی و استفاده اختیاری از شورتکد نرخ‌ها.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/quick-start/#primaryimage","url":"https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp","width":706,"height":376},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/quick-start/#webpage","url":"https://tomanify.github.io/docs/quick-start/","name":"شروع سریع تومنی‌فای | راه‌اندازی افزونه در چند دقیقه","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/quick-start/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"راهنمای کوتاه Tomanify برای شروع سریع: ورود JSON بازار آزاد، بروزرسانی نرخ‌ها، ساخت اولین محصول خارجی و استفاده اختیاری از شورتکد نرخ‌ها.","breadcrumb":{"@id":"https://tomanify.github.io/docs/quick-start/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/quick-start/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"شروع سریع","item":"https://tomanify.github.io/docs/quick-start/"}]},{"@type":"SoftwareApplication","@id":"https://tomanify.github.io/#software","name":"Tomanify","applicationCategory":"BusinessApplication","applicationSubCategory":"WooCommerce currency conversion plugin","operatingSystem":"WordPress / WooCommerce","softwareVersion":"current public release","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"HowTo","@id":"https://tomanify.github.io/docs/quick-start/#howto","name":"شروع سریع Tomanify در ۵ دقیقه","description":"راهنمای کوتاه Tomanify برای شروع سریع: ورود JSON بازار آزاد، بروزرسانی نرخ‌ها، ساخت اولین محصول خارجی و استفاده اختیاری از شورتکد نرخ‌ها.","inLanguage":"fa-IR","isPartOf":{"@id":"https://tomanify.github.io/docs/quick-start/#webpage"},"mainEntityOfPage":{"@id":"https://tomanify.github.io/docs/quick-start/#webpage"},"step":[{"@type":"HowToStep","position":1,"name":"JSON URL را در Sources قرار دهید","text":"لینک HTTPS منبع نرخ بازار آزاد را در فیلد JSON وارد کنید."},{"@type":"HowToStep","position":2,"name":"نرخ‌ها را بروزرسانی کنید","text":"در داشبورد روی Update Rates بزنید تا نرخ‌ها و زمان آخرین بروزرسانی ذخیره شوند."},{"@type":"HowToStep","position":3,"name":"یک محصول را foreign کنید","text":"در متاباکس محصول، foreign را فعال کنید و ارز، قیمت خرید و Margin را وارد کنید."},{"@type":"HowToStep","position":4,"name":"در صورت نیاز شورتکد را نمایش دهید","text":"برای نمایش نرخ‌ها در فرانت‌اند از [tomanify_rates] استفاده کنید."}]},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/quick-start/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"برای سریع‌ترین تست کدام روش را انتخاب کنم؟","acceptedAnswer":{"@type":"Answer","text":"JSON بازار آزاد سریع‌ترین و ساده‌ترین نقطه شروع است. بعد از وارد کردن URL، فقط کافی است Update Rates بزنید و یک محصول foreign را تست کنید."}},{"@type":"Question","name":"اگر قیمت کالاهایم خیلی حساس است چه کنم؟","acceptedAnswer":{"@type":"Answer","text":"در شروع سریع هم بهتر است Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ بگذارید تا اگر منبع رایگان کمی با تأخیر بروزرسانی شد، حاشیهٔ امن داشته باشید."}},{"@type":"Question","name":"آیا برای شروع حتماً باید همهٔ فیدهای بانک مرکزی را هم وارد کنم؟","acceptedAnswer":{"@type":"Answer","text":"خیر، ولی برای پایداری بهتر توصیه می‌شود بعد از تست اولیه، فیدهای پشتیبان را هم اضافه کنید."}},{"@type":"Question","name":"شورتکد از همان اول لازم است؟","acceptedAnswer":{"@type":"Answer","text":"نه. شورتکد فقط برای نمایش نرخ‌ها به کاربر است و بر محاسبهٔ قیمت محصولات اثری ندارد."}},{"@type":"Question","name":"بعد از شروع سریع، کدام صفحه را بخوانم؟","acceptedAnswer":{"@type":"Answer","text":"معمولاً منابع نرخ و محصولات خارجی مهم‌ترین قدم‌های بعدی هستند؛ اگر فروشگاه شما حساس‌تر است، صفحه پیشرفته را هم بخوانید."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a class="active" href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / شروع سریع</div>
 <section class="card"><div class="inner">
   <h1>شروع سریع Tomanify در ۵ دقیقه</h1>
@@ -72,6 +70,10 @@ howto_steps:
 <img alt="داشبورد تومنی فای برای اجرای بروزرسانی نرخ ها" decoding="async" loading="lazy" src="/assets/img/tomanify-dashboard-manual-update-cron.webp" width="706" height="376"/>
 <figcaption>داشبورد افزونه و محل اجرای بروزرسانی نرخ‌ها</figcaption>
 </figure>
+    <ol class="figure-points">
+      <li><strong>شماره ۱:</strong> بعد از وارد کردن JSON یا منبع نرخ، این دکمه را بزنید تا اولین بروزرسانی انجام شود.</li>
+      <li><strong>شماره ۲:</strong> اگر خواستید بعد از تست اولیه کار به‌صورت خودکار ادامه پیدا کند، بازه زمانی اجرای کرون را همین‌جا تنظیم کنید.</li>
+    </ol>
   </div></div>
 </section>
 
@@ -118,3 +120,8 @@ howto_steps:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

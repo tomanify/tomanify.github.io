@@ -220,3 +220,8 @@ h1,h2,h3,.brand span,.nav a{font-family:"YekanLocal","Vazirmatn",Tahoma,sans-ser
 .comparison-table th,.comparison-table td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:right;vertical-align:top}
 .comparison-table th{background:rgba(15,23,42,.04);font-weight:900}
 .faq-item-simple{padding:12px 14px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.72);margin:.75rem 0 0}
+
+
+.figure-points{margin:12px 0 0;padding-inline-start:1.2rem;color:var(--text)}
+.figure-points li{margin:.45rem 0}
+.figure-points strong{color:#0b2d1f}

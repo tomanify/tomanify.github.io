@@ -1,39 +1,46 @@
----
-layout: default
-page_key: advanced
-nav_parent: advanced
-page_url: /docs/advanced/
-title: تنظیمات پیشرفته تومنی‌فای | Threshold، Premium و Offline Mode
-description: راهنمای تنظیمات پیشرفته Tomanify: Threshold، Premium، Offline Mode، تفاوت Margin و Premium، گرد کردن قیمت و منطق پایه تومان.
-keywords: تنظیمات پیشرفته تومنیفای, Threshold تومنیفای, Premium تومنیفای, Offline Mode تومنیفای, Margin vs Premium, پایه تومان, گرد کردن قیمت تومنیفای, حساسیت تغییر نرخ ارز, تبدیل نرخ رسمی به آزاد
-robots: index, follow
-og_type: article
-schema_type: Article
-schema_image: /assets/img/tomanify-advanced-threshold-premium.webp
-schema_image_width: 1200
-schema_image_height: 800
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: پیشرفته
-  path: /docs/advanced/
-faq_items:
-- q: Threshold را روی چه عددی بگذارم؟
-  a: اگر می‌خواهید تغییرهای کوچک نادیده گرفته شوند، Threshold را کمی بالاتر بگذارید. اگر فروشگاه شما حساس‌تر است، مقدار آن را پایین‌تر بیاورید.
-- q: Premium با Margin چه فرقی دارد؟
-  a: Premium روی تبدیل نرخ رسمی به نرخ آزاد اثر می‌گذارد؛ Margin روی قیمت‌گذاری خودِ محصول.
-- q: Offline Mode برای چه زمانی است؟
-  a: برای زمانی که به هیچ منبع زنده‌ای دسترسی ندارید و می‌خواهید افزونه بر اساس مدل مرجع و پیش‌بینی موقتاً کار را ادامه دهد.
-- q: گرد کردن قیمت چه فایده‌ای دارد؟
-  a: باعث می‌شود قیمت‌ها خواناتر و فروشگاهی‌تر شوند و شما به اعداد ریز و نامعمول نرسید.
-- q: اگر Premium را بد تنظیم کنم چه اتفاقی می‌افتد؟
-  a: وقتی از فید رسمی استفاده می‌کنید، نرخ آزاد تخمینی از واقعیت دورتر می‌شود. پس این گزینه مخصوص کسی است که تفاوت نرخ رسمی و بازار آزاد را می‌فهمد یا از مقادیر پیشنهادی شروع می‌کند.
-- q: آیا برای استفاده از منبع رایگان هم باید وارد این صفحه شوم؟
-  a: برای شروع نه؛ اما اگر می‌خواهید رفتار حرفه‌ای‌تری از نظر حساسیت تغییر نرخ، پشتیبان‌ها و پوشش ریسک داشته باشید، این صفحه مهم می‌شود.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/img/tomanify-advanced-threshold-premium.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/img/tomanify-advanced-threshold-premium.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>تنظیمات پیشرفته تومنی‌فای | Threshold، Premium و Offline Mode</title>
+<meta name="description" content="راهنمای تنظیمات پیشرفته Tomanify: Threshold، Premium، Offline Mode، تفاوت Margin و Premium، گرد کردن قیمت و منطق پایه تومان.">
+<meta name="keywords" content="تنظیمات پیشرفته تومنیفای, Threshold تومنیفای, Premium تومنیفای, Offline Mode تومنیفای, Margin vs Premium, پایه تومان, گرد کردن قیمت تومنیفای, حساسیت تغییر نرخ ارز, تبدیل نرخ رسمی به آزاد">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/advanced/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="تنظیمات پیشرفته تومنی‌فای | Threshold، Premium و Offline Mode">
+<meta property="og:description" content="راهنمای تنظیمات پیشرفته Tomanify: Threshold، Premium، Offline Mode، تفاوت Margin و Premium، گرد کردن قیمت و منطق پایه تومان.">
+<meta property="og:url" content="https://tomanify.github.io/docs/advanced/">
+<meta name="twitter:title" content="تنظیمات پیشرفته تومنی‌فای | Threshold، Premium و Offline Mode">
+<meta name="twitter:description" content="راهنمای تنظیمات پیشرفته Tomanify: Threshold، Premium، Offline Mode، تفاوت Margin و Premium، گرد کردن قیمت و منطق پایه تومان.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/advanced/#primaryimage","url":"https://tomanify.github.io/assets/img/tomanify-advanced-threshold-premium.webp","width":1200,"height":800},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/advanced/#webpage","url":"https://tomanify.github.io/docs/advanced/","name":"تنظیمات پیشرفته تومنی‌فای | Threshold، Premium و Offline Mode","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/advanced/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"راهنمای تنظیمات پیشرفته Tomanify: Threshold، Premium، Offline Mode، تفاوت Margin و Premium، گرد کردن قیمت و منطق پایه تومان.","breadcrumb":{"@id":"https://tomanify.github.io/docs/advanced/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/advanced/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"پیشرفته","item":"https://tomanify.github.io/docs/advanced/"}]},{"@type":"Article","@id":"https://tomanify.github.io/docs/advanced/#article","headline":"تنظیمات پیشرفته تومنی‌فای | Threshold، Premium و Offline Mode","description":"راهنمای تنظیمات پیشرفته Tomanify: Threshold، Premium، Offline Mode، تفاوت Margin و Premium، گرد کردن قیمت و منطق پایه تومان.","inLanguage":"fa-IR","isPartOf":{"@id":"https://tomanify.github.io/docs/advanced/#webpage"},"mainEntityOfPage":{"@id":"https://tomanify.github.io/docs/advanced/#webpage"},"image":{"@id":"https://tomanify.github.io/docs/advanced/#primaryimage"},"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"},"datePublished":"2026-03-09","dateModified":"2026-03-09"},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/advanced/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"Threshold را روی چه عددی بگذارم؟","acceptedAnswer":{"@type":"Answer","text":"اگر می‌خواهید تغییرهای کوچک نادیده گرفته شوند، Threshold را کمی بالاتر بگذارید. اگر فروشگاه شما حساس‌تر است، مقدار آن را پایین‌تر بیاورید."}},{"@type":"Question","name":"Premium با Margin چه فرقی دارد؟","acceptedAnswer":{"@type":"Answer","text":"Premium روی تبدیل نرخ رسمی به نرخ آزاد اثر می‌گذارد؛ Margin روی قیمت‌گذاری خودِ محصول."}},{"@type":"Question","name":"Offline Mode برای چه زمانی است؟","acceptedAnswer":{"@type":"Answer","text":"برای زمانی که به هیچ منبع زنده‌ای دسترسی ندارید و می‌خواهید افزونه بر اساس مدل مرجع و پیش‌بینی موقتاً کار را ادامه دهد."}},{"@type":"Question","name":"گرد کردن قیمت چه فایده‌ای دارد؟","acceptedAnswer":{"@type":"Answer","text":"باعث می‌شود قیمت‌ها خواناتر و فروشگاهی‌تر شوند و شما به اعداد ریز و نامعمول نرسید."}},{"@type":"Question","name":"اگر Premium را بد تنظیم کنم چه اتفاقی می‌افتد؟","acceptedAnswer":{"@type":"Answer","text":"وقتی از فید رسمی استفاده می‌کنید، نرخ آزاد تخمینی از واقعیت دورتر می‌شود. پس این گزینه مخصوص کسی است که تفاوت نرخ رسمی و بازار آزاد را می‌فهمد یا از مقادیر پیشنهادی شروع می‌کند."}},{"@type":"Question","name":"آیا برای استفاده از منبع رایگان هم باید وارد این صفحه شوم؟","acceptedAnswer":{"@type":"Answer","text":"برای شروع نه؛ اما اگر می‌خواهید رفتار حرفه‌ای‌تری از نظر حساسیت تغییر نرخ، پشتیبان‌ها و پوشش ریسک داشته باشید، این صفحه مهم می‌شود."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a class="active" href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / پیشرفته</div>
 <section class="card"><div class="inner">
   <h1>تنظیمات پیشرفته Tomanify</h1>
@@ -119,3 +126,8 @@ faq_items:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

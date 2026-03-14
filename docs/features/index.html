@@ -1,37 +1,46 @@
----
-layout: default
-page_key: features
-nav_parent: docs
-page_url: /docs/features/
-title: امکانات تومنی‌فای | همه قابلیت‌های مهم افزونه در یک صفحه
-description: معرفی کامل قابلیت‌های Tomanify: بروزرسانی دستی نرخ‌ها، کرون زمان‌بندی، زبان مستقل افزونه، پاکسازی کش، Factory Reset، حذف سبک یا کامل داده‌ها، شورتکد و بکاپ.
-keywords: امکانات تومنیفای, قابلیت های تومنی فای, ویژگی های Tomanify, بروزرسانی دستی نرخ, cron scheduling تومنیفای, plugin language تومنیفای, factory reset تومنیفای, cache purge تومنیفای, uninstall data removal تومنیفای, محصولات foreign ووکامرس
-robots: index, follow
-og_type: article
-schema_type: Article
-schema_image: /assets/img/tomanify-dashboard-manual-update-cron.webp
-schema_image_width: 706
-schema_image_height: 376
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: امکانات کامل
-  path: /docs/features/
-faq_items:
-- q: این صفحه برای چه کسی مهم‌تر است؟
-  a: برای کسی که می‌خواهد بداند افزونه فقط یک تبدیل ساده نرخ نیست و عملاً چه ابزارهایی برای مدیریت فروشگاه در اختیارش می‌گذارد.
-- q: آیا همه امکانات از همان اول لازم‌اند؟
-  a: نه. خیلی از فروشگاه‌ها با JSON بازار آزاد، چند محصول foreign و یک Margin معقول شروع می‌کنند و بعداً سراغ امکانات پیشرفته‌تر می‌روند.
-- q: زبان افزونه از زبان وردپرس جداست؟
-  a: بله. از طریق Plugin Language در تب General می‌توانید زبان خود افزونه را مستقل از زبان کلی سایت تغییر دهید.
-- q: پاکسازی کش داخلی چه زمانی به درد می‌خورد؟
-  a: وقتی بعد از تغییر نرخ یا قیمت می‌خواهید نسخه تازه صفحات سریع‌تر دیده شود، مخصوصاً در سایت‌هایی که کش داخلی یا CDN دارند.
-- q: حذف سبک و حذف کامل دقیقاً چه فرقی دارند؟
-  a: در حذف کامل، داده‌های افزونه و متای محصولات foreign هم پاک می‌شوند. در حذف سبک، می‌توانید داده‌های مربوط به محصولات را برای استفاده‌های بعدی نگه دارید.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp">
+<meta property="og:image:width" content="706">
+<meta property="og:image:height" content="376">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>امکانات تومنی‌فای | همه قابلیت‌های مهم افزونه در یک صفحه</title>
+<meta name="description" content="معرفی کامل قابلیت‌های Tomanify: بروزرسانی دستی نرخ‌ها، کرون زمان‌بندی، زبان مستقل افزونه، پاکسازی کش، Factory Reset، حذف سبک یا کامل داده‌ها، شورتکد و بکاپ.">
+<meta name="keywords" content="امکانات تومنیفای, قابلیت های تومنی فای, ویژگی های Tomanify, بروزرسانی دستی نرخ, cron scheduling تومنیفای, plugin language تومنیفای, factory reset تومنیفای, cache purge تومنیفای, uninstall data removal تومنیفای, محصولات foreign ووکامرس">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/features/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="امکانات تومنی‌فای | همه قابلیت‌های مهم افزونه در یک صفحه">
+<meta property="og:description" content="معرفی کامل قابلیت‌های Tomanify: بروزرسانی دستی نرخ‌ها، کرون زمان‌بندی، زبان مستقل افزونه، پاکسازی کش، Factory Reset، حذف سبک یا کامل داده‌ها، شورتکد و بکاپ.">
+<meta property="og:url" content="https://tomanify.github.io/docs/features/">
+<meta name="twitter:title" content="امکانات تومنی‌فای | همه قابلیت‌های مهم افزونه در یک صفحه">
+<meta name="twitter:description" content="معرفی کامل قابلیت‌های Tomanify: بروزرسانی دستی نرخ‌ها، کرون زمان‌بندی، زبان مستقل افزونه، پاکسازی کش، Factory Reset، حذف سبک یا کامل داده‌ها، شورتکد و بکاپ.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/features/#primaryimage","url":"https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp","width":706,"height":376},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/features/#webpage","url":"https://tomanify.github.io/docs/features/","name":"امکانات تومنی‌فای | همه قابلیت‌های مهم افزونه در یک صفحه","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/features/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"معرفی کامل قابلیت‌های Tomanify: بروزرسانی دستی نرخ‌ها، کرون زمان‌بندی، زبان مستقل افزونه، پاکسازی کش، Factory Reset، حذف سبک یا کامل داده‌ها، شورتکد و بکاپ.","breadcrumb":{"@id":"https://tomanify.github.io/docs/features/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/features/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"امکانات کامل","item":"https://tomanify.github.io/docs/features/"}]},{"@type":"Article","@id":"https://tomanify.github.io/docs/features/#article","headline":"امکانات تومنی‌فای | همه قابلیت‌های مهم افزونه در یک صفحه","description":"معرفی کامل قابلیت‌های Tomanify: بروزرسانی دستی نرخ‌ها، کرون زمان‌بندی، زبان مستقل افزونه، پاکسازی کش، Factory Reset، حذف سبک یا کامل داده‌ها، شورتکد و بکاپ.","inLanguage":"fa-IR","isPartOf":{"@id":"https://tomanify.github.io/docs/features/#webpage"},"mainEntityOfPage":{"@id":"https://tomanify.github.io/docs/features/#webpage"},"image":{"@id":"https://tomanify.github.io/docs/features/#primaryimage"},"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"},"datePublished":"2026-03-09","dateModified":"2026-03-09"},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/features/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"این صفحه برای چه کسی مهم‌تر است؟","acceptedAnswer":{"@type":"Answer","text":"برای کسی که می‌خواهد بداند افزونه فقط یک تبدیل ساده نرخ نیست و عملاً چه ابزارهایی برای مدیریت فروشگاه در اختیارش می‌گذارد."}},{"@type":"Question","name":"آیا همه امکانات از همان اول لازم‌اند؟","acceptedAnswer":{"@type":"Answer","text":"نه. خیلی از فروشگاه‌ها با JSON بازار آزاد، چند محصول foreign و یک Margin معقول شروع می‌کنند و بعداً سراغ امکانات پیشرفته‌تر می‌روند."}},{"@type":"Question","name":"زبان افزونه از زبان وردپرس جداست؟","acceptedAnswer":{"@type":"Answer","text":"بله. از طریق Plugin Language در تب General می‌توانید زبان خود افزونه را مستقل از زبان کلی سایت تغییر دهید."}},{"@type":"Question","name":"پاکسازی کش داخلی چه زمانی به درد می‌خورد؟","acceptedAnswer":{"@type":"Answer","text":"وقتی بعد از تغییر نرخ یا قیمت می‌خواهید نسخه تازه صفحات سریع‌تر دیده شود، مخصوصاً در سایت‌هایی که کش داخلی یا CDN دارند."}},{"@type":"Question","name":"حذف سبک و حذف کامل دقیقاً چه فرقی دارند؟","acceptedAnswer":{"@type":"Answer","text":"در حذف کامل، داده‌های افزونه و متای محصولات foreign هم پاک می‌شوند. در حذف سبک، می‌توانید داده‌های مربوط به محصولات را برای استفاده‌های بعدی نگه دارید."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a class="active" href="/docs/">راهنما</a><a class="active" href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / امکانات کامل</div>
 <section class="card"><div class="inner">
   <h1>امکانات کامل Tomanify، به زبان صاحب فروشگاه</h1>
@@ -103,6 +112,10 @@ faq_items:
 <img alt="دکمه بروزرسانی نرخ ها و بازه زمانی کرون در تومنی فای" decoding="async" loading="lazy" src="/assets/img/tomanify-dashboard-manual-update-cron.webp" width="706" height="376"/>
 <figcaption>در داشبورد هم دکمه بروزرسانی دستی را می‌بینید، هم بازه زمانی اجرای خودکار را تنظیم می‌کنید.</figcaption>
 </figure>
+    <ol class="figure-points">
+      <li><strong>شماره ۱:</strong> دکمه <strong>Update Rates</strong> برای دریافت فوری نرخ‌های تازه از منبع فعال است.</li>
+      <li><strong>شماره ۲:</strong> در بخش زمان‌بندی مشخص می‌کنید این بروزرسانی به‌صورت خودکار هر چند وقت یک‌بار انجام شود.</li>
+    </ol>
   </div></div>
   <div class="card"><div class="inner">
     <h2>تصویر: زبان افزونه و سیستم پاکسازی کش</h2>
@@ -144,6 +157,11 @@ faq_items:
 <img alt="ورود JSON بازار آزاد و فیدهای بانک مرکزی در تومنی فای" decoding="async" loading="lazy" src="/assets/img/tomanify-sources-json-bank-manual.webp" width="560" height="640"/>
 <figcaption>در Sources می‌توانید JSON بازار آزاد، فیدهای بانک مرکزی و نرخ‌های دستی را کنار هم مدیریت کنید.</figcaption>
 </figure>
+    <ol class="figure-points">
+      <li><strong>شماره ۱:</strong> آدرس JSON بازار آزاد را اینجا وارد می‌کنید.</li>
+      <li><strong>شماره‌های ۲ تا ۶:</strong> این‌ها فیلدهای لینک رسمی بانک مرکزی برای ارزهای مختلف هستند.</li>
+      <li><strong>شماره ۷:</strong> برای حالت Manual، نرخ‌های دستی هر ارز را در این بخش می‌نویسید.</li>
+    </ol>
   </div></div>
 </section>
 
@@ -166,3 +184,8 @@ faq_items:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

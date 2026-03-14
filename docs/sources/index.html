@@ -1,40 +1,46 @@
----
-layout: default
-page_key: sources
-nav_parent: sources
-page_url: /docs/sources/
-title: منابع نرخ تومنی‌فای | JSON بازار آزاد و RSS/XML رسمی
-description: آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، RSS/XML رسمی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.
-keywords: منابع نرخ تومنیفای, JSON بازار آزاد, RSS بانک مرکزی, XML بانک مرکزی, Source Mode Tomanify, Premium تومنیفای, Threshold تومنیفای, Offline Mode تومنیفای, JSON سازگار با Tomanify, URL منبع نرخ ووکامرس, بانک مرکزی برای ووکامرس
-robots: index, follow
-og_type: article
-schema_type: Article
-schema_image: /assets/img/tomanify-sources-json-bank-manual.webp
-schema_image_width: 560
-schema_image_height: 640
-software_app: true
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: منابع نرخ
-  path: /docs/sources/
-faq_items:
-- q: بهترین Source Mode برای شروع کدام است؟
-  a: برای بیشتر فروشگاه‌ها، JSON بازار آزاد بهترین نقطه شروع است. بعد از آن فیدهای بانک مرکزی را به‌عنوان لایهٔ پشتیبان اضافه کنید.
-- q: Premium دقیقاً چه مشکلی را حل می‌کند؟
-  a: Premium کمک می‌کند نرخ رسمی بانک مرکزی به نرخ آزاد نزدیک شود. یعنی وقتی از RSS/XML رسمی استفاده می‌کنید، تبدیل صرفاً با همان رقم رسمی باقی نمی‌ماند.
-- q: اگر JSON من کار نکرد اول کجا را چک کنم؟
-  a: HTTPS بودن URL، ساختار JSON، عددی بودن مقادیر، و این‌که آیا واقعاً همه ارزها به تومان برمی‌گردند یا نه.
-- q: آیا می‌توانم فقط بعضی ارزها را از بانک مرکزی بگیرم؟
-  a: بله. هر فید برای هر ارز جداگانه وارد می‌شود و می‌توانید ترکیب منبع‌ها را مطابق نیازتان بچینید.
-- q: Offline Mode چه زمانی مفید است؟
-  a: وقتی هیچ منبع بیرونی در دسترس نیست و می‌خواهید افزونه با مدل مرجع/پیش‌بینی، کار را به‌طور موقت ادامه دهد.
-- q: Threshold چرا گاهی باعث می‌شود قیمت‌ها آپدیت نشوند؟
-  a: چون تغییرهای خیلی کوچک را برای جلوگیری از نویز نادیده می‌گیرد. اگر می‌خواهید حساس‌تر باشید، مقدار آن را کمتر کنید.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/img/tomanify-sources-json-bank-manual.webp">
+<meta property="og:image:width" content="560">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/img/tomanify-sources-json-bank-manual.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>منابع نرخ تومنی‌فای | JSON بازار آزاد و RSS/XML رسمی</title>
+<meta name="description" content="آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، RSS/XML رسمی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.">
+<meta name="keywords" content="منابع نرخ تومنیفای, JSON بازار آزاد, RSS بانک مرکزی, XML بانک مرکزی, Source Mode Tomanify, Premium تومنیفای, Threshold تومنیفای, Offline Mode تومنیفای, JSON سازگار با Tomanify, URL منبع نرخ ووکامرس, بانک مرکزی برای ووکامرس">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/sources/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="منابع نرخ تومنی‌فای | JSON بازار آزاد و RSS/XML رسمی">
+<meta property="og:description" content="آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، RSS/XML رسمی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.">
+<meta property="og:url" content="https://tomanify.github.io/docs/sources/">
+<meta name="twitter:title" content="منابع نرخ تومنی‌فای | JSON بازار آزاد و RSS/XML رسمی">
+<meta name="twitter:description" content="آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، RSS/XML رسمی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/sources/#primaryimage","url":"https://tomanify.github.io/assets/img/tomanify-sources-json-bank-manual.webp","width":560,"height":640},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/sources/#webpage","url":"https://tomanify.github.io/docs/sources/","name":"منابع نرخ تومنی‌فای | JSON بازار آزاد و RSS/XML رسمی","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/sources/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، RSS/XML رسمی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.","breadcrumb":{"@id":"https://tomanify.github.io/docs/sources/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/sources/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"منابع نرخ","item":"https://tomanify.github.io/docs/sources/"}]},{"@type":"SoftwareApplication","@id":"https://tomanify.github.io/#software","name":"Tomanify","applicationCategory":"BusinessApplication","applicationSubCategory":"WooCommerce currency conversion plugin","operatingSystem":"WordPress / WooCommerce","softwareVersion":"current public release","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Article","@id":"https://tomanify.github.io/docs/sources/#article","headline":"منابع نرخ تومنی‌فای | JSON بازار آزاد و RSS/XML رسمی","description":"آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، RSS/XML رسمی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.","inLanguage":"fa-IR","isPartOf":{"@id":"https://tomanify.github.io/docs/sources/#webpage"},"mainEntityOfPage":{"@id":"https://tomanify.github.io/docs/sources/#webpage"},"image":{"@id":"https://tomanify.github.io/docs/sources/#primaryimage"},"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"},"datePublished":"2026-03-09","dateModified":"2026-03-09"},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/sources/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"بهترین Source Mode برای شروع کدام است؟","acceptedAnswer":{"@type":"Answer","text":"برای بیشتر فروشگاه‌ها، JSON بازار آزاد بهترین نقطه شروع است. بعد از آن فیدهای بانک مرکزی را به‌عنوان لایهٔ پشتیبان اضافه کنید."}},{"@type":"Question","name":"Premium دقیقاً چه مشکلی را حل می‌کند؟","acceptedAnswer":{"@type":"Answer","text":"Premium کمک می‌کند نرخ رسمی بانک مرکزی به نرخ آزاد نزدیک شود. یعنی وقتی از RSS/XML رسمی استفاده می‌کنید، تبدیل صرفاً با همان رقم رسمی باقی نمی‌ماند."}},{"@type":"Question","name":"اگر JSON من کار نکرد اول کجا را چک کنم؟","acceptedAnswer":{"@type":"Answer","text":"HTTPS بودن URL، ساختار JSON، عددی بودن مقادیر، و این‌که آیا واقعاً همه ارزها به تومان برمی‌گردند یا نه."}},{"@type":"Question","name":"آیا می‌توانم فقط بعضی ارزها را از بانک مرکزی بگیرم؟","acceptedAnswer":{"@type":"Answer","text":"بله. هر فید برای هر ارز جداگانه وارد می‌شود و می‌توانید ترکیب منبع‌ها را مطابق نیازتان بچینید."}},{"@type":"Question","name":"Offline Mode چه زمانی مفید است؟","acceptedAnswer":{"@type":"Answer","text":"وقتی هیچ منبع بیرونی در دسترس نیست و می‌خواهید افزونه با مدل مرجع/پیش‌بینی، کار را به‌طور موقت ادامه دهد."}},{"@type":"Question","name":"Threshold چرا گاهی باعث می‌شود قیمت‌ها آپدیت نشوند؟","acceptedAnswer":{"@type":"Answer","text":"چون تغییرهای خیلی کوچک را برای جلوگیری از نویز نادیده می‌گیرد. اگر می‌خواهید حساس‌تر باشید، مقدار آن را کمتر کنید."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a class="active" href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / منابع نرخ</div>
 <section class="card"><div class="inner">
   <h1>منابع نرخ در Tomanify</h1>
@@ -111,6 +117,11 @@ faq_items:
 <img alt="تنظیم JSON بازار آزاد و فیدهای بانک مرکزی در تومنی فای" decoding="async" loading="lazy" src="/assets/img/tomanify-sources-json-bank-manual.webp" width="560" height="640"/>
 <figcaption>در این نما، محل وارد کردن JSON بازار آزاد، لینک‌های بانک مرکزی و نرخ‌های دستی مشخص شده است.</figcaption>
 </figure>
+    <ol class="figure-points">
+      <li><strong>شماره ۱:</strong> این فیلد برای آدرس فایل JSON بازار آزاد است. باید یک لینک HTTPS وارد کنید که خروجی آن با ساختار سازگار افزونه و با مقادیر <strong>تومانی</strong> برگردد.</li>
+      <li><strong>شماره‌های ۲ تا ۶:</strong> این ردیف‌ها برای وارد کردن لینک RSS/XML رسمی هر ارز از بانک مرکزی هستند. هر ارز فیلد جداگانه دارد و لازم نیست همه را یک‌جا پر کنید.</li>
+      <li><strong>شماره ۷:</strong> این بخش مربوط به نرخ‌های دستی است. اگر Source Mode روی <strong>Manual</strong> باشد، نرخ هر ارز را در همین فیلدها وارد می‌کنید.</li>
+    </ol>
   </div></div>
   <div class="card"><div class="inner">
     <h2>تصویر: تنظیمات پیشرفته</h2>
@@ -151,3 +162,8 @@ faq_items:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

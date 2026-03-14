@@ -1,35 +1,46 @@
----
-layout: default
-page_key: shortcode
-nav_parent: shortcode
-page_url: /docs/shortcode/
-title: شورتکد تومنی‌فای | نمایش نرخ ارز با [tomanify_rates]
-description: آموزش استفاده از شورتکد [tomanify_rates] برای نمایش نرخ ارز، زمان آخرین بروزرسانی و ساخت صفحه‌های کاربرپسند مثل نرخ امروز دلار و یورو.
-keywords: شورتکد تومنیفای, [tomanify_rates], نمایش نرخ ارز در وردپرس, ویجت نرخ ارز ووکامرس, نرخ امروز دلار و یورو در وردپرس, shortcode exchange rate wordpress, Tomanify shortcode
-robots: index, follow
-og_type: article
-schema_type: Article
-schema_image: /assets/img/tomanify-shortcode-rates-widget.webp
-schema_image_width: 1024
-schema_image_height: 576
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: شورتکد
-  path: /docs/shortcode/
-faq_items:
-- q: شورتکد Tomanify چه چیزی را نمایش می‌دهد؟
-  a: نرخ ارزهای انتخاب‌شده، و در صورت فعال بودن، زمان آخرین بروزرسانی را در قالب یک ویجت نمایشی نشان می‌دهد.
-- q: استفاده از شورتکد روی محاسبه قیمت محصولات اثر دارد؟
-  a: خیر. شورتکد فقط برای نمایش نرخ‌ها به کاربر است و از منطق قیمت‌گذاری محصولات جداست.
-- q: آیا برای صفحه نرخ امروز دلار و یورو مناسب است؟
-  a: بله، اگر هدفتان یک صفحه کاربرپسند برای نمایش نرخ‌هاست، این شورتکد راه ساده‌ای برای ساخت آن است.
-- q: چرا روی بعضی صفحات ویجت نمایش داده نمی‌شود؟
-  a: باید مطمئن شوید شورتکد دقیقاً داخل محتوای صفحه قرار گرفته و نرخ‌ها هم قبلاً در افزونه ذخیره شده‌اند.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/img/tomanify-shortcode-rates-widget.webp">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="576">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/img/tomanify-shortcode-rates-widget.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>شورتکد تومنی‌فای | نمایش نرخ ارز با [tomanify_rates]</title>
+<meta name="description" content="آموزش استفاده از شورتکد [tomanify_rates] برای نمایش نرخ ارز، زمان آخرین بروزرسانی و ساخت صفحه‌های کاربرپسند مثل نرخ امروز دلار و یورو.">
+<meta name="keywords" content="شورتکد تومنیفای, [tomanify_rates], نمایش نرخ ارز در وردپرس, ویجت نرخ ارز ووکامرس, نرخ امروز دلار و یورو در وردپرس, shortcode exchange rate wordpress, Tomanify shortcode">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/shortcode/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="شورتکد تومنی‌فای | نمایش نرخ ارز با [tomanify_rates]">
+<meta property="og:description" content="آموزش استفاده از شورتکد [tomanify_rates] برای نمایش نرخ ارز، زمان آخرین بروزرسانی و ساخت صفحه‌های کاربرپسند مثل نرخ امروز دلار و یورو.">
+<meta property="og:url" content="https://tomanify.github.io/docs/shortcode/">
+<meta name="twitter:title" content="شورتکد تومنی‌فای | نمایش نرخ ارز با [tomanify_rates]">
+<meta name="twitter:description" content="آموزش استفاده از شورتکد [tomanify_rates] برای نمایش نرخ ارز، زمان آخرین بروزرسانی و ساخت صفحه‌های کاربرپسند مثل نرخ امروز دلار و یورو.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/shortcode/#primaryimage","url":"https://tomanify.github.io/assets/img/tomanify-shortcode-rates-widget.webp","width":1024,"height":576},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/shortcode/#webpage","url":"https://tomanify.github.io/docs/shortcode/","name":"شورتکد تومنی‌فای | نمایش نرخ ارز با [tomanify_rates]","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/shortcode/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"آموزش استفاده از شورتکد [tomanify_rates] برای نمایش نرخ ارز، زمان آخرین بروزرسانی و ساخت صفحه‌های کاربرپسند مثل نرخ امروز دلار و یورو.","breadcrumb":{"@id":"https://tomanify.github.io/docs/shortcode/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/shortcode/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"شورتکد","item":"https://tomanify.github.io/docs/shortcode/"}]},{"@type":"Article","@id":"https://tomanify.github.io/docs/shortcode/#article","headline":"شورتکد تومنی‌فای | نمایش نرخ ارز با [tomanify_rates]","description":"آموزش استفاده از شورتکد [tomanify_rates] برای نمایش نرخ ارز، زمان آخرین بروزرسانی و ساخت صفحه‌های کاربرپسند مثل نرخ امروز دلار و یورو.","inLanguage":"fa-IR","isPartOf":{"@id":"https://tomanify.github.io/docs/shortcode/#webpage"},"mainEntityOfPage":{"@id":"https://tomanify.github.io/docs/shortcode/#webpage"},"image":{"@id":"https://tomanify.github.io/docs/shortcode/#primaryimage"},"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"},"datePublished":"2026-03-09","dateModified":"2026-03-09"},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/shortcode/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"شورتکد Tomanify چه چیزی را نمایش می‌دهد؟","acceptedAnswer":{"@type":"Answer","text":"نرخ ارزهای انتخاب‌شده، و در صورت فعال بودن، زمان آخرین بروزرسانی را در قالب یک ویجت نمایشی نشان می‌دهد."}},{"@type":"Question","name":"استفاده از شورتکد روی محاسبه قیمت محصولات اثر دارد؟","acceptedAnswer":{"@type":"Answer","text":"خیر. شورتکد فقط برای نمایش نرخ‌ها به کاربر است و از منطق قیمت‌گذاری محصولات جداست."}},{"@type":"Question","name":"آیا برای صفحه نرخ امروز دلار و یورو مناسب است؟","acceptedAnswer":{"@type":"Answer","text":"بله، اگر هدفتان یک صفحه کاربرپسند برای نمایش نرخ‌هاست، این شورتکد راه ساده‌ای برای ساخت آن است."}},{"@type":"Question","name":"چرا روی بعضی صفحات ویجت نمایش داده نمی‌شود؟","acceptedAnswer":{"@type":"Answer","text":"باید مطمئن شوید شورتکد دقیقاً داخل محتوای صفحه قرار گرفته و نرخ‌ها هم قبلاً در افزونه ذخیره شده‌اند."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a class="active" href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / شورتکد</div>
 <section class="card"><div class="inner">
   <h1>شورتکد نمایش نرخ‌ها</h1>
@@ -83,3 +94,8 @@ faq_items:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

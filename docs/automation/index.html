@@ -1,35 +1,46 @@
----
-layout: default
-page_key: automation
-nav_parent: docs
-page_url: /docs/automation/
-title: بروزرسانی دستی نرخ‌ها و کرون تومنی‌فای | راهنمای Update Rates
-description: راهنمای کاربردی Update Rates و Cron Scheduling در Tomanify: چه زمانی بروزرسانی دستی بزنید، زمان‌بندی خودکار چه می‌کند و برای کاربر عادی کدام تنظیم مناسب‌تر است.
-keywords: بروزرسانی دستی نرخ ها, update rates تومنیفای, cron scheduling تومنیفای, زمان بندی بروزرسانی نرخ ارز, بروزرسانی خودکار قیمت ها, wp cron تومنیفای, کرون ووکامرس نرخ ارز, تومنی فای بروزرسانی دستی
-robots: index, follow
-og_type: article
-schema_type: Article
-schema_image: /assets/img/tomanify-dashboard-manual-update-cron.webp
-schema_image_width: 706
-schema_image_height: 376
-breadcrumbs:
-- name: خانه
-  path: /
-- name: راهنما
-  path: /docs/
-- name: بروزرسانی دستی و کرون
-  path: /docs/automation/
-faq_items:
-- q: دکمه Update Rates را هر روز باید دستی بزنم؟
-  a: نه لزوماً. اگر کرون را تنظیم کرده باشید، افزونه می‌تواند خودش نرخ‌ها را طبق بازه زمانی انتخابی تازه کند. این دکمه بیشتر برای مواقع فوری یا تست مفید است.
-- q: بهترین بازه برای Cron چیست؟
-  a: بستگی به حساسیت فروشگاه شما به نوسان ارز دارد. برای خیلی از فروشگاه‌ها هر چند ساعت یک‌بار نقطه شروع منطقی است.
-- q: اگر کرون اجرا نشود چه می‌شود؟
-  a: نرخ‌ها تا اجرای بعدی تازه نمی‌شوند. در سایت‌های کم‌بازدید بهتر است وضعیت WP-Cron یا cron واقعی هاست را بررسی کنید.
-- q: بعد از Update Rates چه چیزی آپدیت می‌شود؟
-  a: ابتدا نرخ‌ها ذخیره می‌شوند، بعد محاسبه مجدد محصولات foreign در صف قرار می‌گیرد تا قیمت‌های ووکامرس بازنویسی شوند.
----
-
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="generator" content="Tomanify Persian Guide">
+<link rel="preload" href="/assets/fonts/Vazirmatn[wght].woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/assets/fonts/Yekan.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0A7B56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="og:site_name" content="Tomanify">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp">
+<meta property="og:image:width" content="706">
+<meta property="og:image:height" content="376">
+<meta property="og:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp">
+<meta name="twitter:image:alt" content="راهنمای فارسی افزونه Tomanify">
+<link href="/assets/style.css" rel="stylesheet">
+<meta name="author" content="Amin Raoufi">
+<title>بروزرسانی دستی نرخ‌ها و کرون تومنی‌فای | راهنمای Update Rates</title>
+<meta name="description" content="راهنمای کاربردی Update Rates و Cron Scheduling در Tomanify: چه زمانی بروزرسانی دستی بزنید، زمان‌بندی خودکار چه می‌کند و برای کاربر عادی کدام تنظیم مناسب‌تر است.">
+<meta name="keywords" content="بروزرسانی دستی نرخ ها, update rates تومنیفای, cron scheduling تومنیفای, زمان بندی بروزرسانی نرخ ارز, بروزرسانی خودکار قیمت ها, wp cron تومنیفای, کرون ووکامرس نرخ ارز, تومنی فای بروزرسانی دستی">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tomanify.github.io/docs/automation/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="بروزرسانی دستی نرخ‌ها و کرون تومنی‌فای | راهنمای Update Rates">
+<meta property="og:description" content="راهنمای کاربردی Update Rates و Cron Scheduling در Tomanify: چه زمانی بروزرسانی دستی بزنید، زمان‌بندی خودکار چه می‌کند و برای کاربر عادی کدام تنظیم مناسب‌تر است.">
+<meta property="og:url" content="https://tomanify.github.io/docs/automation/">
+<meta name="twitter:title" content="بروزرسانی دستی نرخ‌ها و کرون تومنی‌فای | راهنمای Update Rates">
+<meta name="twitter:description" content="راهنمای کاربردی Update Rates و Cron Scheduling در Tomanify: چه زمانی بروزرسانی دستی بزنید، زمان‌بندی خودکار چه می‌کند و برای کاربر عادی کدام تنظیم مناسب‌تر است.">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://tomanify.github.io/#website","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"name":"راهنمای فارسی Tomanify","inLanguage":["fa-IR"],"publisher":{"@id":"https://tomanify.github.io/#org"}},{"@type":"Organization","@id":"https://tomanify.github.io/#org","name":"Tomanify","url":"https://tomanify.github.io/","sameAs":["https://wordpress.org/plugins/tomanify/"],"logo":{"@type":"ImageObject","url":"https://tomanify.github.io/assets/favicon-32x32.png","width":32,"height":32}},{"@type":"Person","@id":"https://tomanify.github.io/#author","name":"Amin Raoufi","url":"https://tomanify.github.io/"},{"@type":"ImageObject","@id":"https://tomanify.github.io/docs/automation/#primaryimage","url":"https://tomanify.github.io/assets/img/tomanify-dashboard-manual-update-cron.webp","width":706,"height":376},{"@type":"WebPage","@id":"https://tomanify.github.io/docs/automation/#webpage","url":"https://tomanify.github.io/docs/automation/","name":"بروزرسانی دستی نرخ‌ها و کرون تومنی‌فای | راهنمای Update Rates","isPartOf":{"@id":"https://tomanify.github.io/#website"},"primaryImageOfPage":{"@id":"https://tomanify.github.io/docs/automation/#primaryimage"},"inLanguage":"fa-IR","datePublished":"2026-03-09","dateModified":"2026-03-09","description":"راهنمای کاربردی Update Rates و Cron Scheduling در Tomanify: چه زمانی بروزرسانی دستی بزنید، زمان‌بندی خودکار چه می‌کند و برای کاربر عادی کدام تنظیم مناسب‌تر است.","breadcrumb":{"@id":"https://tomanify.github.io/docs/automation/#breadcrumb"},"author":{"@id":"https://tomanify.github.io/#author"}},{"@type":"BreadcrumbList","@id":"https://tomanify.github.io/docs/automation/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"خانه","item":"https://tomanify.github.io/"},{"@type":"ListItem","position":2,"name":"راهنما","item":"https://tomanify.github.io/docs/"},{"@type":"ListItem","position":3,"name":"بروزرسانی دستی و کرون","item":"https://tomanify.github.io/docs/automation/"}]},{"@type":"Article","@id":"https://tomanify.github.io/docs/automation/#article","headline":"بروزرسانی دستی نرخ‌ها و کرون تومنی‌فای | راهنمای Update Rates","description":"راهنمای کاربردی Update Rates و Cron Scheduling در Tomanify: چه زمانی بروزرسانی دستی بزنید، زمان‌بندی خودکار چه می‌کند و برای کاربر عادی کدام تنظیم مناسب‌تر است.","inLanguage":"fa-IR","isPartOf":{"@id":"https://tomanify.github.io/docs/automation/#webpage"},"mainEntityOfPage":{"@id":"https://tomanify.github.io/docs/automation/#webpage"},"image":{"@id":"https://tomanify.github.io/docs/automation/#primaryimage"},"author":{"@id":"https://tomanify.github.io/#author"},"publisher":{"@id":"https://tomanify.github.io/#org"},"datePublished":"2026-03-09","dateModified":"2026-03-09"},{"@type":"FAQPage","@id":"https://tomanify.github.io/docs/automation/#faqpage","inLanguage":"fa-IR","mainEntity":[{"@type":"Question","name":"دکمه Update Rates را هر روز باید دستی بزنم؟","acceptedAnswer":{"@type":"Answer","text":"نه لزوماً. اگر کرون را تنظیم کرده باشید، افزونه می‌تواند خودش نرخ‌ها را طبق بازه زمانی انتخابی تازه کند. این دکمه بیشتر برای مواقع فوری یا تست مفید است."}},{"@type":"Question","name":"بهترین بازه برای Cron چیست؟","acceptedAnswer":{"@type":"Answer","text":"بستگی به حساسیت فروشگاه شما به نوسان ارز دارد. برای خیلی از فروشگاه‌ها هر چند ساعت یک‌بار نقطه شروع منطقی است."}},{"@type":"Question","name":"اگر کرون اجرا نشود چه می‌شود؟","acceptedAnswer":{"@type":"Answer","text":"نرخ‌ها تا اجرای بعدی تازه نمی‌شوند. در سایت‌های کم‌بازدید بهتر است وضعیت WP-Cron یا cron واقعی هاست را بررسی کنید."}},{"@type":"Question","name":"بعد از Update Rates چه چیزی آپدیت می‌شود؟","acceptedAnswer":{"@type":"Answer","text":"ابتدا نرخ‌ها ذخیره می‌شوند، بعد محاسبه مجدد محصولات foreign در صف قرار می‌گیرد تا قیمت‌های ووکامرس بازنویسی شوند."}}]}]}</script>
+</head>
+<body>
+<header class="header"><div class="container"><div class="wrap"><a aria-label="Tomanify" class="brand" href="/"><img alt="Tomanify" src="/assets/img/icon-256x256.png"/><span>Tomanify — راهنمای فارسی افزونه</span></a><nav aria-label="ناوبری" class="nav"><a href="/">خانه</a><a class="active" href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a class="active" href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a></nav><div class="controls"><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" target="_blank">دانلود از WP.org</a><button aria-label="باز کردن منو" class="btn hamburger" data-open-drawer type="button">☰</button></div></div></div></header><div aria-hidden="true" class="mobile-drawer"><div aria-label="منوی موبایل" class="drawer-panel" role="dialog"><div class="drawer-top"><strong>منوی راهنما</strong><button class="btn" data-close-drawer type="button">بستن</button></div><a href="/">خانه</a><a href="/docs/">راهنما</a><a href="/docs/features/">امکانات</a><a href="/docs/automation/">بروزرسانی</a><a href="/docs/sources/">منابع نرخ</a><a href="/docs/products/">محصولات خارجی</a><a href="/docs/shortcode/">شورتکد</a><a href="/docs/troubleshooting/">رفع اشکال</a><a href="/docs/advanced/">پیشرفته</a><a href="/docs/backup/">بکاپ</a><a href="/docs/security/">امنیت</a><a href="/docs/faq/">سوالات</a><hr/><a class="btn primary" href="https://wordpress.org/plugins/tomanify/" rel="noopener" style="justify-content:center" target="_blank">دانلود از WP.org</a></div></div>
+<main class="container main">
 <div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / بروزرسانی دستی و کرون</div>
 <section class="card"><div class="inner">
   <h1>بروزرسانی دستی نرخ‌ها و Cron Scheduling در Tomanify</h1>
@@ -100,6 +111,10 @@ faq_items:
 <img alt="بروزرسانی دستی نرخ ها و زمان بندی کرون در تومنی فای" decoding="async" loading="lazy" src="/assets/img/tomanify-dashboard-manual-update-cron.webp" width="706" height="376"/>
 <figcaption>شماره ۱ دکمه بروزرسانی دستی را نشان می‌دهد و شماره ۲ بازه زمانی اجرای خودکار را.</figcaption>
 </figure>
+    <ol class="figure-points">
+      <li><strong>شماره ۱:</strong> وقتی منبع نرخ را تنظیم کرده‌اید و می‌خواهید بدون انتظار برای کرون، همان لحظه نرخ‌های تازه ذخیره شوند این دکمه را می‌زنید.</li>
+      <li><strong>شماره ۲:</strong> در این بخش بازه زمانی اجرای خودکار را تعیین می‌کنید؛ مثلاً هر چند ساعت یا هر چند روز یک‌بار.</li>
+    </ol>
   </div></div>
   <div class="card"><div class="inner">
     <h2>پیوندهای مکمل</h2>
@@ -123,3 +138,8 @@ faq_items:
 </div>
 </section></div>
 </section>
+</main>
+<footer class="footer"><div class="container"><div class="wrap"><p class="small">© 2026 — راهنمای فارسی Tomanify · ساخته‌شده توسط <strong>امین رئوفی</strong></p><p class="small"><a href="/docs/">راهنما</a> · <a href="/docs/features/">امکانات</a> · <a href="/docs/automation/">بروزرسانی</a> · <a href="/docs/faq/">سوالات</a> · <a href="mailto:raoufiamin1@gmail.com">ایمیل</a></p></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

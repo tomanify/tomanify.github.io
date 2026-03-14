@@ -8,7 +8,8 @@
       "@type": "WebSite",
       "@id": "{{ site.url }}/#website",
       "url": "{{ site.url }}/",
-      "name": "Tomanify Docs",
+      "sameAs": ["https://wordpress.org/plugins/tomanify/"],
+      "name": "راهنمای فارسی Tomanify",
       "inLanguage": ["fa-IR"],
       "publisher": {"@id": "{{ site.url }}/#org"}
     },
@@ -16,7 +17,8 @@
       "@type": "Organization",
       "@id": "{{ site.url }}/#org",
       "name": "Tomanify",
-      "url": "https://wordpress.org/plugins/tomanify/",
+      "url": "{{ site.url }}/",
+      "sameAs": ["https://wordpress.org/plugins/tomanify/"],
       "logo": {
         "@type": "ImageObject",
         "url": "{{ site.url }}/assets/favicon-32x32.png",
@@ -76,7 +78,8 @@
         "price": "0",
         "priceCurrency": "USD"
       },
-      "url": "https://wordpress.org/plugins/tomanify/",
+      "url": "{{ site.url }}/",
+      "sameAs": ["https://wordpress.org/plugins/tomanify/"],
       "author": {"@id": "{{ site.url }}/#author"},
       "publisher": {"@id": "{{ site.url }}/#org"}
     }{% endif %}{% if page.doc_links %},

@@ -1,0 +1,125 @@
+---
+layout: default
+page_key: automation
+nav_parent: docs
+page_url: /docs/automation/
+title: بروزرسانی دستی نرخ‌ها و کرون تومنی‌فای | راهنمای Update Rates
+description: راهنمای کاربردی Update Rates و Cron Scheduling در Tomanify: چه زمانی بروزرسانی دستی بزنید، زمان‌بندی خودکار چه می‌کند و برای کاربر عادی کدام تنظیم مناسب‌تر است.
+keywords: بروزرسانی دستی نرخ ها, update rates تومنیفای, cron scheduling تومنیفای, زمان بندی بروزرسانی نرخ ارز, بروزرسانی خودکار قیمت ها, wp cron تومنیفای, کرون ووکامرس نرخ ارز, تومنی فای بروزرسانی دستی
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/tomanify-dashboard-manual-update-cron.webp
+schema_image_width: 706
+schema_image_height: 376
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: بروزرسانی دستی و کرون
+  path: /docs/automation/
+faq_items:
+- q: دکمه Update Rates را هر روز باید دستی بزنم؟
+  a: نه لزوماً. اگر کرون را تنظیم کرده باشید، افزونه می‌تواند خودش نرخ‌ها را طبق بازه زمانی انتخابی تازه کند. این دکمه بیشتر برای مواقع فوری یا تست مفید است.
+- q: بهترین بازه برای Cron چیست؟
+  a: بستگی به حساسیت فروشگاه شما به نوسان ارز دارد. برای خیلی از فروشگاه‌ها هر چند ساعت یک‌بار نقطه شروع منطقی است.
+- q: اگر کرون اجرا نشود چه می‌شود؟
+  a: نرخ‌ها تا اجرای بعدی تازه نمی‌شوند. در سایت‌های کم‌بازدید بهتر است وضعیت WP-Cron یا cron واقعی هاست را بررسی کنید.
+- q: بعد از Update Rates چه چیزی آپدیت می‌شود؟
+  a: ابتدا نرخ‌ها ذخیره می‌شوند، بعد محاسبه مجدد محصولات foreign در صف قرار می‌گیرد تا قیمت‌های ووکامرس بازنویسی شوند.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / بروزرسانی دستی و کرون</div>
+<section class="card"><div class="inner">
+  <h1>بروزرسانی دستی نرخ‌ها و Cron Scheduling در Tomanify</h1>
+  <p class="lead">اگر بخواهیم این دو گزینه را خیلی ساده توضیح بدهیم: <strong>Update Rates</strong> برای «الان همین لحظه» است و <strong>Cron Scheduling</strong> برای «از این به بعد خودکار انجامش بده».</p>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>Update Rates دقیقاً چه می‌کند؟</h2>
+    <p>این دکمه در Dashboard قرار دارد. وقتی آن را می‌زنید، افزونه آخرین نرخ‌ها را از منبعی که انتخاب کرده‌اید می‌گیرد و ذخیره می‌کند. بعد هم صف محاسبه مجدد محصولات foreign ساخته می‌شود تا قیمت‌های ووکامرس به‌روز شوند.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>چه زمانی دکمه دستی مفید است؟</h2>
+    <ul style="margin:0;padding-inline-start:1.2rem">
+      <li>وقتی تازه منبع نرخ را تنظیم کرده‌اید و می‌خواهید سریع تست بگیرید</li>
+      <li>وقتی بازار ناگهان تغییر کرده و نمی‌خواهید منتظر اجرای کرون بمانید</li>
+      <li>وقتی بعد از ایمپورت یا تغییر تنظیمات می‌خواهید مطمئن شوید همه چیز درست کار می‌کند</li>
+    </ul>
+  </div></div>
+</section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>Cron Scheduling چه کاری می‌کند؟</h2>
+    <p>در بخش Cron Scheduling مشخص می‌کنید افزونه هر چند دقیقه، هر چند ساعت یا هر چند روز یک‌بار نرخ‌ها را خودش بررسی کند. این همان چیزی است که بروزرسانی را از حالت «یادم باشد دستی بزنم» به حالت «خودش انجام بدهد» تبدیل می‌کند.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>برای کاربر عادی چه تنظیمی مناسب‌تر است؟</h2>
+    <p>اگر فروشگاه شما خیلی لحظه‌ای نیست، معمولاً بازه‌های چندساعته شروع خوبی هستند. اگر کالاهای شما شدیداً به نوسان ارز حساس‌اند، می‌توانید بازه را کوتاه‌تر کنید. اما همیشه باید مصرف منابع هاست را هم در نظر بگیرید.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>فرق ساده و کاربردی این دو گزینه</h2>
+  <div class="table-wrap">
+    <table class="comparison-table">
+      <thead>
+        <tr><th>گزینه</th><th>به زبان ساده</th><th>به چه درد می‌خورد؟</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Update Rates</td><td>همین حالا نرخ را بگیر</td><td>تست سریع، واکنش فوری به بازار، یا بروزرسانی دستی</td></tr>
+        <tr><td>Cron Scheduling</td><td>از این به بعد خودت انجام بده</td><td>خودکارسازی، کاهش کار دستی و حفظ نظم بروزرسانی</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>اگر کرون اجرا نشود</h2>
+    <p>در بعضی سایت‌ها، مخصوصاً روی هاست اشتراکی و سایت‌های کم‌بازدید، WP-Cron دقیق نیست چون به بازدید وابسته می‌شود. اگر نظم بروزرسانی برایتان مهم است، بهتر است cron واقعی هاست یا سرویس زمان‌بندی را هم بررسی کنید.</p>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>بعد از گرفتن نرخ، قیمت‌ها چه می‌شوند؟</h2>
+    <p>نرخ‌ها فقط ذخیره نمی‌شوند؛ محصولات foreign هم دوباره از روی فرمول قیمت‌گذاری محاسبه می‌شوند تا قیمت واقعی ووکامرس با داده تازه هم‌سو شود. پس این روند فقط یک «نمایش نرخ» نیست.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>اگر خیلی ساده بخواهیم جمع‌بندی کنیم</h2>
+  <p>برای راه‌اندازی و تست: اول منبع نرخ را تنظیم کنید، بعد یک بار <strong>Update Rates</strong> بزنید. برای ادامه کار روزمره: <strong>Cron Scheduling</strong> را روی یک بازه منطقی بگذارید تا سیستم خودش کار را جلو ببرد. همین ترکیب برای بیشتر فروشگاه‌ها کافی و قابل فهم است.</p>
+</div></section>
+
+<section class="grid section">
+  <div class="card"><div class="inner">
+    <h2>تصویر: دکمه Update Rates و زمان‌بندی</h2>
+    <figure class="figure">
+<img alt="بروزرسانی دستی نرخ ها و زمان بندی کرون در تومنی فای" decoding="async" loading="lazy" src="/assets/img/tomanify-dashboard-manual-update-cron.webp" width="706" height="376"/>
+<figcaption>شماره ۱ دکمه بروزرسانی دستی را نشان می‌دهد و شماره ۲ بازه زمانی اجرای خودکار را.</figcaption>
+</figure>
+  </div></div>
+  <div class="card"><div class="inner">
+    <h2>پیوندهای مکمل</h2>
+    <p style="display:flex;gap:10px;flex-wrap:wrap;margin:0">
+      <a class="btn primary" href="/docs/sources/">منابع نرخ</a>
+      <a class="btn" href="/docs/advanced/">تنظیمات پیشرفته</a>
+      <a class="btn" href="/docs/troubleshooting/">رفع اشکال</a>
+    </p>
+  </div></div>
+</section>
+
+<section class="container section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted" style="margin:.4rem 0 1rem">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open><summary>دکمه Update Rates را هر روز باید دستی بزنم؟</summary><p>نه لزوماً. اگر کرون را تنظیم کرده باشید، افزونه می‌تواند خودش نرخ‌ها را طبق بازه زمانی انتخابی تازه کند. این دکمه بیشتر برای مواقع فوری یا تست مفید است.</p></details>
+<details><summary>بهترین بازه برای Cron چیست؟</summary><p>بستگی به حساسیت فروشگاه شما به نوسان ارز دارد. برای خیلی از فروشگاه‌ها هر چند ساعت یک‌بار نقطه شروع منطقی است.</p></details>
+<details><summary>اگر کرون اجرا نشود چه می‌شود؟</summary><p>نرخ‌ها تا اجرای بعدی تازه نمی‌شوند. در سایت‌های کم‌بازدید بهتر است وضعیت WP-Cron یا cron واقعی هاست را بررسی کنید.</p></details>
+<details><summary>بعد از Update Rates چه چیزی آپدیت می‌شود؟</summary><p>ابتدا نرخ‌ها ذخیره می‌شوند، بعد محاسبه مجدد محصولات foreign در صف قرار می‌گیرد تا قیمت‌های ووکامرس بازنویسی شوند.</p></details>
+</div>
+</section></div>
+</section>

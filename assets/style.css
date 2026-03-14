@@ -207,3 +207,16 @@ h1,h2,h3,.brand span,.nav a{font-family:"YekanLocal","Vazirmatn",Tahoma,sans-ser
   .lightbox .panel{max-height: calc(100vh - 20px)}
   .lightbox img{max-height: calc(100vh - 70px)}
 }
+
+
+.muted{color:var(--muted)}
+.video-card{margin-top:10px}
+.video-poster{position:relative;display:block;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 6px 18px rgba(2,20,32,.06)}
+.video-poster img{width:100%;height:auto;display:block}
+.play-badge{position:absolute;inset:auto 14px 14px auto;background:rgba(15,23,42,.82);color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;backdrop-filter:blur(8px)}
+.feature-list li{margin:.35rem 0}
+.table-wrap{overflow:auto}
+.comparison-table{width:100%;border-collapse:collapse}
+.comparison-table th,.comparison-table td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:right;vertical-align:top}
+.comparison-table th{background:rgba(15,23,42,.04);font-weight:900}
+.faq-item-simple{padding:12px 14px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.72);margin:.75rem 0 0}

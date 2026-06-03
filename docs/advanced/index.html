@@ -1,0 +1,114 @@
+---
+layout: default
+page_key: advanced
+nav_parent: advanced
+page_url: /docs/advanced/
+title: تنظیمات پیشرفته تومنی‌فای | Threshold، Premium و Offline Mode
+description: 'راهنمای تنظیمات پیشرفته Tomanify: Threshold، Premium، Offline Mode، تفاوت Margin و Premium، گرد کردن قیمت و منطق پایه تومان.'
+keywords: تنظیمات پیشرفته تومنیفای, Threshold تومنیفای, Premium تومنیفای, Offline Mode تومنیفای, Margin vs Premium, پایه تومان, گرد کردن قیمت تومنیفای, حساسیت تغییر نرخ ارز, تبدیل نرخ رسمی به آزاد
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/tomanify-advanced-threshold-premium.webp
+schema_image_width: 1200
+schema_image_height: 800
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: پیشرفته
+  path: /docs/advanced/
+faq_items:
+- q: Threshold را روی چه عددی بگذارم؟
+  a: اگر می‌خواهید تغییرهای کوچک نادیده گرفته شوند، Threshold را کمی بالاتر بگذارید. اگر فروشگاه شما حساس‌تر است، مقدار آن را پایین‌تر بیاورید.
+- q: Premium با Margin چه فرقی دارد؟
+  a: Premium روی تبدیل نرخ رسمی به نرخ آزاد اثر می‌گذارد؛ Margin روی قیمت‌گذاری خودِ محصول.
+- q: Offline Mode برای چه زمانی است؟
+  a: برای زمانی که به هیچ منبع زنده‌ای دسترسی ندارید و می‌خواهید افزونه بر اساس مدل مرجع و پیش‌بینی موقتاً کار را ادامه دهد.
+- q: گرد کردن قیمت چه فایده‌ای دارد؟
+  a: باعث می‌شود قیمت‌ها خواناتر و فروشگاهی‌تر شوند و شما به اعداد ریز و نامعمول نرسید.
+- q: اگر Premium را بد تنظیم کنم چه اتفاقی می‌افتد؟
+  a: وقتی از فید رسمی استفاده می‌کنید، نرخ آزاد تخمینی از واقعیت دورتر می‌شود. پس این گزینه مخصوص کسی است که تفاوت نرخ رسمی و بازار آزاد را می‌فهمد یا از مقادیر پیشنهادی شروع می‌کند.
+- q: آیا برای استفاده از منبع رایگان هم باید وارد این صفحه شوم؟
+  a: برای شروع نه؛ اما اگر می‌خواهید رفتار حرفه‌ای‌تری از نظر حساسیت تغییر نرخ، پشتیبان‌ها و پوشش ریسک داشته باشید، این صفحه مهم می‌شود.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / پیشرفته</div>
+<section class="card"><div class="inner">
+<h1>تنظیمات پیشرفته Tomanify</h1>
+<p class="lead">این صفحه برای وقتی است که راه‌اندازی اولیه انجام شده و حالا می‌خواهید رفتار افزونه را دقیق‌تر و متناسب با مدل کسب‌وکار خود تنظیم کنید.</p>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>Threshold (آستانه تغییر)</h2>
+<p>Threshold مشخص می‌کند تغییرهای خیلی کوچک نرخ ارز نادیده گرفته شوند یا نه. اگر این گزینه خیلی بالا باشد، ممکن است نرخ‌ها ظاهراً تغییر کنند ولی قیمت محصولات آپدیت نشوند. اگر خیلی پایین باشد، نوسان‌های جزئی هم مدام وارد سیستم می‌شوند.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>Premium</h2>
+<p>Premium زمانی مهم می‌شود که از فید رسمی بانک مرکزی استفاده می‌کنید و می‌خواهید نرخ رسمی به نرخ بازار آزاد نزدیک شود. این گزینه برای منبع نرخ است، نه برای سود محصول.</p>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>Offline Mode</h2>
+<p>وقتی منبع زنده بازار آزاد و فیدهای رسمی هر دو در دسترس نیستند، Offline Mode کمک می‌کند فروشگاه کاملاً کور نشود. این حالت یک راهکار اضطراری است، نه جایگزین دائمی منبع زنده.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>گرد کردن قیمت و پایه تومان</h2>
+<p>گرد کردن باعث قیمت‌های خواناتر می‌شود و پایه تومان هم ثبات محاسبات را حفظ می‌کند. این دو گزینه کنار هم باعث می‌شوند خروجی نهایی هم حرفه‌ای‌تر باشد، هم پایدارتر.</p>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>Margin در این صفحه نیست، اما باید در ذهن‌تان باشد</h2>
+<p>خیلی‌ها Premium و Margin را با هم قاطی می‌کنند. Premium برای تبدیل نرخ رسمی به آزاد است؛ Margin برای اینکه قیمت نهایی محصول شما حاشیهٔ امن یا سود مورد نظر را داشته باشد. در عمل معمولاً باید هر دو را جداگانه و با فهم هدف‌شان تنظیم کنید.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>تصویر: تنظیمات پیشرفته</h2>
+<figure class="figure">
+<img alt="Advanced settings" decoding="async" loading="lazy" src="/assets/img/tomanify-advanced-threshold-premium.webp"/>
+<figcaption>نمونه‌ای از تنظیمات Threshold و سایر گزینه‌های پیشرفته در Tomanify</figcaption>
+</figure>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>تصویر: هشدار Factory Reset</h2>
+<figure class="figure">
+<img alt="هشدار بازنشانی تنظیمات به حالت اولیه در تومنی فای" decoding="async" height="136" loading="lazy" src="/assets/img/tomanify-advanced-factory-reset-warning.webp" width="734"/>
+<figcaption>قبل از بازنشانی تنظیمات، بهتر است یک نسخه پشتیبان بگیرید تا بتوانید در صورت نیاز برگردید.</figcaption>
+</figure>
+</div></div>
+<div class="card"><div class="inner">
+<h2>بازنشانی برای چه وقت مناسب است؟</h2>
+<p>وقتی در محیط تست چند بار منبع نرخ، واحد، پرمیوم یا آستانه را تغییر داده‌اید و می‌خواهید همه چیز را از یک وضعیت تمیز و قابل پیش‌بینی دوباره شروع کنید.</p>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>چه زمانی این صفحه برای شما مهم می‌شود؟</h2>
+<ul class="tight-list">
+<li>وقتی نرخ‌ها آپدیت می‌شوند ولی قیمت‌ها دیرتر واکنش نشان می‌دهند.</li>
+<li>وقتی از فید رسمی بانک مرکزی استفاده می‌کنید.</li>
+<li>وقتی می‌خواهید در شرایط قطع یا محدودیت اینترنت، فروشگاه همچنان کار کند.</li>
+<li>وقتی قیمت‌گذاری شما به نوسان بازار حساس‌تر از حالت عادی است.</li>
+</ul>
+</div></section>
+<section class="card section"><div class="inner">
+<h2>مطالعه بیشتر</h2>
+<p class="actions-inline"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/free-api/">API رایگان</a> <a class="btn" href="/docs/products/">محصولات خارجی</a></p>
+</div></section>
+<section class="section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted faq-intro">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open=""><summary>Threshold را روی چه عددی بگذارم؟</summary><p>اگر می‌خواهید تغییرهای کوچک نادیده گرفته شوند، Threshold را کمی بالاتر بگذارید. اگر فروشگاه شما حساس‌تر است، مقدار آن را پایین‌تر بیاورید.</p></details>
+<details><summary>Premium با Margin چه فرقی دارد؟</summary><p>Premium روی تبدیل نرخ رسمی به نرخ آزاد اثر می‌گذارد؛ Margin روی قیمت‌گذاری خودِ محصول.</p></details>
+<details><summary>Offline Mode برای چه زمانی است؟</summary><p>برای زمانی که به هیچ منبع زنده‌ای دسترسی ندارید و می‌خواهید افزونه بر اساس مدل مرجع و پیش‌بینی موقتاً کار را ادامه دهد.</p></details>
+<details><summary>گرد کردن قیمت چه فایده‌ای دارد؟</summary><p>باعث می‌شود قیمت‌ها خواناتر و فروشگاهی‌تر شوند و شما به اعداد ریز و نامعمول نرسید.</p></details>
+<details><summary>اگر Premium را بد تنظیم کنم چه اتفاقی می‌افتد؟</summary><p>وقتی از فید رسمی استفاده می‌کنید، نرخ آزاد تخمینی از واقعیت دورتر می‌شود. پس این گزینه مخصوص کسی است که تفاوت نرخ رسمی و بازار آزاد را می‌فهمد یا از مقادیر پیشنهادی شروع می‌کند.</p></details>
+<details><summary>آیا برای استفاده از منبع رایگان هم باید وارد این صفحه شوم؟</summary><p>برای شروع نه؛ اما اگر می‌خواهید رفتار حرفه‌ای‌تری از نظر حساسیت تغییر نرخ، پشتیبان‌ها و پوشش ریسک داشته باشید، این صفحه مهم می‌شود.</p></details>
+</div>
+</section></div>
+</section>

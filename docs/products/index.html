@@ -1,0 +1,97 @@
+---
+layout: default
+page_key: products
+nav_parent: products
+page_url: /docs/products/
+title: محصولات خارجی در تومنی‌فای | ارز، سود و قیمت پایه تومان
+description: 'راهنمای ثبت محصولات foreign در Tomanify: انتخاب ارز، وارد کردن قیمت خرید خارجی، درصد سود، قیمت پایه تومان و منطق درست قیمت‌گذاری در ووکامرس.'
+keywords: محصول خارجی تومنیفای, foreign product ووکامرس, محصولات وارداتی در ووکامرس, پایه تومان Tomanify, فرمول تبدیل قیمت Tomanify, Margin محصول خارجی, سورت قیمت ووکامرس با نرخ ارز, قیمت نهایی واقعی ووکامرس
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/tomanify-products-foreign-pricing-table.webp
+schema_image_width: 840
+schema_image_height: 433
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: محصولات خارجی
+  path: /docs/products/
+faq_items:
+- q: کدام محصولات تحت تأثیر Tomanify قرار می‌گیرند؟
+  a: فقط محصولاتی که در متاباکس Tomanify به‌عنوان foreign/product imported علامت خورده‌اند و ارز و قیمت خرید خارجی دارند.
+- q: چرا Tomanify پایه تومان را ذخیره می‌کند؟
+  a: برای اینکه تغییر واحد تومان/ریال یا بروزرسانی‌های بعدی باعث تبدیل دوباره و خطای تجمعی نشود.
+- q: آیا مرتب‌سازی ارزان‌ترین به گران‌ترین درست می‌ماند؟
+  a: بله، چون قیمت ووکامرس بر اساس مبلغ نهایی واقعی بازنویسی می‌شود و فقط نرخ نمایشی عوض نمی‌شود.
+- q: Margin روی چه چیزی اعمال می‌شود؟
+  a: روی قیمت خرید خارجی بعد از ضرب شدن در نرخ ارز؛ یعنی در عمل بخشی از قیمت‌گذاری نهایی شماست، نه تنظیم منبع نرخ.
+- q: اگر واحد سایت را عوض کنم، دوباره قیمت خارجی محاسبه می‌شود؟
+  a: خیر. افزونه از پایه تومان استفاده می‌کند و فقط قیمت ذخیره‌شدهٔ ووکامرس را متناسب با واحد جدید بازنویسی می‌کند.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / محصولات خارجی</div>
+<section class="card"><div class="inner">
+<h1>محصولات خارجی و وارداتی در Tomanify</h1>
+<p class="lead">اگر نرخ ارز را درست تنظیم کرده‌اید ولی هنوز نمی‌دانید محصول خارجی دقیقاً چطور تعریف می‌شود، این صفحه مهم‌ترین نقطهٔ بعدی است.</p>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>فیلدهایی که باید پر شوند</h2>
+<ul class="tight-list">
+<li>فعال کردن حالت <strong>foreign</strong></li>
+<li>انتخاب ارز (USD / EUR / AED / TRY / CNY)</li>
+<li>وارد کردن قیمت خرید خارجی</li>
+<li>وارد کردن Margin یا درصد سود</li>
+</ul>
+</div></div>
+<div class="card"><div class="inner">
+<h2>تصویر: متاباکس محصول خارجی</h2>
+<figure class="figure">
+<img alt="تنظیم ارز و قیمت خرید خارجی در بخش محصولات تومنی فای" decoding="async" height="433" loading="lazy" src="/assets/img/tomanify-products-foreign-pricing-table.webp" width="840"/>
+<figcaption>این جدول نشان می‌دهد برای هر محصول foreign دقیقاً کجا باید قیمت خرید خارجی، ارز و درصد سود را وارد کنید.</figcaption>
+</figure>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>فرمول کلی</h2>
+<p>منطق پایه این است: <strong>قیمت خرید خارجی × نرخ ارز × (۱ + درصد سود)</strong>. سپس بسته به تنظیمات شما، مبلغ نهایی گرد می‌شود و به‌عنوان قیمت ووکامرس ذخیره می‌شود.</p>
+<p class="flush">یعنی افزونه از اول برای «قیمت‌گذاری واقعی» طراحی شده، نه فقط نمایش ظاهری نرخ ارز.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>پایه تومان یعنی چه؟</h2>
+<p>افزونه یک «قیمت پایه به تومان» نگه می‌دارد تا وقتی واحد سایت بین تومان و ریال جابه‌جا شد یا بعدها دوباره بروزرسانی انجام شد، تبدیل دوباره و خطای جمع‌شونده رخ ندهد.</p>
+<p class="flush">این همان چیزی است که باعث می‌شود ساختار قیمت فروشگاه پایدار بماند.</p>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>چرا سورت و فیلتر به‌هم نمی‌ریزد؟</h2>
+<p>چون Tomanify قیمت نهایی ووکامرس را بازنویسی می‌کند و دیتابیس فروشگاه بر اساس مبلغ نهایی واقعی ذخیره می‌شود. پس وقتی کاربر «ارزان‌ترین» یا «گران‌ترین» را انتخاب می‌کند، ترتیب درست باقی می‌ماند.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>Margin را با Premium اشتباه نگیرید</h2>
+<p><strong>Margin</strong> مربوط به قیمت‌گذاری محصول است؛ اما <strong>Premium</strong> مربوط به نزدیک کردن نرخ رسمی بانک مرکزی به نرخ آزاد. یکی روی «محصول» اثر دارد، دیگری روی «منبع نرخ».</p>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>مطالعه بیشتر</h2>
+<p class="actions-inline"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/troubleshooting/">رفع اشکال</a></p>
+</div></section>
+<section class="section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted faq-intro">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open=""><summary>کدام محصولات تحت تأثیر Tomanify قرار می‌گیرند؟</summary><p>فقط محصولاتی که در متاباکس Tomanify به‌عنوان foreign/product imported علامت خورده‌اند و ارز و قیمت خرید خارجی دارند.</p></details>
+<details><summary>چرا Tomanify پایه تومان را ذخیره می‌کند؟</summary><p>برای اینکه تغییر واحد تومان/ریال یا بروزرسانی‌های بعدی باعث تبدیل دوباره و خطای تجمعی نشود.</p></details>
+<details><summary>آیا مرتب‌سازی ارزان‌ترین به گران‌ترین درست می‌ماند؟</summary><p>بله، چون قیمت ووکامرس بر اساس مبلغ نهایی واقعی بازنویسی می‌شود و فقط نرخ نمایشی عوض نمی‌شود.</p></details>
+<details><summary>Margin روی چه چیزی اعمال می‌شود؟</summary><p>روی قیمت خرید خارجی بعد از ضرب شدن در نرخ ارز؛ یعنی در عمل بخشی از قیمت‌گذاری نهایی شماست، نه تنظیم منبع نرخ.</p></details>
+<details><summary>اگر واحد سایت را عوض کنم، دوباره قیمت خارجی محاسبه می‌شود؟</summary><p>خیر. افزونه از پایه تومان استفاده می‌کند و فقط قیمت ذخیره‌شدهٔ ووکامرس را متناسب با واحد جدید بازنویسی می‌کند.</p></details>
+</div>
+</section></div>
+</section>

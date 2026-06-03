@@ -1,0 +1,96 @@
+---
+layout: default
+page_key: troubleshooting
+nav_parent: troubleshooting
+page_url: /docs/troubleshooting/
+title: رفع اشکال تومنی‌فای | چرا نرخ یا قیمت آپدیت نمی‌شود؟
+description: راهنمای رفع اشکال Tomanify برای مشکل در نرخ‌ها، JSON، اجرای کرون، بروزرسانی قیمت محصولات foreign و نمایش شورتکد یا ویجت نرخ ارز.
+keywords: رفع اشکال تومنیفای, مشکل آپدیت قیمت در Tomanify, JSON error Tomanify, cron تومنیفای, threshold مشکل, ویجت نرخ ارز نمایش داده نمی شود, troubleshooting Tomanify, foreign product not updating
+robots: index, follow
+og_type: article
+schema_type: FAQPage
+schema_image: /assets/img/tomanify-dashboard-manual-update-cron.webp
+schema_image_width: 1200
+schema_image_height: 800
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: رفع اشکال
+  path: /docs/troubleshooting/
+faq_items:
+- q: نرخ‌ها آپدیت می‌شوند ولی قیمت محصول تغییر نمی‌کند
+  a: اول مطمئن شوید محصول foreign است و ارز، قیمت خرید و Margin دارد. بعد Threshold را بررسی کنید و ببینید نرخ ارز مربوطه واقعاً ذخیره شده یا نه.
+- q: لینک JSON خطا می‌دهد
+  a: HTTPS بودن لینک، اعتبار گواهی SSL، و ساختار JSON را بررسی کنید. همچنین مطمئن شوید خروجی به تومان و عددی است.
+- q: کران اجرا نمی‌شود
+  a: در هاست اشتراکی ممکن است WP-Cron وابسته به بازدید باشد. برای دقت بیشتر از cron واقعی هاست یا سرویس Cron استفاده کنید.
+- q: شورتکد چیزی نمایش نمی‌دهد
+  a: نرخ‌ها باید قبلاً ذخیره شده باشند و شورتکد هم دقیقاً داخل محتوای همان صفحه قرار گرفته باشد.
+- q: تغییر واحد تومان/ریال باعث نتایج عجیب شده
+  a: اگر پایه تومان قبلاً درست ساخته شده باشد، تغییر واحد نباید مشکل ایجاد کند. در غیر این صورت صفحه محصولات خارجی و سپس بکاپ/بازیابی را بررسی کنید.
+- q: با افزونه‌های کش مشکل خواهم داشت؟
+  a: معمولاً خیر، اما بعد از تغییرات بزرگ بهتر است کش را پاک کنید تا کاربر فوراً قیمت‌های جدید را ببیند.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / رفع اشکال</div>
+<section class="card"><div class="inner">
+<h1>رفع اشکال Tomanify</h1>
+<p class="lead">این صفحه برای وقتی است که می‌دانید افزونه تقریباً چطور کار می‌کند، اما نتیجه‌ای که می‌بینید با چیزی که انتظار داشتید یکی نیست.</p>
+</div></section>
+<section class="card section"><div class="inner">
+<h2>۱) قیمت محصولات اصلاً آپدیت نمی‌شود</h2>
+<ol class="tight-list">
+<li>بررسی کنید محصول foreign فعال باشد.</li>
+<li>ارز، قیمت خرید خارجی و Margin محصول خالی نباشد.</li>
+<li>نرخ ارز مربوطه واقعاً در داشبورد ذخیره شده باشد.</li>
+<li>اگر تغییر نرخ خیلی کوچک بوده، Threshold را هم چک کنید.</li>
+</ol>
+</div></section>
+<section class="card section"><div class="inner">
+<h2>۲) لینک منبع نرخ خطا می‌دهد</h2>
+<p>سه مورد را اول چک کنید: <strong>HTTPS</strong>، <strong>SSL</strong> و <strong>ساختار خروجی</strong>. اگر JSON شما به‌صورت استاندارد و عددی برنگردد، افزونه چیزی برای ذخیره کردن ندارد.</p>
+<div class="copyline">
+<pre><code id="trouble-json-format">{"values":{"USD":65000,"EUR":71000,"AED":17800,"TRY":2300,"CNY":9000}}</code></pre>
+<button class="btn" data-copy="trouble-json-format" type="button">نمونه فرمت</button>
+</div>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>۳) Cron اجرا نمی‌شود</h2>
+<p>اگر سایت بازدید کمی دارد، WP-Cron ممکن است دقیق کار نکند. در این حالت Cron واقعی هاست یا سرویس‌های Cron زمان‌بندی را قابل اتکاتر می‌کنند.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>۴) ویجت نمایش داده نمی‌شود</h2>
+<p>شورتکد باید داخل محتوای همان صفحه قرار بگیرد و نرخ‌ها هم قبلاً در افزونه ذخیره شده باشند. این صفحه را با شورتکد اشتباه نگیرید: شورتکد فقط «نمایش» است.</p>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>۵) قیمت‌ها عقب‌تر از بازارند</h2>
+<p>این مشکل معمولاً به منبع نرخ، فاصلهٔ Cron یا Margin برمی‌گردد. اگر منبع رایگان دارید و بازار پرنوسان است، هم Interval و هم Margin را بازبینی کنید.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>۶) بعد از پاک‌سازی کش نتیجه بهتر می‌شود</h2>
+<p>اگر نرخ و قیمت در پنل تغییر کرده ولی در فرانت‌اند نه، کش صفحه و CDN را پاک کنید تا کاربر نسخهٔ تازه را ببیند.</p>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>صفحه‌های مرتبط</h2>
+<p class="actions-inline"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/products/">محصولات خارجی</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/security/">امنیت</a></p>
+</div></section>
+<section class="section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted faq-intro">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open=""><summary>نرخ‌ها آپدیت می‌شوند ولی قیمت محصول تغییر نمی‌کند</summary><p>اول مطمئن شوید محصول foreign است و ارز، قیمت خرید و Margin دارد. بعد Threshold را بررسی کنید و ببینید نرخ ارز مربوطه واقعاً ذخیره شده یا نه.</p></details>
+<details><summary>لینک JSON خطا می‌دهد</summary><p>HTTPS بودن لینک، اعتبار گواهی SSL، و ساختار JSON را بررسی کنید. همچنین مطمئن شوید خروجی به تومان و عددی است.</p></details>
+<details><summary>کران اجرا نمی‌شود</summary><p>در هاست اشتراکی ممکن است WP-Cron وابسته به بازدید باشد. برای دقت بیشتر از cron واقعی هاست یا سرویس Cron استفاده کنید.</p></details>
+<details><summary>شورتکد چیزی نمایش نمی‌دهد</summary><p>نرخ‌ها باید قبلاً ذخیره شده باشند و شورتکد هم دقیقاً داخل محتوای همان صفحه قرار گرفته باشد.</p></details>
+<details><summary>تغییر واحد تومان/ریال باعث نتایج عجیب شده</summary><p>اگر پایه تومان قبلاً درست ساخته شده باشد، تغییر واحد نباید مشکل ایجاد کند. در غیر این صورت صفحه محصولات خارجی و سپس بکاپ/بازیابی را بررسی کنید.</p></details>
+<details><summary>با افزونه‌های کش مشکل خواهم داشت؟</summary><p>معمولاً خیر، اما بعد از تغییرات بزرگ بهتر است کش را پاک کنید تا کاربر فوراً قیمت‌های جدید را ببیند.</p></details>
+</div>
+</section></div>
+</section>

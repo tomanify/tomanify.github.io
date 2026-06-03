@@ -1,0 +1,149 @@
+---
+layout: default
+page_key: sources
+nav_parent: sources
+page_url: /docs/sources/
+title: منابع نرخ تومنی‌فای | JSON بازار آزاد و RSS/XML رسمی
+description: 'آموزش کامل منابع نرخ در Tomanify: JSON بازار آزاد، RSS/XML رسمی، Source Mode، ساختار JSON سازگار، Premium، Threshold و روش‌های پشتیبان.'
+keywords: منابع نرخ تومنیفای, JSON بازار آزاد, RSS بانک مرکزی, XML بانک مرکزی, Source Mode Tomanify, Premium تومنیفای, Threshold تومنیفای, Offline Mode تومنیفای, JSON سازگار با Tomanify, URL منبع نرخ ووکامرس, بانک مرکزی برای ووکامرس
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/tomanify-sources-json-bank-manual.webp
+schema_image_width: 560
+schema_image_height: 640
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: منابع نرخ
+  path: /docs/sources/
+faq_items:
+- q: بهترین Source Mode برای شروع کدام است؟
+  a: برای بیشتر فروشگاه‌ها، JSON بازار آزاد بهترین نقطه شروع است. بعد از آن فیدهای بانک مرکزی را به‌عنوان لایهٔ پشتیبان اضافه کنید.
+- q: Premium دقیقاً چه مشکلی را حل می‌کند؟
+  a: Premium کمک می‌کند نرخ رسمی بانک مرکزی به نرخ آزاد نزدیک شود. یعنی وقتی از RSS/XML رسمی استفاده می‌کنید، تبدیل صرفاً با همان رقم رسمی باقی نمی‌ماند.
+- q: اگر JSON من کار نکرد اول کجا را چک کنم؟
+  a: HTTPS بودن URL، ساختار JSON، عددی بودن مقادیر، و این‌که آیا واقعاً همه ارزها به تومان برمی‌گردند یا نه.
+- q: آیا می‌توانم فقط بعضی ارزها را از بانک مرکزی بگیرم؟
+  a: بله. هر فید برای هر ارز جداگانه وارد می‌شود و می‌توانید ترکیب منبع‌ها را مطابق نیازتان بچینید.
+- q: Offline Mode چه زمانی مفید است؟
+  a: وقتی هیچ منبع بیرونی در دسترس نیست و می‌خواهید افزونه با مدل مرجع/پیش‌بینی، کار را به‌طور موقت ادامه دهد.
+- q: Threshold چرا گاهی باعث می‌شود قیمت‌ها آپدیت نشوند؟
+  a: چون تغییرهای خیلی کوچک را برای جلوگیری از نویز نادیده می‌گیرد. اگر می‌خواهید حساس‌تر باشید، مقدار آن را کمتر کنید.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / منابع نرخ</div>
+<section class="card"><div class="inner">
+<h1>منابع نرخ در Tomanify</h1>
+<p class="lead">مهم‌ترین صفحه برای راه‌اندازی درست افزونه همین‌جاست؛ چون کیفیت منبع نرخ تعیین می‌کند قیمت‌های فروشگاه چقدر دقیق، پایدار و قابل اتکا باشند.</p>
+<div class="note">برای رعایت امنیت و الزامات وردپرس، افزونه هیچ URL آماده‌ای را از قبل در تنظیمات قرار نمی‌دهد. یعنی شما باید لینک‌های منبع را خودتان وارد کنید.</div>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>۱) JSON بازار آزاد — یک راه ساده برای شروع</h2>
+<p>اگر می‌خواهید نرخ واقعی‌تری نسبت به نرخ‌های رسمی داشته باشید و بدون هزینهٔ API کار را شروع کنید، یک JSON بازار آزادِ سازگار می‌تواند گزینه ساده‌ای باشد. نمونه‌های این صفحه مستنداتی و اختیاری هستند، نه پیش‌فرض افزونه.</p>
+<div class="copyline">
+<pre><code id="sources-json-url">https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
+<button class="btn" data-copy="sources-json-url" type="button">کپی</button>
+</div>
+<p class="note-top">اگر JSON اختصاصی دارید، کافی است خروجی را به فرمت سازگار با افزونه برگردانید.</p>
+<p class="actions-inline margin-top"><a class="btn" href="/docs/rate-links/json/#json-source-url">صفحه کپی سریع لینک JSON</a></p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>۲) RSS/XML بانک مرکزی — روش پشتیبان</h2>
+<p>اگر به هر دلیل منبع آزاد در دسترس نبود، فیدهای رسمی بانک مرکزی می‌توانند لایهٔ پشتیبان شما باشند. با کمک Premium، نرخ رسمی به نرخ آزاد نزدیک‌تر می‌شود.</p>
+<p class="flush"><a class="btn" href="/docs/advanced/">توضیح Premium و Threshold</a></p>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>لینک‌های فید بانک مرکزی برای هر ارز</h2>
+<p>این لینک‌ها نمونه‌های اختیاری مستندات برای فیلدهای جداگانهٔ هر ارز هستند. افزونه هیچ‌کدام را پیش‌فرض وارد نمی‌کند و استفاده از آن‌ها فقط با تصمیم مدیر سایت انجام می‌شود:</p>
+<p class="actions-inline"><a class="btn" href="/docs/rate-links/cbi/#cbi-usd">صفحه کپی سریع لینک‌های بانک مرکزی</a></p>
+<div class="copyline">
+<strong>USD — دلار آمریکا</strong><pre id="cbi-usd"><code>https://cbi.ir/ExRatesRSS.aspx?cid=1</code></pre><button class="btn" data-copy="cbi-usd" type="button">کپی لینک</button>
+</div>
+<div class="copyline">
+<strong>EUR — یورو</strong><pre id="cbi-eur"><code>https://cbi.ir/ExRatesRSS.aspx?cid=94</code></pre><button class="btn" data-copy="cbi-eur" type="button">کپی لینک</button>
+</div>
+<div class="copyline">
+<strong>AED — درهم امارات</strong><pre id="cbi-aed"><code>https://cbi.ir/ExRatesRSS.aspx?cid=14</code></pre><button class="btn" data-copy="cbi-aed" type="button">کپی لینک</button>
+</div>
+<div class="copyline">
+<strong>TRY — لیر ترکیه</strong><pre id="cbi-try"><code>https://cbi.ir/ExRatesRSS.aspx?cid=38</code></pre><button class="btn" data-copy="cbi-try" type="button">کپی لینک</button>
+</div>
+<div class="copyline">
+<strong>CNY — یوان چین</strong><pre id="cbi-cny"><code>https://cbi.ir/ExRatesRSS.aspx?cid=85</code></pre><button class="btn" data-copy="cbi-cny" type="button">کپی لینک</button>
+</div>
+</div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>ساختار JSON سازگار</h2>
+<p>اگر خودتان API دارید یا برایتان API سفارشی ساخته می‌شود، ساده‌ترین فرمت سازگار این است:</p>
+<div class="copyline">
+<pre><code id="sources-json-format">{"values":{"USD":65000,"EUR":71000,"AED":17800,"TRY":2300,"CNY":9000}}</code></pre>
+<button class="btn" data-copy="sources-json-format" type="button">کپی</button>
+</div>
+</div></div>
+<div class="card"><div class="inner">
+<h2>Source Mode را چطور انتخاب کنم؟</h2>
+<ul class="tight-list">
+<li><strong>JSON / Auto:</strong> برای منبع اصلی بازار آزاد</li>
+<li><strong>Bank:</strong> وقتی می‌خواهید روی فیدهای رسمی تکیه کنید</li>
+<li><strong>Offline:</strong> برای شرایط اضطراری و عدم دسترسی به منابع بیرونی</li>
+<li><strong>Manual:</strong> وقتی همه چیز را دستی کنترل می‌کنید</li>
+</ul>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>تصویر: تب منابع نرخ</h2>
+<figure class="figure">
+<img alt="تنظیم JSON بازار آزاد و فیدهای بانک مرکزی در تومنی فای" decoding="async" height="640" loading="lazy" src="/assets/img/tomanify-sources-json-bank-manual.webp" width="560"/>
+<figcaption>در این نما، محل وارد کردن JSON بازار آزاد، لینک‌های بانک مرکزی و نرخ‌های دستی مشخص شده است.</figcaption>
+</figure>
+<ol class="figure-points">
+<li><strong>شماره ۱:</strong> این فیلد برای آدرس فایل JSON بازار آزاد است. باید یک لینک HTTPS وارد کنید که خروجی آن با ساختار سازگار افزونه و با مقادیر <strong>تومانی</strong> برگردد.</li>
+<li><strong>شماره‌های ۲ تا ۶:</strong> این ردیف‌ها برای وارد کردن لینک RSS/XML رسمی هر ارز از بانک مرکزی هستند. هر ارز فیلد جداگانه دارد و لازم نیست همه را یک‌جا پر کنید.</li>
+<li><strong>شماره ۷:</strong> این بخش مربوط به نرخ‌های دستی است. اگر Source Mode روی <strong>Manual</strong> باشد، نرخ هر ارز را در همین فیلدها وارد می‌کنید.</li>
+</ol>
+</div></div>
+<div class="card"><div class="inner">
+<h2>تصویر: تنظیمات پیشرفته</h2>
+<figure class="figure">
+<img alt="Advanced settings" decoding="async" loading="lazy" src="/assets/img/tomanify-advanced-threshold-premium.webp"/>
+<figcaption>Threshold، Premium و دیگر تنظیمات حساس که روی رفتار منابع نرخ اثر می‌گذارند</figcaption>
+</figure>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>چه ترکیبی برای بیشتر فروشگاه‌ها خوب است؟</h2>
+<ol class="tight-list">
+<li>JSON بازار آزاد به‌عنوان منبع اصلی</li>
+<li>فیدهای بانک مرکزی به‌عنوان پشتیبان</li>
+<li>Threshold معقول برای جلوگیری از نویز</li>
+<li>Margin محافظه‌کارانه برای پوشش تأخیر احتمالی</li>
+<li>Offline یا Manual برای شرایط اضطراری</li>
+</ol>
+</div></section>
+<section class="card section"><div class="inner">
+<h2>مطالعه بیشتر</h2>
+<p class="actions-inline"><a class="btn primary" href="/docs/free-api/">API رایگان</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/troubleshooting/">رفع اشکال</a> <a class="btn" href="/docs/quick-start/">شروع سریع</a></p>
+</div></section>
+<section class="section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted faq-intro">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open=""><summary>بهترین Source Mode برای شروع کدام است؟</summary><p>برای بیشتر فروشگاه‌ها، JSON بازار آزاد بهترین نقطه شروع است. بعد از آن فیدهای بانک مرکزی را به‌عنوان لایهٔ پشتیبان اضافه کنید.</p></details>
+<details><summary>Premium دقیقاً چه مشکلی را حل می‌کند؟</summary><p>Premium کمک می‌کند نرخ رسمی بانک مرکزی به نرخ آزاد نزدیک شود. یعنی وقتی از RSS/XML رسمی استفاده می‌کنید، تبدیل صرفاً با همان رقم رسمی باقی نمی‌ماند.</p></details>
+<details><summary>اگر JSON من کار نکرد اول کجا را چک کنم؟</summary><p>HTTPS بودن URL، ساختار JSON، عددی بودن مقادیر، و این‌که آیا واقعاً همه ارزها به تومان برمی‌گردند یا نه.</p></details>
+<details><summary>آیا می‌توانم فقط بعضی ارزها را از بانک مرکزی بگیرم؟</summary><p>بله. هر فید برای هر ارز جداگانه وارد می‌شود و می‌توانید ترکیب منبع‌ها را مطابق نیازتان بچینید.</p></details>
+<details><summary>Offline Mode چه زمانی مفید است؟</summary><p>وقتی هیچ منبع بیرونی در دسترس نیست و می‌خواهید افزونه با مدل مرجع/پیش‌بینی، کار را به‌طور موقت ادامه دهد.</p></details>
+<details><summary>Threshold چرا گاهی باعث می‌شود قیمت‌ها آپدیت نشوند؟</summary><p>چون تغییرهای خیلی کوچک را برای جلوگیری از نویز نادیده می‌گیرد. اگر می‌خواهید حساس‌تر باشید، مقدار آن را کمتر کنید.</p></details>
+</div>
+</section></div>
+</section>

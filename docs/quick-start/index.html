@@ -1,0 +1,119 @@
+---
+layout: default
+page_key: quick-start
+nav_parent: docs
+page_url: /docs/quick-start/
+title: شروع سریع تومنی‌فای | راه‌اندازی افزونه در چند دقیقه
+description: 'راهنمای کوتاه Tomanify برای شروع سریع: ورود JSON بازار آزاد، بروزرسانی نرخ‌ها، ساخت اولین محصول خارجی و استفاده اختیاری از شورتکد نرخ‌ها.'
+keywords: شروع سریع تومنیفای, Quick start Tomanify, راه اندازی 5 دقیقه ای Tomanify, JSON بازار آزاد, Update Rates تومنیفای, محصول foreign ووکامرس, Margin در Tomanify, shortcode نرخ ارز
+robots: index, follow
+og_type: article
+schema_type: HowTo
+schema_image: /assets/img/tomanify-dashboard-manual-update-cron.webp
+schema_image_width: 706
+schema_image_height: 376
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: شروع سریع
+  path: /docs/quick-start/
+faq_items:
+- q: برای سریع‌ترین تست کدام روش را انتخاب کنم؟
+  a: JSON بازار آزاد سریع‌ترین و ساده‌ترین نقطه شروع است. بعد از وارد کردن URL، فقط کافی است Update Rates بزنید و یک محصول foreign را تست کنید.
+- q: اگر قیمت کالاهایم خیلی حساس است چه کنم؟
+  a: در شروع سریع هم بهتر است Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ بگذارید تا اگر منبع رایگان کمی با تأخیر بروزرسانی شد، حاشیهٔ امن داشته باشید.
+- q: آیا برای شروع حتماً باید همهٔ فیدهای بانک مرکزی را هم وارد کنم؟
+  a: خیر، ولی برای پایداری بهتر توصیه می‌شود بعد از تست اولیه، فیدهای پشتیبان را هم اضافه کنید.
+- q: شورتکد از همان اول لازم است؟
+  a: نه. شورتکد فقط برای نمایش نرخ‌ها به کاربر است و بر محاسبهٔ قیمت محصولات اثری ندارد.
+- q: بعد از شروع سریع، کدام صفحه را بخوانم؟
+  a: معمولاً منابع نرخ و محصولات خارجی مهم‌ترین قدم‌های بعدی هستند؛ اگر فروشگاه شما حساس‌تر است، صفحه پیشرفته را هم بخوانید.
+howto_steps:
+- name: JSON URL را در Sources قرار دهید
+  text: لینک HTTPS منبع نرخ بازار آزاد را در فیلد JSON وارد کنید.
+- name: نرخ‌ها را بروزرسانی کنید
+  text: در داشبورد روی Update Rates بزنید تا نرخ‌ها و زمان آخرین بروزرسانی ذخیره شوند.
+- name: یک محصول را foreign کنید
+  text: در متاباکس محصول، foreign را فعال کنید و ارز، قیمت خرید و Margin را وارد کنید.
+- name: در صورت نیاز شورتکد را نمایش دهید
+  text: برای نمایش نرخ‌ها در فرانت‌اند از [tomanify_rates] استفاده کنید.
+schema_name: شروع سریع Tomanify در ۵ دقیقه
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / شروع سریع</div>
+<section class="card"><div class="inner">
+<h1>شروع سریع Tomanify در ۵ دقیقه</h1>
+<p class="lead">اگر می‌خواهید افزونه را سریع تست کنید و مطمئن شوید منطق کلی کار را فهمیده‌اید، همین صفحه کافی است.</p>
+<div class="kpis">
+<div class="kpi">۱ لینک JSON</div>
+<div class="kpi">۱ بار Update Rates</div>
+<div class="kpi">۱ محصول foreign</div>
+<div class="kpi">Margin محافظه‌کارانه</div>
+</div>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>۱) لینک JSON را وارد کنید</h2>
+<p>در <strong>Tomanify → Sources</strong>، فیلد JSON URL را با یک URL HTTPS که خودتان انتخاب می‌کنید پر کنید. نمونه زیر فقط مثال اختیاری مستندات است و داخل افزونه پیش‌فرض نیست:</p>
+<div class="copyline">
+<pre><code id="quick-json-url">https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
+<button class="btn" data-copy="quick-json-url" type="button">کپی</button>
+</div>
+<p class="note-top">پیشنهاد: اگر نمی‌خواهید فعلاً درگیر روش‌های پشتیبان شوید، می‌توانید ابتدا با همین نمونه اختیاری تست بگیرید و بعد منبع خودتان را جایگزین کنید.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>۲) نرخ‌ها را بروزرسانی کنید</h2>
+<p>در داشبورد روی <strong>Update Rates</strong> بزنید. اگر منبع درست باشد، آخرین زمان بروزرسانی و منبع ثبت می‌شود.</p>
+<figure class="figure">
+<img alt="داشبورد تومنی فای برای اجرای بروزرسانی نرخ ها" decoding="async" height="376" loading="lazy" src="/assets/img/tomanify-dashboard-manual-update-cron.webp" width="706"/>
+<figcaption>داشبورد افزونه و محل اجرای بروزرسانی نرخ‌ها</figcaption>
+</figure>
+<ol class="figure-points">
+<li><strong>شماره ۱:</strong> بعد از وارد کردن JSON یا منبع نرخ، این دکمه را بزنید تا اولین بروزرسانی انجام شود.</li>
+<li><strong>شماره ۲:</strong> اگر خواستید بعد از تست اولیه کار به‌صورت خودکار ادامه پیدا کند، بازه زمانی اجرای کرون را همین‌جا تنظیم کنید.</li>
+</ol>
+</div></div>
+</section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>۳) یک محصول را خارجی کنید</h2>
+<p>در صفحهٔ ویرایش محصول، متاباکس Tomanify را باز کنید و ارز، قیمت خرید خارجی و Margin را وارد کنید.</p>
+<figure class="figure">
+<img alt="فرم ثبت قیمت خرید خارجی و ارز محصول در تومنی فای" decoding="async" height="433" loading="lazy" src="/assets/img/tomanify-products-foreign-pricing-table.webp" width="840"/>
+<figcaption>متاباکس محصول خارجی: ارز، قیمت خرید خارجی و درصد سود</figcaption>
+</figure>
+</div></div>
+<div class="card"><div class="inner">
+<h2>۴) Margin را فراموش نکنید</h2>
+<p>اگر منبع رایگان شما با تأخیر بروزرسانی می‌شود، Margin معقول می‌تواند از ضرر ناشی از نوسان کوچک بازار جلوگیری کند. برای شروع، ۳٪ تا ۵٪ برای بسیاری از فروشگاه‌ها عدد عملی‌تری است.</p>
+<p class="flush">بعداً می‌توانید عدد دقیق‌تر را بر اساس بازار و مدل کسب‌وکار خود تنظیم کنید.</p>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>۵) نمایش نرخ‌ها به کاربر (اختیاری)</h2>
+<p>اگر می‌خواهید نرخ ارزها را هم در یک صفحه یا سایدبار نمایش دهید، این شورتکد را قرار دهید:</p>
+<div class="copyline">
+<pre><code id="quick-shortcode">[tomanify_rates]</code></pre>
+<button class="btn" data-copy="quick-shortcode" type="button">کپی</button>
+</div>
+</div></section>
+<section class="card section"><div class="inner">
+<h2>بعد از شروع سریع</h2>
+<p class="actions-inline"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/free-api/">API رایگان</a> <a class="btn" href="/docs/products/">محصولات خارجی</a> <a class="btn" href="/docs/advanced/">پیشرفته</a></p>
+</div></section>
+<section class="section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted faq-intro">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open=""><summary>برای سریع‌ترین تست کدام روش را انتخاب کنم؟</summary><p>JSON بازار آزاد سریع‌ترین و ساده‌ترین نقطه شروع است. بعد از وارد کردن URL، فقط کافی است Update Rates بزنید و یک محصول foreign را تست کنید.</p></details>
+<details><summary>اگر قیمت کالاهایم خیلی حساس است چه کنم؟</summary><p>در شروع سریع هم بهتر است Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ بگذارید تا اگر منبع رایگان کمی با تأخیر بروزرسانی شد، حاشیهٔ امن داشته باشید.</p></details>
+<details><summary>آیا برای شروع حتماً باید همهٔ فیدهای بانک مرکزی را هم وارد کنم؟</summary><p>خیر، ولی برای پایداری بهتر توصیه می‌شود بعد از تست اولیه، فیدهای پشتیبان را هم اضافه کنید.</p></details>
+<details><summary>شورتکد از همان اول لازم است؟</summary><p>نه. شورتکد فقط برای نمایش نرخ‌ها به کاربر است و بر محاسبهٔ قیمت محصولات اثری ندارد.</p></details>
+<details><summary>بعد از شروع سریع، کدام صفحه را بخوانم؟</summary><p>معمولاً منابع نرخ و محصولات خارجی مهم‌ترین قدم‌های بعدی هستند؛ اگر فروشگاه شما حساس‌تر است، صفحه پیشرفته را هم بخوانید.</p></details>
+</div>
+</section></div>
+</section>

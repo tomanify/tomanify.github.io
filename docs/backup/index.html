@@ -1,0 +1,82 @@
+---
+layout: default
+page_key: backup
+nav_parent: backup
+page_url: /docs/backup/
+title: بکاپ و انتقال تومنی‌فای | Export، Import و حذف داده‌ها
+description: راهنمای Export و Import در Tomanify برای بکاپ، انتقال تنظیمات بین سایت تست و اصلی، و انتخاب حذف کامل یا سبک داده‌ها هنگام حذف افزونه.
+keywords: بکاپ تومنیفای, Export Import Tomanify, انتقال تنظیمات تومنیفای, backup JSON تومنیفای, انتقال از سایت تست به اصلی, restore Tomanify settings
+robots: index, follow
+og_type: article
+schema_type: Article
+schema_image: /assets/img/tomanify-backup-uninstall-data-removal.webp
+schema_image_width: 529
+schema_image_height: 155
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: بکاپ
+  path: /docs/backup/
+faq_items:
+- q: Export دقیقاً چه کمکی می‌کند؟
+  a: برای زمانی که می‌خواهید تنظیمات و محصولات foreign را از سایت تست به سایت اصلی یا برعکس منتقل کنید و دوباره همه چیز را دستی نسازید.
+- q: آیا بعد از Import باید چیزی را دوباره چک کنم؟
+  a: بله، بهتر است منابع نرخ، نرخ‌های ذخیره‌شده و چند محصول نمونه را بعد از import بررسی کنید.
+- q: اگر نام یا SKU محصول‌ها فرق کند چه می‌شود؟
+  a: تطبیق محصولات در import باید با دقت انجام شود؛ بنابراین قبل از انتقال گسترده، روی چند محصول نمونه تست بگیرید.
+- q: بکاپ جایگزین منبع نرخ زنده است؟
+  a: خیر. بکاپ برای انتقال تنظیمات و متادیتاست؛ منبع نرخ زنده و اعتبار آن باید جداگانه درست تنظیم شود.
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / بکاپ</div>
+<section class="card"><div class="inner">
+<h1>بکاپ و انتقال تنظیمات Tomanify</h1>
+<p class="lead">اگر سایت تست و سایت اصلی دارید یا می‌خواهید تنظیمات و محصولات foreign را بین دو محیط جابه‌جا کنید، این صفحه برای شماست.</p>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>چه زمانی Export/Import مفید است؟</h2>
+<p>وقتی در سایت تست همه چیز را تنظیم کرده‌اید و نمی‌خواهید در سایت اصلی دوباره همان URLها، تنظیمات، و محصولات foreign را از اول وارد کنید.</p>
+</div></div>
+<div class="card"><div class="inner">
+<h2>چه چیزی را باید بعد از Import بررسی کنید؟</h2>
+<p>چند محصول نمونه، منبع نرخ، واحد تومان/ریال و نتیجهٔ Update Rates. مخصوصاً اگر سایت‌ها از نظر قالب، کش یا موجودی محصول متفاوت باشند.</p>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>یک روال امن برای انتقال</h2>
+<ol class="tight-list">
+<li>در سایت تست همه تنظیمات را کامل کنید.</li>
+<li>Export بگیرید و فایل را نگه دارید.</li>
+<li>در سایت مقصد import کنید.</li>
+<li>نرخ‌ها را بروزرسانی کنید و چند محصول را تست بگیرید.</li>
+<li>اگر کش فعال است، کش را پاک کنید.</li>
+</ol>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>تصویر: حذف داده‌ها هنگام حذف افزونه</h2>
+<figure class="figure">
+<img alt="تنظیم حذف داده ها هنگام حذف افزونه در تومنی فای" decoding="async" height="155" loading="lazy" src="/assets/img/tomanify-backup-uninstall-data-removal.webp" width="529"/>
+<figcaption>از همین بخش تعیین می‌کنید حذف افزونه کامل باشد یا بخشی از داده‌های لازم برای استفاده‌های بعدی باقی بمانند.</figcaption>
+</figure>
+</div></div>
+<div class="card"><div class="inner">
+<h2>این گزینه برای چه زمانی مهم است؟</h2>
+<p>اگر روی سایت تست زیاد نصب و حذف انجام می‌دهید، نگه داشتن داده‌های محصولات foreign می‌تواند زمان راه‌اندازی دوباره را کم کند. اما اگر می‌خواهید افزونه را کاملاً پاک کنید، باید گزینه حذف کامل داده‌ها را انتخاب کنید.</p>
+</div></div>
+</section>
+<section class="section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted faq-intro">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open=""><summary>Export دقیقاً چه کمکی می‌کند؟</summary><p>برای زمانی که می‌خواهید تنظیمات و محصولات foreign را از سایت تست به سایت اصلی یا برعکس منتقل کنید و دوباره همه چیز را دستی نسازید.</p></details>
+<details><summary>آیا بعد از Import باید چیزی را دوباره چک کنم؟</summary><p>بله، بهتر است منابع نرخ، نرخ‌های ذخیره‌شده و چند محصول نمونه را بعد از import بررسی کنید.</p></details>
+<details><summary>اگر نام یا SKU محصول‌ها فرق کند چه می‌شود؟</summary><p>تطبیق محصولات در import باید با دقت انجام شود؛ بنابراین قبل از انتقال گسترده، روی چند محصول نمونه تست بگیرید.</p></details>
+<details><summary>بکاپ جایگزین منبع نرخ زنده است؟</summary><p>خیر. بکاپ برای انتقال تنظیمات و متادیتاست؛ منبع نرخ زنده و اعتبار آن باید جداگانه درست تنظیم شود.</p></details>
+</div>
+</section></div>
+</section>

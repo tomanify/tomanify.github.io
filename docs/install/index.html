@@ -1,0 +1,127 @@
+---
+layout: default
+page_key: install
+nav_parent: docs
+page_url: /docs/install/
+title: نصب تومنی‌فای | راه‌اندازی اولیه افزونه در ووکامرس
+description: 'آموزش نصب و راه‌اندازی Tomanify: فعال‌سازی افزونه، وارد کردن منبع نرخ، بروزرسانی اولیه نرخ‌ها، ساخت اولین محصول foreign و تنظیم کرون.'
+keywords: نصب تومنیفای, راه اندازی Tomanify, نصب افزونه تومنیفای در وردپرس, فعال سازی Tomanify, تنظیم اولیه ووکامرس تومان, تنظیم منابع نرخ در Tomanify, Update Rates, Cron تومنیفای, wp-cron تومنیفای, راه اندازی محصول خارجی ووکامرس
+robots: index, follow
+og_type: article
+schema_type: HowTo
+schema_image: /assets/img/tomanify-dashboard-manual-update-cron.webp
+schema_image_width: 706
+schema_image_height: 376
+software_app: true
+breadcrumbs:
+- name: خانه
+  path: /
+- name: راهنما
+  path: /docs/
+- name: نصب
+  path: /docs/install/
+faq_items:
+- q: بعد از نصب، اولین کار چیست؟
+  a: منبع نرخ را در تب Sources تنظیم کنید، بعد از داشبورد Update Rates بزنید و سپس اولین محصول foreign را تست کنید.
+- q: اگر هنوز URL منبع را وارد نکرده باشم چه می‌شود؟
+  a: افزونه به‌صورت پیش‌فرض هیچ URL آماده‌ای را داخل تنظیمات قرار نمی‌دهد؛ بنابراین تا وقتی شما آدرس را وارد نکنید، درخواست خارجی هم انجام نمی‌شود.
+- q: آیا WP-Cron همیشه دقیق اجرا می‌شود؟
+  a: در هاست اشتراکی ممکن است به بازدید سایت وابسته باشد. اگر زمان‌بندی دقیق‌تری می‌خواهید، از Cron واقعی هاست یا سرویس cron استفاده کنید.
+- q: تغییر واحد از تومان به ریال دوباره نرخ را می‌گیرد؟
+  a: خیر. فقط قیمت ووکامرس از روی پایه تومان بازنویسی می‌شود و تبدیل دوباره انجام نمی‌شود.
+- q: برای شروع Margin را روی چه عددی بگذارم؟
+  a: برای اکثر فروشگاه‌هایی که با JSON رایگان بازار آزاد شروع می‌کنند، Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ می‌تواند ریسک عقب‌ماندن نرخ را پوشش دهد.
+howto_steps:
+- name: افزونه را نصب و فعال کنید
+  text: از WordPress.org افزونه را نصب و فعال کنید تا منوی Tomanify در پیشخوان ظاهر شود.
+- name: واحد و زبان را بررسی کنید
+  text: در تب General، واحد نمایش را روی تومان یا ریال و زبان را مطابق نیازتان تنظیم کنید.
+- name: منبع نرخ را وارد کنید
+  text: در تب Sources، یک لینک HTTPS برای JSON بازار آزاد یا فیدهای بانک مرکزی وارد کنید.
+- name: نرخ‌ها را بروزرسانی کنید
+  text: در داشبورد افزونه روی Update Rates بزنید تا نرخ‌های ذخیره‌شده ساخته شوند.
+- name: اولین محصول foreign را تنظیم کنید
+  text: در صفحه محصول، گزینه محصول خارجی را فعال و ارز، قیمت خرید و Margin را وارد کنید.
+- name: کران و بروزرسانی خودکار را تنظیم کنید
+  text: اگر نمی‌خواهید دستی بروزرسانی کنید، Update Interval را در General تنظیم کنید.
+schema_name: نصب و راه‌اندازی اولیه Tomanify
+---
+
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / نصب</div>
+<section class="card"><div class="inner">
+<h1>نصب و راه‌اندازی Tomanify</h1>
+<p class="lead">این صفحه برای راه‌اندازی استاندارد است: مناسب کسی که می‌خواهد افزونه را نصب کند، منبع نرخ را وارد کند، اولین محصول خارجی را بسازد و بعد بروزرسانی‌ها را خودکار کند.</p>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>قبل از شروع</h2>
+<ul class="tight-list">
+<li>ووکامرس باید فعال باشد.</li>
+<li>بهتر است تصمیم بگیرید واحد نهایی سایت <strong>تومان</strong> باشد یا <strong>ریال</strong>.</li>
+<li>یک منبع نرخ HTTPS آماده داشته باشید؛ ساده‌ترین گزینه، JSON بازار آزاد است.</li>
+<li>اگر فروشگاه حساسی دارید، از همین ابتدا دربارهٔ Margin و منابع پشتیبان فکر کنید.</li>
+</ul>
+</div></div>
+<div class="card"><div class="inner">
+<h2>نمونه اختیاری شروع سریع</h2>
+<p>برای اولین تست می‌توانید این نمونه اختیاری را خودتان در Sources وارد کنید. این URL در افزونه پیش‌فرض یا bundled نیست:</p>
+<div class="copyline">
+<pre><code id="install-json-url">https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
+<button class="btn" data-copy="install-json-url" type="button">کپی</button>
+</div>
+<p class="note-top">بعد از آن، داشبورد افزونه را باز کنید و بروزرسانی نرخ‌ها را اجرا کنید.</p>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>مسیر راه‌اندازی در ۶ قدم</h2>
+<ol class="tight-list">
+<li><strong>نصب و فعال‌سازی:</strong> افزونه را نصب و فعال کنید.</li>
+<li><strong>General:</strong> واحد، زبان و بازهٔ Cron را بررسی کنید.</li>
+<li><strong>Sources:</strong> JSON یا RSS/XML را وارد کنید.</li>
+<li><strong>Dashboard:</strong> روی Update Rates بزنید و آخرین منبع/زمان را ببینید.</li>
+<li><strong>Product:</strong> اولین محصول را foreign کنید و قیمت خرید/ارز/Margin را وارد کنید.</li>
+<li><strong>Validation:</strong> قیمت نهایی، مرتب‌سازی و در صورت نیاز شورتکد را تست کنید.</li>
+</ol>
+</div></section>
+<section class="grid section">
+<div class="card"><div class="inner">
+<h2>تصویر: داشبورد و بروزرسانی نرخ‌ها</h2>
+<figure class="figure">
+<img alt="داشبورد تومنی فای و دکمه بروزرسانی دستی نرخ ها" decoding="async" height="376" loading="lazy" src="/assets/img/tomanify-dashboard-manual-update-cron.webp" width="706"/>
+<figcaption>داشبورد افزونه: دکمه بروزرسانی نرخ‌ها و مشاهدهٔ نرخ‌های ذخیره‌شده</figcaption>
+</figure>
+<ol class="figure-points">
+<li><strong>شماره ۱:</strong> بعد از تنظیم منبع نرخ، یک بار این دکمه را بزنید تا افزونه نرخ‌های فعلی را ذخیره کند.</li>
+<li><strong>شماره ۲:</strong> بازه اجرای خودکار را اینجا تعیین می‌کنید تا بعد از نصب، مجبور نباشید همیشه دستی بروزرسانی بزنید.</li>
+</ol>
+</div></div>
+<div class="card"><div class="inner">
+<h2>تصویر: تب منابع نرخ</h2>
+<figure class="figure">
+<img alt="تب منابع نرخ در تومنی فای برای ورود JSON و لینک های بانک مرکزی" decoding="async" height="640" loading="lazy" src="/assets/img/tomanify-sources-json-bank-manual.webp" width="560"/>
+<figcaption>جایی که لینک JSON بازار آزاد و فیدهای بانک مرکزی را وارد می‌کنید</figcaption>
+</figure>
+<ol class="figure-points">
+<li><strong>شماره ۱:</strong> لینک JSON سازگار با افزونه را اینجا قرار دهید.</li>
+<li><strong>شماره‌های ۲ تا ۶:</strong> اگر می‌خواهید از نرخ‌های رسمی بانک مرکزی هم استفاده کنید، لینک هر ارز را در ردیف مربوط به همان ارز وارد کنید.</li>
+<li><strong>شماره ۷:</strong> برای حالت Manual، نرخ‌های دستی را اینجا بنویسید.</li>
+</ol>
+</div></div>
+</section>
+<section class="card section"><div class="inner">
+<h2>بعد از نصب چه صفحه‌هایی مهم‌ترند؟</h2>
+<p class="actions-inline"><a class="btn primary" href="/docs/sources/">منابع نرخ</a> <a class="btn" href="/docs/products/">محصولات خارجی</a> <a class="btn" href="/docs/advanced/">پیشرفته</a> <a class="btn" href="/docs/free-api/">API رایگان</a></p>
+</div></section>
+<section class="section seo-box">
+<div class="card"><section class="section">
+<h2>سوالات متداول این صفحه</h2>
+<p class="muted faq-intro">جواب کوتاه به سوال‌هایی که معمولاً قبل از نصب، هنگام تنظیمات، یا زمان عیب‌یابی پیش می‌آید.</p>
+<div class="faq">
+<details open=""><summary>بعد از نصب، اولین کار چیست؟</summary><p>منبع نرخ را در تب Sources تنظیم کنید، بعد از داشبورد Update Rates بزنید و سپس اولین محصول foreign را تست کنید.</p></details>
+<details><summary>اگر هنوز URL منبع را وارد نکرده باشم چه می‌شود؟</summary><p>افزونه به‌صورت پیش‌فرض هیچ URL آماده‌ای را داخل تنظیمات قرار نمی‌دهد؛ بنابراین تا وقتی شما آدرس را وارد نکنید، درخواست خارجی هم انجام نمی‌شود.</p></details>
+<details><summary>آیا WP-Cron همیشه دقیق اجرا می‌شود؟</summary><p>در هاست اشتراکی ممکن است به بازدید سایت وابسته باشد. اگر زمان‌بندی دقیق‌تری می‌خواهید، از Cron واقعی هاست یا سرویس cron استفاده کنید.</p></details>
+<details><summary>تغییر واحد از تومان به ریال دوباره نرخ را می‌گیرد؟</summary><p>خیر. فقط قیمت ووکامرس از روی پایه تومان بازنویسی می‌شود و تبدیل دوباره انجام نمی‌شود.</p></details>
+<details><summary>برای شروع Margin را روی چه عددی بگذارم؟</summary><p>برای اکثر فروشگاه‌هایی که با JSON رایگان بازار آزاد شروع می‌کنند، Margin محافظه‌کارانه مثل ۳٪ تا ۵٪ می‌تواند ریسک عقب‌ماندن نرخ را پوشش دهد.</p></details>
+</div>
+</section></div>
+</section>

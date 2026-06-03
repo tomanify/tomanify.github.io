@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="{{ site.lang | default: 'fa-IR' }}">
+<head>
+  {% include head.html %}
+  {% assign page_abs = site.url | append: page.page_url %}
+  {% assign meta_title = page.og_title | default: page.title %}
+  {% assign meta_description = page.og_description | default: page.description %}
+  <title>{{ page.title | escape }}</title>
+  <meta name="description" content="{{ page.description | strip_newlines | escape }}">
+  <meta name="keywords" content="{{ page.keywords | strip_newlines | escape }}">
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' | escape }}">
+  <link rel="canonical" href="{{ page_abs }}">
+  <meta property="og:type" content="{{ page.og_type | default: 'article' | escape }}">
+  <meta property="og:title" content="{{ meta_title | escape }}">
+  <meta property="og:description" content="{{ meta_description | strip_newlines | escape }}">
+  <meta property="og:url" content="{{ page_abs }}">
+  <meta name="twitter:title" content="{{ page.twitter_title | default: meta_title | escape }}">
+  <meta name="twitter:description" content="{{ page.twitter_description | default: meta_description | strip_newlines | escape }}">
+  {% include schema.html %}
+</head>
+<body>
+  {% include header.html %}
+  <main class="container main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="/assets/site.js"></script>
+</body>
+</html>

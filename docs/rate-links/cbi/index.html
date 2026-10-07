@@ -2,8 +2,8 @@
 layout: default
 nav_parent: "sources"
 page_url: "/docs/rate-links/cbi/"
-title: "لینک‌های بانک مرکزی برای Tebaro | USD EUR AED TRY CNY"
-description: "لینک‌های اختیاری RSS/XML بانک مرکزی برای USD، EUR، AED، TRY و CNY جهت استفاده مدیر در Official-rate estimate افزونه Tebaro."
+title: "لینک‌های رسمی بانک مرکزی برای Tebaro | USD EUR AED TRY CNY"
+description: "صفحه اطلاع‌رسانی امن برای کپی لینک‌های اختیاری RSS/XML بانک مرکزی مربوط به USD، EUR، AED، TRY و CNY در افزونه Tebaro."
 keywords: "RSS بانک مرکزی, لینک CBI Tebaro, USD EUR AED TRY CNY, Official rate estimate"
 robots: "index, follow"
 og_type: "article"
@@ -23,11 +23,48 @@ breadcrumbs:
   path: /docs/rate-links/cbi/
 ---
 
-<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / لینک‌های رسمی</div><section class="card"><div class="inner"><h1>لینک‌های اختیاری RSS/XML بانک مرکزی برای Tebaro</h1><p class="lead">Tebaro هیچ URL رسمی را در تنظیمات prefill نمی‌کند. اگر مدیر تصمیم بگیرد از این endpointهای رسمی استفاده کند، می‌تواند هرکدام را در فیلد ارز مربوط وارد کند.</p><div class="policy-box">این لینک‌ها نمونه مستنداتی اختیاری هستند؛ فعال‌سازی آن‌ها تصمیم مدیر سایت است.</div></div></section>
-<section class="card section"><div class="inner"><div class="table-wrap"><table class="comparison-table"><thead><tr><th>ارز</th><th>URL رسمی</th></tr></thead><tbody>
-<tr><td>USD</td><td class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=1</td></tr>
-<tr><td>EUR</td><td class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=94</td></tr>
-<tr><td>AED</td><td class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=14</td></tr>
-<tr><td>TRY</td><td class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=38</td></tr>
-<tr><td>CNY</td><td class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=85</td></tr>
-</tbody></table></div><p>مشاهده رسمی به ریال parse می‌شود و در حالت Official estimate با ضریب مؤثر به تومان تبدیل می‌شود. اگر یک ارز در همان refresh معتبر نباشد، snapshot کامل نسبت‌های رسمی جایگزین نمی‌شود.</p></div></section>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / لینک‌های رسمی</div>
+<section class="card compact-page-intro"><div class="inner">
+  <h1>لینک‌های رسمی هر ارز برای Tebaro</h1>
+  <p class="lead">این صفحه یک فهرست اطلاع‌رسانی برای کپی‌کردن URLهای اختیاری RSS/XML بانک مرکزی است. Tebaro این آدرس‌ها را داخل افزونه از پیش وارد نمی‌کند؛ مدیر سایت در صورت تمایل، لینک هر ارز را خودش در فیلد مربوط در تب Sources قرار می‌دهد.</p>
+  <div class="policy-box"><strong>حریم خصوصی و ایمنی:</strong> بازکردن این صفحه هیچ درخواستی به endpointهای بانک مرکزی ارسال نمی‌کند. آدرس‌ها فقط به‌صورت متن نمایش داده می‌شوند و دکمه «کپی لینک» فقط از قابلیت محلی Clipboard مرورگر استفاده می‌کند. هیچ tracking، telemetry یا ارسال داده‌ای برای این کار وجود ندارد.</div>
+</div></section>
+
+<section class="grid section source-link-grid" aria-label="لینک‌های رسمی ارزها">
+  <div id="cbi-usd" class="card link-focus-card"><div class="inner">
+    <p class="link-label">دلار آمریکا — USD</p>
+    <div class="copyline copyline-focus"><pre id="cbi-usd-url" class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=1</pre><button class="btn primary copy-cta" data-copy="cbi-usd-url" type="button">کپی لینک USD</button></div>
+    <p class="muted link-help">این آدرس را فقط در فیلد رسمی USD وارد کنید.</p>
+  </div></div>
+
+  <div id="cbi-eur" class="card link-focus-card"><div class="inner">
+    <p class="link-label">یورو — EUR</p>
+    <div class="copyline copyline-focus"><pre id="cbi-eur-url" class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=94</pre><button class="btn primary copy-cta" data-copy="cbi-eur-url" type="button">کپی لینک EUR</button></div>
+    <p class="muted link-help">این آدرس را فقط در فیلد رسمی EUR وارد کنید.</p>
+  </div></div>
+
+  <div id="cbi-aed" class="card link-focus-card"><div class="inner">
+    <p class="link-label">درهم امارات — AED</p>
+    <div class="copyline copyline-focus"><pre id="cbi-aed-url" class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=14</pre><button class="btn primary copy-cta" data-copy="cbi-aed-url" type="button">کپی لینک AED</button></div>
+    <p class="muted link-help">این آدرس را فقط در فیلد رسمی AED وارد کنید.</p>
+  </div></div>
+
+  <div id="cbi-try" class="card link-focus-card"><div class="inner">
+    <p class="link-label">لیر ترکیه — TRY</p>
+    <div class="copyline copyline-focus"><pre id="cbi-try-url" class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=38</pre><button class="btn primary copy-cta" data-copy="cbi-try-url" type="button">کپی لینک TRY</button></div>
+    <p class="muted link-help">این آدرس را فقط در فیلد رسمی TRY وارد کنید.</p>
+  </div></div>
+
+  <div id="cbi-cny" class="card link-focus-card"><div class="inner">
+    <p class="link-label">یوان چین — CNY</p>
+    <div class="copyline copyline-focus"><pre id="cbi-cny-url" class="endpoint">https://cbi.ir/ExRatesRSS.aspx?cid=85</pre><button class="btn primary copy-cta" data-copy="cbi-cny-url" type="button">کپی لینک CNY</button></div>
+    <p class="muted link-help">این آدرس را فقط در فیلد رسمی CNY وارد کنید.</p>
+  </div></div>
+</section>
+
+<section class="card section"><div class="inner">
+  <h2>این لینک‌ها در Tebaro چگونه استفاده می‌شوند؟</h2>
+  <p>مشاهده رسمی به ریال خوانده می‌شود و در حالت <strong>Official-rate estimate</strong> با ضریب مؤثر به مقدار تخمینی تومان تبدیل می‌شود. این صفحه خودش نرخ ارز منتشر یا محاسبه نمی‌کند و هیچ URLی را در تنظیمات افزونه ذخیره نمی‌کند.</p>
+  <p class="actions-inline"><a class="btn primary" href="/docs/sources/">راهنمای منابع و ضریب</a><a class="btn" href="/docs/quick-start/">شروع سریع Tebaro</a><a class="btn" href="/docs/rate-links/json/">راهنمای فید ضریب</a></p>
+  <div class="note note-top">endpointهای رسمی تحت کنترل اپراتور منبع هستند و ممکن است در آینده تغییر کنند. این صفحه صرفاً برای راهنمایی و کپی آسان آدرس‌های فعلی است؛ استفاده از هر منبع خارجی تصمیم مدیر سایت است.</div>
+</div></section>

@@ -7,7 +7,7 @@
   {% assign meta_description = page.og_description | default: page.description %}
   <title>{{ page.title | escape }}</title>
   <meta name="description" content="{{ page.description | strip_newlines | escape }}">
-  <meta name="keywords" content="{{ page.keywords | strip_newlines | escape }}">
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords | strip_newlines | escape }}">{% endif %}
   <meta name="robots" content="{{ page.robots | default: 'index, follow' | escape }}">
   <link rel="canonical" href="{{ page_abs }}">
   <meta property="og:type" content="{{ page.og_type | default: 'article' | escape }}">
@@ -20,9 +20,7 @@
 </head>
 <body>
   {% include header.html %}
-  <main class="container main">
-    {{ content }}
-  </main>
+  <main class="container main">{{ content }}</main>
   {% include footer.html %}
   <script src="/assets/site.js"></script>
 </body>

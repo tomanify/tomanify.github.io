@@ -1,13 +1,13 @@
 {
-  "name": "Tomanify",
-  "short_name": "Tomanify",
-  "description": "مستندات فارسی و راهنمای کاربرپسند افزونه Tomanify برای قیمت‌گذاری محصولات خارجی ووکامرس با نرخ بازار آزاد.",
+  "name": "Tebaro — WooCommerce Product Pricing",
+  "short_name": "Tebaro",
+  "description": "راهنمای فارسی Tebaro، نام جدید Tomanify، برای قیمت‌گذاری و تبدیل هزینه محصولات خارجی در WooCommerce.",
   "lang": "fa-IR",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#0A7B56",
+  "theme_color": "#155E75",
   "background_color": "#ffffff",
   "icons": [
     {
@@ -24,13 +24,13 @@
       "src": "/assets/favicon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/assets/favicon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/assets/apple-touch-icon.png",

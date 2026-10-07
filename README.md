@@ -1,19 +1,37 @@
-# Tomanify Persian Docs (GitHub Pages)
+# Tebaro Persian Docs (formerly Tomanify)
 
-این ریپازیتوری وب‌سایت مستندات فارسی افزونه **Tomanify** را روی GitHub Pages منتشر می‌کند:
+این repository منبع GitHub Pages مستندات فارسی **Tebaro** است. برای حفظ SEO، بک‌لینک‌ها و مسیر ارتقای کاربران قدیمی، آدرس canonical سایت و repository فعلاً همان هویت فنی قدیمی را نگه می‌دارد:
 
-* وب‌سایت: https://tomanify.github.io/
-* افزونه در WordPress.org: https://wordpress.org/plugins/tomanify/
+- Documentation: https://tomanify.github.io/
+- WordPress.org plugin slug: https://wordpress.org/plugins/tomanify/
+- Documentation repository: https://github.com/tomanify/tomanify.github.io
+- Public coefficient repository: https://github.com/tebaro-wp/coefficient-index
+- Final coefficient file: `coefficient.json`
+- Raw coefficient URL: https://raw.githubusercontent.com/tebaro-wp/coefficient-index/main/coefficient.json
 
-هدف سایت، ارائه‌ی مستندات فارسی، RTL، چندصفحه‌ای و SEO-first برای افزونه Tomanify است؛ با تمرکز روی ووکامرس، نرخ ارز، تبدیل تومان/ریال، محصولات خارجی و بروزرسانی خودکار قیمت‌ها.
+## Brand / compatibility
 
----
+نام عمومی پروژه **Tebaro** است و در دوره انتقال با عبارت **Tebaro — formerly Tomanify** معرفی می‌شود. شناسه فنی `tomanify` در slug، folder، textdomain، option names و `[tomanify_rates]` برای سازگاری حفظ می‌شود.
 
-## معماری فعلی
+## Public data policy
 
-سایت از پردازش native Jekyll در GitHub Pages استفاده می‌کند تا head/header/footer/schema در همه صفحات تکرار نشوند.
+Tebaro هیچ فایل عمومی شامل نرخ‌های per-currency یا provider catalogue منتشر نمی‌کند. companion feed فقط یک coefficient بدون واحد و metadata محدود منتشر می‌کند:
 
-فایل‌های مرکزی:
+```json
+{
+  "schema_version": 1,
+  "coefficient": 1.525058,
+  "generated_at": "2026-10-07T00:00:00Z",
+  "valid_until": "2026-10-08T00:00:00Z",
+  "method": "median_of_currency_ratios_v1",
+  "sample_count": 5,
+  "status": "ok"
+}
+```
+
+## Site architecture
+
+Native GitHub Pages/Jekyll shared templates:
 
 ```text
 _config.yml
@@ -24,63 +42,4 @@ _includes/footer.html
 _includes/schema.html
 ```
 
----
-
-## مسیرهای عمومی فعلی
-
-```text
-/
-/docs/
-/docs/about/
-/docs/advanced/
-/docs/automation/
-/docs/automatic-pricing/
-/docs/auto-price-update/
-/docs/backup/
-/docs/cache-purge/
-/docs/faq/
-/docs/features/
-/docs/free-api/
-/docs/install/
-/docs/language-switch/
-/docs/products/
-/docs/quick-start/
-/docs/reset-uninstall/
-/docs/security/
-/docs/shortcode/
-/docs/sources/
-/docs/troubleshooting/
-/404.html
-```
-
-همه مسیرهای مستندات با ساختار `folder/index.html` نگهداری می‌شوند تا URLهای تمیز مثل `/docs/install/` بدون rewrite اختصاصی کار کنند.
-
----
-
-## فایل‌های استاتیک
-
-```text
-/assets/style.css
-/assets/site.js
-/assets/og.webp
-/assets/favicon-16x16.png
-/assets/favicon-32x32.png
-/assets/favicon-192x192.png
-/assets/favicon-512x512.png
-/assets/favicon.ico
-/assets/apple-touch-icon.png
-/assets/fonts/
-/assets/img/
-/site.webmanifest
-/sitemap.xml
-/robots.txt
-/google269621f053186e5f.html
-```
-
----
-
-## Structured Data
-
-همه صفحات از `_includes/schema.html` استفاده می‌کنند. Schema اصلی شامل `WebSite`، `Organization`، `Person`، `ImageObject`، `WebPage` و `BreadcrumbList` است. بسته به نوع صفحه، `Article`، `CollectionPage`، `HowTo`، `FAQPage`، `SoftwareApplication` یا `ItemList` هم اضافه می‌شود.
-
----
+All historical public routes are intentionally preserved to protect existing SEO/backlinks while their content has been rewritten for the Tebaro architecture.

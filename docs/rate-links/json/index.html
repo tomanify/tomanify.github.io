@@ -1,44 +1,26 @@
 ---
 layout: default
-page_key: rate_links_json
-nav_parent: sources
-page_url: /docs/rate-links/json/
-title: کپی لینک JSON بازار آزاد برای تومنی‌فای
-description: صفحه سریع برای کپی کردن لینک نمونه اختیاری JSON بازار آزاد و قرار دادن آن در فیلد Free market JSON URL افزونه Tomanify.
-keywords: لینک JSON تومنیفای, کپی لینک JSON نرخ ارز, Free market JSON URL, لینک فایل نرخ ارز آزاد, منبع نرخ بازار آزاد وردپرس, لینک نرخ ارز تومنی فای, افزونه نرخ ارز ووکامرس
-robots: index, follow
-og_type: article
-schema_type: WebPage
-schema_image: /assets/img/tomanify-sources-json-bank-manual.webp
-schema_image_width: 560
-schema_image_height: 640
-software_app: true
+nav_parent: "sources"
+page_url: "/docs/rate-links/json/"
+title: "لینک coefficient.json برای Tebaro | فید ضریب کالیبراسیون"
+description: "Raw URL نهایی coefficient.json برای فید اختیاری ضریب کالیبراسیون Tebaro؛ بدون نرخ ارز، Provider یا URL منبع."
+keywords: "coefficient.json Tebaro, Raw GitHub JSON, ضریب کالیبراسیون Tebaro, Tomanify JSON legacy"
+robots: "index, follow"
+og_type: "article"
+schema_type: "WebPage"
+schema_image: "/assets/favicon-512x512.png"
+schema_image_width: 512
+schema_image_height: 512
+software_app: false
+date_published: "2026-03-09"
+date_modified: "2026-10-07"
 breadcrumbs:
 - name: خانه
   path: /
 - name: راهنما
   path: /docs/
-- name: منابع نرخ
-  path: /docs/sources/
-- name: لینک JSON بازار آزاد
+- name: لینک ضریب
   path: /docs/rate-links/json/
 ---
 
-<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / <a href="/docs/sources/">منابع نرخ</a> / لینک JSON بازار آزاد</div>
-<section class="card"><div class="inner compact-page-intro">
-<h1>لینک نمونه JSON بازار آزاد</h1>
-<p class="lead">این صفحه برای کپی سریع یک لینک نمونه اختیاری JSON ساخته شده است. این آدرس را فقط زمانی وارد کنید که می‌خواهید از همین منبع به‌عنوان منبع نرخ بازار آزاد استفاده کنید.</p>
-</div></section>
-<section id="json-source-url" class="card section link-focus-card"><div class="inner">
-<p class="link-label">لینک قابل کپی برای فیلد <strong>Free market JSON URL</strong></p>
-<div class="copyline copyline-focus">
-<pre><code id="json-rate-url">https://raw.githubusercontent.com/rate-json/default/main/data.json</code></pre>
-<button class="btn primary copy-cta" data-copy="json-rate-url" type="button">کپی لینک JSON</button>
-</div>
-<p class="muted link-help">مسیر استفاده: پیشخوان وردپرس ← Tomanify ← Sources ← فیلد Free market JSON URL</p>
-</div></section>
-<section class="card section"><div class="inner">
-<h2>چرا این لینک از قبل داخل افزونه نیست؟</h2>
-<p>برای امنیت، شفافیت و رعایت قوانین مخزن وردپرس، Tomanify هیچ منبع نرخ خارجی را به‌صورت پیش‌فرض داخل تنظیمات ذخیره یا فعال نمی‌کند. مدیر سایت باید منبع مورد نظر را آگاهانه انتخاب کند و خودش لینک HTTPS را در فیلد مربوط قرار دهد.</p>
-<p class="muted">اگر API یا فایل JSON اختصاصی دارید، به‌جای این نمونه می‌توانید لینک همان منبع را وارد کنید؛ فقط خروجی باید با ساختار سازگار Tomanify و مقادیر تومانی برگردد.</p>
-</div></section>
+<div class="breadcrumb"><a href="/">خانه</a> / <a href="/docs/">راهنما</a> / لینک ضریب</div><section class="card"><div class="inner"><h1>کپی لینک JSON ضریب کالیبراسیون Tebaro</h1><p class="lead">این صفحه جایگزین صفحه قدیمی JSON نرخ بازار آزاد است. لینک زیر فقط فایل scalar جدید <code>coefficient.json</code> را نشان می‌دهد و شامل نرخ هیچ ارز یا Provider نیست.</p><div class="copyline"><pre id="coefficient-url" class="endpoint">https://raw.githubusercontent.com/tebaro-wp/coefficient-index/main/coefficient.json</pre><button class="btn primary" data-copy="coefficient-url" type="button">کپی لینک</button></div><p class="muted">مخزن: <a href="https://github.com/tebaro-wp/coefficient-index" rel="noopener" target="_blank">https://github.com/tebaro-wp/coefficient-index</a></p><div class="policy-box">این URL صرفاً یک گزینه همراه پروژه است؛ در افزونه به‌صورت پیش‌فرض وارد نمی‌شود و مدیر باید در صورت تمایل آن را صریحاً در تنظیمات وارد کند.</div></div></section>

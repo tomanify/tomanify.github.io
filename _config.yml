@@ -1,7 +1,11 @@
-title: Tomanify
-description: راهنمای فارسی افزونه Tomanify برای ووکامرس و قیمت‌گذاری محصولات خارجی
+title: Tebaro
+description: راهنمای فارسی Tebaro، نام جدید Tomanify، برای قیمت‌گذاری و تبدیل هزینه محصولات خارجی در ووکامرس
 url: https://tomanify.github.io
 lang: fa-IR
 author: Amin Raoufi
-generator: Tomanify Persian Guide
+generator: Tebaro Persian Guide
 timezone: Europe/Berlin
+wordpress_url: https://wordpress.org/plugins/tomanify/
+docs_repo: https://github.com/tomanify/tomanify.github.io
+coefficient_repo: https://github.com/tebaro-wp/coefficient-index
+coefficient_raw: https://raw.githubusercontent.com/tebaro-wp/coefficient-index/main/coefficient.json
